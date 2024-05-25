@@ -1,0 +1,421 @@
+{{ 'billboard.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign title = section.settings.section_title
+  assign sub_text = section.settings.sub_text
+
+  assign first_block_image = section.blocks[0].settings.image
+  assign second_block_image = section.blocks[1].settings.image
+  assign third_block_image = section.blocks[2].settings.image
+
+  assign image_1 = first_block_image | image_url
+  assign image_2 = second_block_image | image_url
+  assign image_3 = third_block_image | image_url
+  assign overlay_bg_url = 'overlay-bg.png' | asset_url
+-%}
+
+<style>
+  .billboard__section .inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    z-index: 1;
+  }
+
+  .billboard__section .inner {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    background: url('{{ overlay_bg_url }}') no-repeat center center / cover,
+      url('{%- if image_1 != nil or image_1 != blank -%}{{ image_1 }}{% else %}"https://www.theglammodel.com/images/billboard1.jpg"{%- endif -%}')
+        no-repeat center center / cover;
+    transition: all 600ms ease-in-out;
+  }
+  .billboard__section .box.overlay {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .billboard__section .box .link {
+    color: white;
+    transform: translateY(40%);
+  }
+  .billboard__section .box:hover .link {
+    transform: translateY(0%);
+  }
+  .billboard__section .num {
+    margin: 10px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 68px;
+    line-height: 1;
+    transition: color 0.1s ease-in-out;
+    -webkit-text-stroke: white;
+    font-family: sans-serif;
+    color: black;
+    -webkit-text-fill-color: rgb(225 225 225 / 0%);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffff;
+  }
+  .billboard__section .box__heading {
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .billboard__section .box__description {
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .billboard__section .box {
+    transition: all 0.3s ease-in-out;
+  }
+  .billboard__section .box:not(:hover) .box__description {
+    visibility: collapse;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  .billboard__section .box:hover .box__description {
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0%);
+    margin-bottom: 15px;
+    opacity: 100;
+  }
+  .billboard__section .link {
+    position: absolute;
+    height: fit-content;
+    bottom: 0%;
+    transition: 0.3s ease-in-out;
+  }
+  .billboard__section .box:hover .link {
+    bottom: 0%;
+  }
+
+  .billboard__section .inner.active_2:hover {
+    background: url('{{ overlay_bg_url }}') no-repeat center center / cover,
+      url('{%- if image_1 != nil or image_1 != blank -%}{{ image_2 }}{% else %}"https://www.theglammodel.com/images/billboard2.jpg"{%- endif -%}')
+        no-repeat center center / cover;
+    transition: all 600ms ease-in-out;
+  }
+  .billboard__section .inner.active_3:hover {
+    background: url('{{ overlay_bg_url }}') no-repeat center center / cover,
+      url('{%- if image_1 != nil or image_1 != blank -%}{{ image_3 }}{% else %}"https://www.theglammodel.com/images/billboard3%20(2).jpg"{%- endif -%}')
+        no-repeat center center / cover;
+    transition: all 600ms ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .billboard__section .inner {
+      display: none;
+    }
+    .billboard__section .inner {
+      background: url('{{"overlay-bg.png"|asset_url}}') no-repeat center center / cover;
+      flex-direction: column;
+      height: 100%;
+    }
+    .billboard__section .num {
+      font-size: 40px;
+    }
+    .billboard__section .box .link {
+      transform: translateY(0%);
+      display: inline-block;
+      padding: 20px;
+      z-index: 3;
+    }
+    .billboard__section .box:not(:hover) .box__description,
+    .billboard__section .box__description {
+      visibility: visible;
+      pointer-events: all;
+      opacity: 100;
+      transform: translateY(0%);
+    }
+    .billboard__section   .box {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border-right: 0px;
+      border-bottom: 1px solid rgb(215, 213, 213);
+      background-image: var(--box-image);
+      background-size: cover;
+      background-position: center;
+    }
+    .billboard__section  .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent 10%, rgba(0, 0, 0, 0.75) 70%);
+      z-index: 1;
+    }
+    .billboard p {
+      margin-top: 0;
+    }
+  }
+</style>
+
+<style>
+  #billboard-swiper {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 768px) {
+    #billboard-swiper {
+      display: none;
+    }
+  }
+  .billboard__section .swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+  }
+  .billboard__section .divider {
+    width: 30%;
+    max-width: 25rem;
+    height: 2.5px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    margin: 10px auto;
+    margin-bottom: 50px;
+  }
+  .swiper-heading {
+    color: #4d4d4d;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #billboard-swiper .swiper-slide {
+    position: relative;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 0 !important;
+    position: relative;
+  }
+  #billboard-swiper .swiper-slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 10%, rgba(0, 0, 0, 0.75) 70%);
+    z-index: 1;
+  }
+  #billboard-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #billboard-swiper .swiper-slide-active {
+    transform: scale(1.05);
+  }
+  #billboard-swiper .swiper-slide::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 255, 255, 0) 40%);
+    z-index: 5;
+  }
+  #billboard-swiper .swiper-textbox {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    left: 0px;
+    padding: 20px;
+  }
+
+  .billboard__section .swiper-button-prev,
+  .billboard__section .swiper-button-next {
+    margin: 50px;
+    background: #f2efea;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 !important;
+  }
+  .billboard__section .swiper-button-prev::after,
+  .billboard__section .swiper-button-next::after {
+    font-size: 18px !important;
+    color: #333 !important;
+  }
+</style>
+
+<section class="billboard__section">
+  <div class="container">
+    <div class="billboard">
+      {%- if title != blank -%}
+        <div class="billboard__section_title">{{ title }}</div>
+      {%- else -%}
+        <div class="billboard__section_title">B<span class="halfStyled" data-content="i">i</span>llBoard</div>
+      {%- endif -%}
+      {%- if sub_text != blank -%}
+        {{ sub_text }}
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="inner">
+    {% for block in section.blocks %}
+      {%- liquid
+        if block.settings.image != blank
+          assign box_image = block.settings.image | img_url: 'master'
+        endif
+      -%}
+      <div class="box overlay box__{{ forloop.index }}" style="--box-image: url('{{ box_image | default: 'none' }}')">
+        <a href="{{ block.settings.url }}" class="link">
+          <h1 class="num">0{{ forloop.index }}</h1>
+          <h3 class="box__heading">{{ block.settings.title }}</h3>
+          <p class="box__description">{{ block.settings.description }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div id="billboard-swiper">
+    <div class="swiper billboard-slider">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {%- liquid
+            if block.settings.image != blank
+              assign box_image = block.settings.image
+            endif
+          -%}
+          <div class="swiper-slide">
+            <img src="{{box_image | image_url }}" alt="" width="" height="">
+            <div class="swiper-textbox">
+              <p class="num">0{{ forloop.index }}</p>
+              <p class="box__heading">{{- block.settings.title -}}</p>
+              <p class="box__description">{{- block.settings.description -}}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% comment %}
+        <div class="swiper-button-prev swiper-button-white"><span></span></div>
+      {% endcomment %}
+      <div class="swiper-button-next swiper-button-white billboard_button"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const newLocal = $(function () {
+    $('.box__1').hover(
+      function () {
+        $('.inner').addClass('active_1');
+      },
+      function () {
+        $('.inner').removeClass('active_1');
+      }
+    );
+    $('.box__2').hover(
+      function () {
+        $('.inner').addClass('active_2');
+      },
+      function () {
+        $('.inner').removeClass('active_2');
+      }
+    );
+    $('.box__3').hover(
+      function () {
+        $('.inner').addClass('active_3');
+      },
+      function () {
+        $('.inner').removeClass('active_3');
+      }
+    );
+  });
+</script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    const imgSwiperOne = new Swiper('.billboard-slider', {
+      grabcursor: true,
+      loop: true,
+      effect: 'cube',
+      preloadImages: true,
+      navigation: {
+        nextEl: '.swiper-button-next.billboard_button',
+      },
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Billboard Section",
+
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Feature",
+      "type": "feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descripion"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Billboard Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

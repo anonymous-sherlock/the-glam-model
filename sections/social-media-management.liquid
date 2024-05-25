@@ -1,0 +1,440 @@
+{%- liquid
+  assign isEditor = request.design_mode
+  assign title_start = section.settings.heading_start
+  assign title_feature = section.settings.heading_featured
+  assign title_end = section.settings.heading_end
+  assign sub_text = section.settings.sub_text
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+  assign content_image = section.settings.content_image
+  assign content_image_alt = section.settings.content_image_alt
+-%}
+<style>
+   .smm_section{
+      margin-top: {{ mobile_margin_top | append: 'px' }};
+      margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+   }
+   .smm_section_header{
+        text-align: center;
+    }
+    .smm_section_title{
+        text-align: center;
+        font-size: clamp(24px, 4vw, 40px);
+        font-weight: 600;
+        line-height: 1;
+    }
+    .smm_section_header p {
+        color: #845ec2;
+        font-size: clamp(14px, 2vw, 18px);
+        font-weight: 700;
+        margin-top: 5px;
+    }
+    .smm_section .row{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .smm_column.image{
+       width: 50%;
+    }
+    .featured_item {
+     padding-top: 13px;
+     padding-left: 30px;
+     padding-right: 50px;
+     padding-bottom: 13px;
+     overflow: inherit;
+     background: rgb(255 255 255);
+     border: 2px solid #845EC2;
+     box-shadow: 12px 12px rgb(0 0 0 / 25%);
+     border-radius: 10px;
+    }
+    .smm_column{
+     display: flex;
+     flex-direction: column;
+     gap: 40px;
+    }
+    .featured_item .card_title{
+       font-size: 18px;
+       font-weight: 600;
+       margin: 0;
+   }
+
+  .featured_item .card_featured_title{
+     color: #845EC2;
+   }
+   .smm_section{
+    display: none;
+   }
+   @media (min-width: 768px){
+     .smm_section{
+         margin-top: {{ desktop_margin_top | append: 'px' }};
+         margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+         display: block;
+     }
+     .smm_section .row {
+         display: flex;
+         flex-direction: row;
+     }
+     .smm_column{
+         width: calc(100% / 3);
+     }
+     .smm_mobile_section{
+      display: none;
+     }
+   }
+
+   .swiper {
+     width: 100%;
+     height: 100%;
+   }
+   .swiper-slide {
+     font-size: 18px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px 0 !important;
+   }
+
+   .swiper-slide img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   .pagination{
+     display: flex;
+     margin: auto;
+     justify-content: center;
+     align-items: center;
+   }
+   .smm-swiper-pagination.swiper-pagination-bullets-dynamic{
+     transform:translate(0) !important;
+     margin-top:20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   .smm_mobile_section .swiper-pagination-bullet-active{
+     background: #845EC2 !important;
+   }
+   .swiper .featured_item{
+     margin-right: 15px;
+     margin-right: 15px;
+     margin-left: 5px;
+   }
+   .swiper .featured_item p{
+      margin: 0;
+      margin-top: 10px;
+      font-size: 15px;
+   }
+</style>
+{% liquid
+  assign total_blocks = section.blocks.size
+  assign half_blocks_count = total_blocks | divided_by: 2
+  assign remainder = total_blocks | modulo: 2
+  if remainder > 0
+    assign half_blocks_count = half_blocks_count | plus: 1
+  endif
+%}
+
+<section class="smm_mobile_section container container-{{ section.settings.container }} ">
+  <div class="smm_section_header">
+    {%- if title_start != blank -%}
+      <div class="smm_section_title">
+        {{- title_start -}}
+        <span class="halfStyled" data-content="{{ title_feature }}">{{ title_feature }}</span>
+        {{- title_end -}}
+      </div>
+    {%- else -%}
+      <div class="smm_section_title">
+        Soc<span class="halfStyled" data-content="i">i</span>al Med<span class="halfStyled" data-content="i">i</span>a
+        Management
+      </div>
+    {%- endif -%}
+    {%- if sub_text != blank -%}
+      {{ sub_text }}
+    {%- endif -%}
+  </div>
+  <div class="swiper smm-swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks limit: half_blocks_count %}
+        {% liquid
+          assign featured_title_start = block.settings.title_start
+          assign featured_title_center = block.settings.title_featured
+          assign featured_title_end = block.settings.title_end
+          assign featured_description = block.settings.description
+        %}
+
+        <div class="swiper-slide">
+          <div class="featured_item">
+            <div class="">
+              <h4 class="card_title">
+                {{ featured_title_start }}
+                <span class="card_featured_title">{{ featured_title_center }}</span>
+                {{ featured_title_end }}
+              </h4>
+              {{- featured_description -}}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="pagination">
+    <div class="smm-swiper-pagination"></div>
+  </div>
+</section>
+
+<section class="smm_section container container-{{ section.settings.container }} ">
+  <div class="smm_section_header">
+    {%- if title_start != blank -%}
+      <div class="smm_section_title">
+        {{- title_start -}}
+        <span class="halfStyled" data-content="{{ title_feature }}">{{ title_feature }}</span>
+        {{- title_end -}}
+      </div>
+    {%- else -%}
+      <div class="smm_section_title">
+        Soc<span class="halfStyled" data-content="i">i</span>al Med<span class="halfStyled" data-content="i">i</span>a
+        Management
+      </div>
+    {%- endif -%}
+    {%- if sub_text != blank -%}
+      {{ sub_text }}
+    {%- endif -%}
+  </div>
+  <div class="row">
+    <div
+      class="smm_column"
+
+      {% unless isEditor %}
+        data-aos="fade-right" data-aos-offset="50" data-aos-easing="ease-in-sine"
+      {%- endunless -%}
+    >
+      {% for block in section.blocks limit: half_blocks_count %}
+        {% liquid
+          assign featured_title_start = block.settings.title_start
+          assign featured_title_center = block.settings.title_featured
+          assign featured_title_end = block.settings.title_end
+          assign featured_description = block.settings.description
+        %}
+
+        <div class="featured_item">
+          <div class="">
+            <h4 class="card_title">
+              {{ featured_title_start }}
+              <span class="card_featured_title">{{ featured_title_center }}</span>
+              {{ featured_title_end }}
+            </h4>
+            {{- featured_description -}}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="smm_column image">
+      <div class="image_container">
+        <img src="{{content_image |image_url}}" alt="{{content_image_alt}}" width="" height="">
+      </div>
+    </div>
+    <div
+      class="smm_column"
+      {% unless isEditor %}
+        data-aos="fade-left" data-aos-offset="50" data-aos-easing="ease-in-sine"
+      {%- endunless -%}
+    >
+      {% for block in section.blocks offset: half_blocks_count %}
+        {% liquid
+          assign featured_title_start = block.settings.title_start
+          assign featured_title_center = block.settings.title_featured
+          assign featured_title_end = block.settings.title_end
+          assign featured_description = block.settings.description
+        %}
+
+        <div class="featured_item">
+          <div class="">
+            <h4 class="card_title">
+              {{ featured_title_start }}
+              <span class="card_featured_title">{{ featured_title_center }}</span>
+              {{ featured_title_end }}
+            </h4>
+            {{- featured_description -}}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.smm-swiper', {
+      loop: true,
+      spaceBetween: 25,
+      pagination: {
+        el: '.smm-swiper-pagination',
+        dynamicBullets: true,
+      },
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "SMM Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Title Start"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_featured",
+      "label": "Title Feature"
+    },
+    {
+      "type": "text",
+      "id": "heading_end",
+      "label": "Title End"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "content_image",
+      "label": "Center Content image"
+    },
+    {
+      "type": "text",
+      "id": "content_image_alt",
+      "label": "Alt Text"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Feature",
+      "type": "feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_start",
+          "label": "Title Start"
+        },
+        {
+          "type": "text",
+          "id": "title_featured",
+          "label": "Title Featured"
+        },
+        {
+          "type": "text",
+          "id": "title_end",
+          "label": "Title End"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "SMM Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

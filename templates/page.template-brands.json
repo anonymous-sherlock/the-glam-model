@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "hero_banner_image_YkWWHK": {
+      "type": "hero-banner-image",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/brand-management-services.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 50,
+        "desktop_height": 75
+      }
+    }
+  },
+  "order": [
+    "hero_banner_image_YkWWHK"
+  ]
+}

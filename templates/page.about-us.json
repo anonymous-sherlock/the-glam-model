@@ -1,0 +1,269 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero_banner_image_MxcYUA": {
+      "type": "hero-banner-image",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/about-banner.png",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 25,
+        "desktop_height": 75
+      }
+    },
+    "about_us_hero_KRwj9N": {
+      "type": "about-us-hero",
+      "blocks": {
+        "feature_jDEK9B": {
+          "type": "feature",
+          "settings": {
+            "title": "ROI Focused",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+          }
+        },
+        "feature_BAjAQy": {
+          "type": "feature",
+          "settings": {
+            "title": "ROI Focused",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+          }
+        },
+        "feature_BeAqcc": {
+          "type": "feature",
+          "settings": {
+            "title": "ROI Focused",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+          }
+        },
+        "feature_9i79TC": {
+          "type": "feature",
+          "settings": {
+            "title": "ROI Focused",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+          }
+        },
+        "feature_3hJfEy": {
+          "type": "feature",
+          "settings": {
+            "title": "ROI Focused",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_jDEK9B",
+        "feature_BAjAQy",
+        "feature_BeAqcc",
+        "feature_9i79TC",
+        "feature_3hJfEy"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Your journey to the",
+        "heading_featured": "Spotlight Starts",
+        "heading_end": "from here",
+        "sub_text": "<p>Theglammodel is a modeling agency that represents models and photographers. Many models and photographers have started their journey from here.<\/p>",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20,
+        "desktop_width_left_container": 45,
+        "desktop_width_right_container": 55,
+        "mobile_width_left_container": 100,
+        "mobile_width_right_container": 100
+      }
+    },
+    "marquee_XUX6kz": {
+      "type": "marquee",
+      "blocks": {
+        "marquee_PzdwJA": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>Welcome to our store<\/p>",
+            "color": "#ffffff",
+            "color_mb": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_PzdwJA"
+      ],
+      "settings": {
+        "mq_background": "#835dc0",
+        "mq_gradient": "",
+        "text_size": 40,
+        "gap_blocks": 20,
+        "border": "none",
+        "border_color": "#000000",
+        "icon": "fire",
+        "icon_color": "#ffffff",
+        "text_size_mb": 30,
+        "border_color_mb": "#000000",
+        "icon_color_mb": "#ffffff",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "minus_spacing_top": 0
+      }
+    },
+    "featured_card_section_nCCPjj": {
+      "type": "featured-card-section",
+      "blocks": {
+        "feature_QcHWUw": {
+          "type": "feature",
+          "settings": {
+            "title": "Heading1",
+            "icon": "",
+            "title_color": "rgba(0,0,0,0)",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description_color": "rgba(0,0,0,0)",
+            "background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "feature_BHww7g": {
+          "type": "feature",
+          "settings": {
+            "title": "Heading2",
+            "icon": "",
+            "title_color": "",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        },
+        "feature_URUQbc": {
+          "type": "feature",
+          "settings": {
+            "title": "Heading3",
+            "icon": "",
+            "title_color": "",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        },
+        "feature_rT3q7c": {
+          "type": "feature",
+          "settings": {
+            "title": "Heading4",
+            "icon": "",
+            "title_color": "",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_QcHWUw",
+        "feature_BHww7g",
+        "feature_URUQbc",
+        "feature_rT3q7c"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "",
+        "heading_featured": "",
+        "heading_end": "",
+        "sub_text": "<p>We are made of sweat blood and a whole lot of passion for <\/p>",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "clients_logo_XLhjGP": {
+      "type": "clients-logo",
+      "blocks": {
+        "logo_BP9XW8": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/solar-communications-200.png",
+            "logo_alt": "Solar Comunications"
+          }
+        },
+        "logo_GUFQA3": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/cbf-200.png",
+            "logo_alt": ""
+          }
+        },
+        "logo_C34Fth": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/gxs-200.png",
+            "logo_alt": ""
+          }
+        },
+        "logo_wf4Umj": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/jpr-200.png",
+            "logo_alt": ""
+          }
+        },
+        "logo_y4yYTc": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/talk-internet-200.png",
+            "logo_alt": ""
+          }
+        },
+        "logo_8MTWDW": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/opera3_logo.png",
+            "logo_alt": ""
+          }
+        },
+        "logo_VikVWw": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/pegasus-logo.png",
+            "logo_alt": ""
+          }
+        },
+        "logo_GdRrG7": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/sage_business_partner.jpg",
+            "logo_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_BP9XW8",
+        "logo_GUFQA3",
+        "logo_C34Fth",
+        "logo_wf4Umj",
+        "logo_y4yYTc",
+        "logo_8MTWDW",
+        "logo_VikVWw",
+        "logo_GdRrG7"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Our Cl",
+        "heading_featured": "i",
+        "heading_end": "ent",
+        "sub_text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, adipisci.<\/p>",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_image_MxcYUA",
+    "about_us_hero_KRwj9N",
+    "marquee_XUX6kz",
+    "featured_card_section_nCCPjj",
+    "clients_logo_XLhjGP"
+  ]
+}

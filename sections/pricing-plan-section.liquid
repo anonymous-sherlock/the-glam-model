@@ -1,0 +1,604 @@
+{{ 'pricing-plan-section.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign title_start = section.settings.heading_start
+  assign title_feature = section.settings.heading_featured
+  assign title_end = section.settings.heading_end
+  assign sub_text = section.settings.sub_text
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+  assign pricing_plan_feature = section.blocks | where: 'type', 'plan_feature'
+
+  assign plan_type = section.settings.plan_type
+  assign show_currency_icon = section.settings.show_currency_icon
+  assign custom_pricing_text = section.settings.custom_pricing_text
+  assign custom_pricing_link = section.settings.custom_pricing_link
+  assign custom_currency = section.settings.currency
+
+  assign basic_plan_name = section.settings.basic_plan_name
+  assign standard_plan_name = section.settings.standard_plan_name
+  assign premium_plan_name = section.settings.premium_plan_name
+
+  assign basic_plan_price = section.settings.basic_plan_price
+  assign standard_plan_price = section.settings.standard_plan_price
+  assign premium_plan_price = section.settings.premium_plan_price
+
+  assign basic_plan_checkout_link = section.settings.basic_plan_url
+  assign standard_plan_checkout_link = section.settings.standard_plan_url
+  assign premium_plan_checkout_link = section.settings.premium_plan_url
+
+  assign recomended_plan = section.settings.recomended_plan
+-%}
+
+<style>
+  .pricing_plan_section {
+    margin-top: {{ desktop_margin_top | append: 'px' }};
+    margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+  }
+  @media (max-width:768px){
+    .pricing_plan_section {
+        margin-top: {{ mobile_margin_top | append: 'px' }};
+        margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+    }
+  }
+</style>
+
+<section class="pricing_plan_section">
+  <div class="container container-{{ section.settings.container }}">
+    {%- if title_start != blank -%}
+      <div class="title_section">
+        <h2 class="heading">
+          {{ title_start -}}
+          <span class="halfStyled" data-content="{{title_feature}}">{{ title_feature }}</span>{{ title_end }}
+        </h2>
+        {%- if sub_text != blank -%}
+          {{ sub_text }}
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <div class="title_section">
+        <h2 class="heading">
+          Plans & Pr<span class="halfStyled" data-content="i">i</span>c<span class="halfStyled" data-content="i">i</span
+          >ng
+        </h2>
+        <p>Social Media Monthly Plan.</p>
+      </div>
+    {%- endif -%}
+    <div class="row">
+      <div class="pricing__table">
+        <div class="pt__title">
+          <div class="pt__title__wrap">
+            <div class="pt__row"></div>
+            <div class="pt__row">Price ({{ custom_currency }})</div>
+            {% for item in pricing_plan_feature %}
+              {% if item.settings.title != blank %}
+                <div class="pt__row">
+                  <span>{{ item.settings.title }}</span>
+                  {% if item.settings.hover_content != blank %}
+                    <i class="fa-solid fa-circle-question" data-tippy-content="{{ item.settings.hover_content }}"></i>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="pt__option">
+          <div class="pt__option__mobile__nav">
+            <button
+              type="button"
+              title="Prev button"
+              id="navBtnLeft"
+              class="mobile__nav__btn swiper-button-prev pricing_swiper_button"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button
+              type="button"
+              title="Next button"
+              id="navBtnRight"
+              class="mobile__nav__btn swiper-button-next pricing_swiper_button"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <div class="pt__option__slider swiper" id="pricingTableSlider">
+            <div class="swiper-wrapper content_box">
+              <div class="swiper-slide pt__option__item">
+                <div class="pt__item {% if recomended_plan == 'basic' %} recommend_plan{% endif %}">
+                  <div class="pt__item__wrap">
+                    <div class="pt__row">
+                      {{ basic_plan_name | default: 'Basic' }}
+                    </div>
+                    {%- if basic_plan_price != blank -%}
+                      <div class="pt__row price_row">
+                        <div class="price_wrap">
+                          {%- if show_currency_icon == true -%}
+                            <div class="price_dollar">
+                              {%- if custom_currency == 'USD' -%}
+                                &dollar;
+                              {%- else -%}
+                                &#8377;
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                          <div class="price_tag">{{ basic_plan_price }}</div>
+                          <div class="price_type">
+                            {% if plan_type == 'month' %}
+                              /mo
+                            {%- else -%}
+                              /yr
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    {%- else -%}
+                      <div class="pt__row price_row">
+                        <a href="{{custom_pricing_link}}" class="custom_price">
+                          <div>{{ custom_pricing_text | default: 'Contact Us' }}</div>
+                        </a>
+                      </div>
+                    {%- endif -%}
+
+                    {% for item in pricing_plan_feature %}
+                      {% if item.settings.title != blank %}
+                        <div class="pt__row">
+                          {%- if item.settings.basic_plan_content == 'true' -%}
+                            <i class="fa-solid fa-check"></i>
+                          {%- else -%}
+                            {{ item.settings.basic_plan_content }}
+                          {%- endif -%}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                    <div class="pt__row checkout_button_link">
+                      <a href="{{- basic_plan_checkout_link -}}">Purchase Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide pt__option__item">
+                <div class="pt__item {% if recomended_plan == 'standard' %} recommend_plan{% endif %}">
+                  <div class="pt__item__wrap">
+                    <div class="pt__row">
+                      {{ standard_plan_name | default: 'Standard' }}
+                    </div>
+                    {%- if standard_plan_price != blank -%}
+                      <div class="pt__row price_row">
+                        <div class="price_wrap">
+                          {%- if show_currency_icon == true -%}
+                            <div class="price_dollar">
+                              {%- if custom_currency == 'USD' -%}
+                                &dollar;
+                              {%- else -%}
+                                &#8377;
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                          <div class="price_tag">{{ standard_plan_price }}</div>
+                          <div class="price_type">
+                            {% if plan_type == 'month' %}
+                              /mo
+                            {%- else -%}
+                              /yr
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    {%- else -%}
+                      <div class="pt__row price_row">
+                        <a href="{{custom_pricing_link}}" class="custom_price">
+                          <div>{{ custom_pricing_text | default: 'Contact Us' }}</div>
+                        </a>
+                      </div>
+                    {%- endif -%}
+                    {% for item in pricing_plan_feature %}
+                      {% if item.settings.title != blank %}
+                        <div class="pt__row">
+                          {%- if item.settings.standard_plan_content == 'true' -%}
+                            <i class="fa-solid fa-check"></i>
+                          {%- else -%}
+                            {{ item.settings.standard_plan_content }}
+                          {%- endif -%}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+
+                    <div class="pt__row checkout_button_link">
+                      <a href="{{- standard_plan_checkout_link -}}">Purchase Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide pt__option__item">
+                <div class="pt__item {% if recomended_plan == 'premium' %} recommend_plan{% endif %}">
+                  <div class="pt__item__wrap">
+                    <div class="pt__row">
+                      {{ premium_plan_name | default: 'Premium' }}
+                    </div>
+                    {%- if premium_plan_price != blank -%}
+                      <div class="pt__row price_row">
+                        <div class="price_wrap">
+                          {%- if show_currency_icon == true -%}
+                            <div class="price_dollar">
+                              {%- if custom_currency == 'USD' -%}
+                                &dollar;
+                              {%- else -%}
+                                &#8377;
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                          <div class="price_tag">{{ premium_plan_price }}</div>
+                          <div class="price_type">
+                            {% if plan_type == 'month' %}
+                              /mo
+                            {%- else -%}
+                              /yr
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    {%- else -%}
+                      <div class="pt__row price_row">
+                        <a href="{{custom_pricing_link}}" class="custom_price">
+                          <div>{{ custom_pricing_text | default: 'Contact Us' }}</div>
+                        </a>
+                      </div>
+                    {%- endif -%}
+
+                    {% for item in pricing_plan_feature %}
+                      {% if item.settings.title != blank %}
+                        <div class="pt__row">
+                          {%- if item.settings.premium_plan_content == 'true' -%}
+                            <i class="fa-solid fa-check"></i>
+                          {%- else -%}
+                            {{ item.settings.premium_plan_content }}
+                          {%- endif -%}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                    <div class="pt__row checkout_button_link">
+                      <a href="{{- premium_plan_checkout_link -}}">Purchase Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/popper.js@1" defer></script>
+<script src="https://unpkg.com/tippy.js@5" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let init = false;
+    let pricingCardSwiper;
+    let pricingLoanSwiper;
+
+    function swiperCard() {
+      if (window.innerWidth <= 991) {
+        if (!init) {
+          init = true;
+          pricingCardSwiper = new Swiper('#pricingTableSlider', {
+            slidesPerView: 'auto',
+            spaceBetween: 5,
+            grabCursor: true,
+            keyboard: true,
+            autoHeight: false,
+            freeMode: true,
+            breakpoints: {
+              768: {
+                slidesPerView: 1.5,
+                spaceBetween: 10,
+              },
+              875: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+            },
+            navigation: {
+              nextEl: '#navBtnRight',
+              prevEl: '#navBtnLeft',
+            },
+          });
+        }
+      } else if (init) {
+        pricingCardSwiper.destroy();
+        init = false;
+      }
+    }
+    swiperCard();
+    window.addEventListener('resize', swiperCard);
+
+    tippy('.pt__title__wrap i', {
+      arrow: false,
+      Animation: 'scale',
+      theme: 'huge',
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Pricing Plan Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Title Start"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_featured",
+      "label": "Title Feature"
+    },
+    {
+      "type": "text",
+      "id": "heading_end",
+      "label": "Title End"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text",
+      "default": "<p>Here are a few areas of expertise we specialize in.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "recomended_plan",
+      "label": "Recomended Plan",
+      "options": [
+        {
+          "value": "basic",
+          "label": "Basic"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "premium",
+          "label": "Premium"
+        }
+      ],
+      "default": "premium"
+    },
+    {
+      "type": "select",
+      "id": "plan_type",
+      "label": "Pricing Plan Type",
+      "options": [
+        {
+          "value": "month",
+          "label": "Monthly"
+        },
+        {
+          "value": "year",
+          "label": "Yearly"
+        }
+      ],
+      "default": "month"
+    },
+    {
+      "type": "text",
+      "id": "custom_pricing_text",
+      "label": "Custom Pricing Name"
+    },
+    {
+      "type": "url",
+      "id": "custom_pricing_link",
+      "label": "Custom Pricing Link",
+      "info": "To Make a plan custom don't add price in the plan"
+    },
+    {
+      "type": "select",
+      "id": "currency",
+      "label": "Currency",
+      "options": [
+        {
+          "value": "INR",
+          "label": "INR"
+        },
+        {
+          "value": "USD",
+          "label": "USD"
+        }
+      ],
+      "default": "USD"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_currency_icon",
+      "label": "Show Currency Icon",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Basic Plan Details"
+    },
+    {
+      "type": "text",
+      "id": "basic_plan_name",
+      "label": "Basic Plan Name",
+      "default": "Essentials"
+    },
+    {
+      "type": "text",
+      "id": "basic_plan_price",
+      "label": "Basic Plan Price",
+      "info": "ex - 5,499 or 5499"
+    },
+    {
+      "type": "url",
+      "id": "basic_plan_url",
+      "label": "Basic Plan Url"
+    },
+    {
+      "type": "header",
+      "content": "Standard Plan Details"
+    },
+    {
+      "type": "text",
+      "id": "standard_plan_name",
+      "label": "Standard Plan Name",
+      "default": "Standard"
+    },
+    {
+      "type": "text",
+      "id": "standard_plan_price",
+      "label": "Standard Plan Price"
+    },
+    {
+      "type": "url",
+      "id": "standard_plan_url",
+      "label": "Standard Plan Url"
+    },
+    {
+      "type": "header",
+      "content": "Premium Plan Details"
+    },
+    {
+      "type": "text",
+      "id": "premium_plan_name",
+      "label": "Premium Plan Name",
+      "default": "Premium"
+    },
+    {
+      "type": "text",
+      "id": "premium_plan_price",
+      "label": "Premium Plan Price"
+    },
+    {
+      "type": "url",
+      "id": "premium_plan_url",
+      "label": "Premium Plan Url"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Feature",
+      "type": "plan_feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "hover_content",
+          "label": "Hover Content"
+        },
+        {
+          "type": "header",
+          "content": "Plan Feature",
+          "info": "Plan Info, use true for √ and false for –"
+        },
+        {
+          "type": "textarea",
+          "id": "basic_plan_content",
+          "label": "Basic Plan Content"
+        },
+        {
+          "type": "textarea",
+          "id": "standard_plan_content",
+          "label": "Standard Plan Content"
+        },
+        {
+          "type": "textarea",
+          "id": "premium_plan_content",
+          "label": "Premium Plan Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing Plan Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

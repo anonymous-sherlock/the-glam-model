@@ -1,0 +1,71 @@
+{
+  "sections": {
+    "hero_banner_image_N6eGPY": {
+      "type": "hero-banner-image",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/PR_servives2.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 50,
+        "desktop_height": 50
+      }
+    },
+    "main": {
+      "type": "main-search",
+      "blocks": {
+        "ac51c45c-4e78-4292-8cc6-51a9b2151175": {
+          "type": "category",
+          "settings": {
+            "show_block": true,
+            "heading": "Categories",
+            "type": "1_level",
+            "link_list": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "ac51c45c-4e78-4292-8cc6-51a9b2151175"
+      ],
+      "settings": {
+        "show_breadcrumb": false,
+        "breadcrumb_alignment": "left",
+        "show_page_title": true,
+        "page_title_alignment": "center",
+        "container": "1170",
+        "side_padding_full_width": 0,
+        "mg_top_desktop": 20,
+        "mg_top_tablet": 20,
+        "mg_top_mobile": 15,
+        "mg_bottom_desktop": 45,
+        "mg_bottom_tablet": 45,
+        "mg_bottom_mobile": 40,
+        "show_infinite_scrolling": "infinite",
+        "show_sidebar": true,
+        "show_sidebar_collapse": false,
+        "enable_sticky": true,
+        "sidebar_layout": "layout_2",
+        "sidebar_collapse_default": "expand",
+        "sidebar_type": "vertical",
+        "sidebar_position": "left",
+        "sidebar_heading_font": "font_1",
+        "sidebar_heading_font_size": 14,
+        "sidebar_heading_font_weight": "700",
+        "sidebar_heading_text_transform": "uppercase",
+        "show_filter": true,
+        "filter_swatch": "Color",
+        "filter_swatch_type": "color",
+        "filter_rectangle": "Size",
+        "filter_display_type": "show-more",
+        "max_item_per_filter": 10,
+        "filter_hidden_tag_list": "",
+        "products_per_page": "20",
+        "layout": "5",
+        "article_page_per_load": "10"
+      }
+    }
+  },
+  "order": [
+    "hero_banner_image_N6eGPY",
+    "main"
+  ]
+}

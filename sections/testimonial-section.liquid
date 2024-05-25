@@ -1,0 +1,266 @@
+{%- liquid
+  assign title_start = section.settings.heading_start
+  assign title_feature = section.settings.heading_featured
+  assign title_end = section.settings.heading_end
+  assign sub_title = section.settings.sub_heading
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+-%}
+{{ 'testimonial-section.css' | asset_url | stylesheet_tag }}
+<style>
+  .testimonial-section {
+      margin-top: {{ mobile_margin_top | append: 'px' }};
+      margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+  }
+  @media (min-width: 768px) {
+    .testimonial-section {
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+  }
+</style>
+<section class="testimonial-section">
+  <div class="container container-{{ section.settings.container }}">
+    <div class="row">
+      <div class="row-item">
+        <ol class="row-item-box tabs">
+          {% for block in section.blocks %}
+            {% liquid
+              assign testimonial_image = block.settings.image
+              assign testimonial_name = block.settings.name
+            %}
+            <li class="{%- if forloop.index0 == 0 -%}active{%- endif -%}" data-slide-to="{{forloop.index0}}">
+              <figure>
+                <img
+                  src="{{testimonial_image| image_url }}"
+                  class="img-fluid"
+                  alt="{{testimonial_name}}"
+                  height="179"
+                  width="179"
+                >
+              </figure>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="row-item box">
+        <div class="testimonial_swiper_container">
+          {%- if sub_title != blank -%}
+            <h3 class="sub_title">{{ sub_title }}</h3>
+          {%- endif -%}
+          <h1 class="title">
+            {{ title_start -}}
+            <span class="halfStyled" data-content="{{title_feature}}">{{ title_feature }}</span>{{ title_end }}
+          </h1>
+
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% liquid
+                  assign testimonial_name = block.settings.name
+                  assign testimonial_content = block.settings.content
+                %}
+                <div class="swiper-slide">
+                  <div class="quote_wrapper">
+                    <div class="testimonial_content">
+                      {{ testimonial_content }}
+                    </div>
+                    <h3 class="testimonial_name">{{ testimonial_name }}</h3>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="pagination">
+            <div class="testimonial-swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.mySwiper', {
+      spaceBetween: 25,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.testimonial-swiper-pagination',
+        dynamicBullets: true,
+      },
+    });
+
+    // Event listener for slide change
+    swiper.on('slideChange', function () {
+      updateActiveThumbnail();
+    });
+
+    // Add click event listeners to thumbnails
+    document.querySelectorAll('.row-item-box li').forEach((thumbnail) => {
+      thumbnail.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = thumbnail.getAttribute('data-slide-to');
+        if (id !== null) {
+          swiper.slideTo(parseInt(id));
+        }
+      });
+    });
+
+    // Function to update the active thumbnail based on the current slide
+    function updateActiveThumbnail(index = swiper.realIndex) {
+      // Remove "active" class from all thumbnails
+      document.querySelectorAll('.row-item-box li').forEach((thumb) => {
+        thumb.classList.remove('active');
+      });
+      // Add "active" class to the corresponding thumbnail
+      const activeThumbnail = document.querySelector(`.row-item-box li[data-slide-to="${index}"]`);
+      if (activeThumbnail) {
+        activeThumbnail.classList.add('active');
+      }
+    }
+    // Initial call to set the active thumbnail
+    updateActiveThumbnail();
+  });
+</script>
+{% schema %}
+{
+  "name": "Testimonial Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1170",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Title Start"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_featured",
+      "label": "Title Feature"
+    },
+    {
+      "type": "text",
+      "id": "heading_end",
+      "label": "Title End"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Title"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Testimonial",
+      "type": "testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Testimonial Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

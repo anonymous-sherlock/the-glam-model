@@ -1,0 +1,805 @@
+{%- liquid
+  assign title = section.settings.title
+  assign sub_title = section.settings.sub_title
+  assign sub_text = section.settings.sub_text
+  assign background_image = section.settings.background_image
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+-%}
+{{ 'nionx-icons.css' | asset_url | stylesheet_tag }}
+<style>
+  .service_card_section {
+    position: relative;
+    padding: 60px 0;
+  }
+  .service-page__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: var(--nionx-gray, #f4f2f9);
+    border-radius: 0px 0px 0px 150px;
+  }
+  .service_page__top {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+  .service_page__top .column {
+    flex-grow: 1;
+  }
+  .header_section.column {
+    width: 100%;
+  }
+  .sec-title__tagline {
+    margin-top: -4px;
+    color: var(--nionx-base, #835dc0);
+    font-family: var(--nionx-heading-font, 'Instrument Sans', sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 185.714%;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .sec-title__title {
+    color: var(--nionx-title, #1d1729);
+    font-size: 30px;
+    margin-top: -2px;
+    font-weight: 700;
+    line-height: 117.5%;
+  }
+  .service-page__top__text {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 0;
+    font-size: clamp(14px, 2vw, 16px);
+    color: var(--nionx-text, #6c6a72);
+  }
+
+  .service_card_section .card_row {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 26px;
+    margin-top: 20px;
+  }
+  /* card */
+  .service-card-two {
+    border-radius: 40px;
+    border: 1px solid var(--nionx-border-color, #d9d9d9);
+    background: var(--nionx-white, #fff);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    margin-bottom: 30px;
+    width: calc(100% / 3);
+  }
+  .service-card-two__content {
+    padding: 35px 40px 0px 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .service-card-two__icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--nionx-gray, #f4f2f9);
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--nionx-base, #835dc0);
+    font-size: 40px;
+    margin-bottom: 30px;
+    transition: all 0.4s ease-in-out;
+  }
+  .service-card-two__title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: -2px;
+    margin-bottom: 6px;
+  }
+  .service-card-two__title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: -2px;
+    margin-bottom: 6px;
+  }
+  .service-card-two__text {
+    margin: 0;
+    line-height: 162.5%;
+    padding-bottom: 21px;
+    margin-bottom: 13px;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+  }
+  .service-card-two__link {
+    display: block;
+    max-width: 78px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--nionx-black3, #000);
+    transition: all 500ms ease;
+    padding: 20px 30px;
+    background: var(--nionx-gray, #f4f2f9);
+    border-radius: 50px;
+    margin-bottom: -30px;
+  }
+  .service-card-two__element {
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+  .service-card-two__link__icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: block;
+  }
+  .service-card-two__link__icon::before,
+  .service-card-two__link__icon::after {
+    border-radius: 5px;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: var(--nionx-title, #1d1729);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 500ms ease;
+  }
+  .service-card-two__link__icon::after {
+    height: 2px;
+    width: 100%;
+  }
+  .service-card-two:hover {
+    border: 1px solid var(--nionx-base, #835dc0);
+  }
+  .service-card-two:hover {
+    border: 1px solid var(--nionx-base, #835dc0);
+  }
+  .service-card-two:hover .service-card-two__title,
+  .service-card-two:hover .service-card-two__text {
+    color: var(--nionx-white, #fff);
+  }
+  .service-card-two:hover .service-card-two__icon {
+    background: var(--nionx-white, #fff);
+    color: var(--nionx-base, #835dc0);
+  }
+  .service-card-two:hover::after {
+    height: 100%;
+  }
+  .service-card-two:hover .service-card-two__element {
+    opacity: 0.3;
+  }
+  .service-card-two:hover .service-card-two__link {
+    background: var(--nionx-white, #fff);
+  }
+  .service-card-two::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: var(--nionx-base, #835dc0);
+    bottom: 0%;
+    left: 0%;
+    z-index: -2;
+    transition: all 0.4s ease-in-out;
+    border-radius: 39px;
+  }
+  .service-card-two:hover .service-card-two__element {
+    opacity: 0.3;
+  }
+  .service-card-two__element {
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+  .service-card-two__link {
+    display: block;
+    max-width: 78px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--nionx-black3, #000);
+    transition: all 500ms ease;
+    padding: 20px 30px;
+    background: var(--nionx-gray, #f4f2f9);
+    border-radius: 50px;
+    margin-bottom: -30px;
+  }
+  .service-card-two__link__icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: block;
+  }
+  .service-card-two__icon:hover i {
+    transform: scale(0.9);
+  }
+  .service-card-two__link__icon::before,
+  .service-card-two__link__icon::after {
+    border-radius: 5px;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: var(--nionx-title, #1d1729);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 500ms ease;
+  }
+  .service-card-two__link__icon::after {
+    height: 2px;
+    width: 100%;
+  }
+  .service-card-two__link:hover .service-card-two__link__icon::before,
+  .service-card-two__link:hover .service-card-two__link__icon::after {
+    background-color: var(--nionx-white, #fff);
+  }
+  .nionx-btn {
+    z-index: 1;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    outline: none !important;
+    overflow: hidden;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 112.5%;
+    background-color: var(--nionx-gray, #f4f2f9);
+    color: var(--nionx-title, #1d1729);
+    font-family: var(--nionx-heading-font, 'Instrument Sans', sans-serif);
+    padding: 22px 40px;
+    transition: 500ms;
+    background-color: var(--nionx-gray, #f4f2f9);
+    color: var(--nionx-title, #1d1729);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 20px;
+  }
+  .service-card-two__link {
+    display: block;
+    max-width: 78px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--nionx-black3, #000);
+    transition: all 500ms ease;
+    padding: 20px 30px;
+    background: var(--nionx-gray, #f4f2f9);
+    border-radius: 50px;
+    margin-bottom: -30px;
+  }
+  .service-card-two__title a {
+    transition: all 0.4s ease-in-out;
+    color: inherit;
+    background: linear-gradient(to right, currentcolor 0%, currentcolor 100%) 0px 95% / 0px 1px no-repeat;
+    transition: all 500ms ease;
+  }
+  .nionx-btn::before {
+    content: ' ';
+    width: 0%;
+    height: 100%;
+    background: var(--nionx-base, #835dc0);
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -3;
+  }
+  .nionx-btn--black::before {
+    background: var(--nionx-base, #835dc0);
+  }
+  .nionx-btn--black:hover::before {
+    width: 100%;
+    right: 0;
+    left: auto;
+  }
+  .service-card-two__link:hover::before {
+    background-color: rgba(var(--nionx-black3-rgb, 0, 0, 0), 1);
+  }
+
+  @media (max-width: 768px) {
+    .service_page__top {
+      flex-direction: column;
+      gap: 0px;
+    }
+    .sec-title__title {
+      margin-bottom: 0px;
+    }
+    .service_card_section .card_row {
+      flex-direction: column;
+    }
+    .service-card-two {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .service-page__bg {
+      border-radius: 0px;
+    }
+    .service-card-two__content {
+      padding: 35px 30px 0px 30px;
+    }
+  }
+</style>
+<section class="service_card_section">
+  <div class="service-page__bg" style="background-image: url('{{background_image| image_url }}');"></div>
+  <!-- /.service-page__bg -->
+  <div class="container container-{{ section.settings.container }}">
+    <div class="service_page__top">
+      <div class="column header_section">
+        <p class="sec-title__tagline">{{ sub_title }}</p>
+        <h2 class="sec-title__title">{{ title }}</h2>
+      </div>
+      <div class="column service-page__top__text">
+        {{ sub_text }}
+      </div>
+    </div>
+    <!-- /.service-page__top -->
+    <div class="card_row">
+      <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+        <div class="service-card-two__content">
+          <div class="service-card-two__icon">
+            <i class="icon-Search"></i>
+          </div>
+          <!-- /.service-card-two__price -->
+          <h3 class="service-card-two__title"><a href="search-enginen.html">Search Engine Optimization</a></h3>
+          <!-- /.service-card-two__title -->
+          <p class="service-card-two__text">
+            There are many variations of pssages of Lorem Ipsum available is njected humou, but the majority have
+          </p>
+          <!-- /.service-card-two__text -->
+          <a href="services-details.html" class="service-card-two__link nionx-btn nionx-btn--black"
+            ><span class="service-card-two__link__icon"></span
+          ></a>
+          <!-- /.blog-card__link -->
+        </div>
+        <!-- /.service-card-two__content -->
+        <div class="service-card-two__element">
+          <img src="https://bracketweb.com/nionx-html/assets/images/shapes/line.png" alt height="" width="">
+        </div>
+        <!-- /.service-card-two__element -->
+      </div>
+
+      <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+        <div class="service-card-two__content">
+          <div class="service-card-two__icon">
+            <i class="icon-content-writing-1"></i>
+          </div>
+          <!-- /.service-card-two__price -->
+          <h3 class="service-card-two__title"><a href="content-marketing.html">Content Marketing</a></h3>
+          <!-- /.service-card-two__title -->
+          <p class="service-card-two__text">
+            There are many variations of pssages of Lorem Ipsum available is njected humou, but the majority have
+          </p>
+          <!-- /.service-card-two__text -->
+          <a href="services-details.html" class="service-card-two__link nionx-btn nionx-btn--black"
+            ><span class="service-card-two__link__icon"></span
+          ></a>
+          <!-- /.blog-card__link -->
+        </div>
+        <!-- /.service-card-two__content -->
+        <div class="service-card-two__element">
+          <img src="https://bracketweb.com/nionx-html/assets/images/shapes/line.png" alt height="" width="">
+        </div>
+        <!-- /.service-card-two__element -->
+      </div>
+
+      <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
+        <div class="service-card-two__content">
+          <div class="service-card-two__icon">
+            <i class="icon-start-up-1"></i>
+          </div>
+          <!-- /.service-card-two__price -->
+          <h3 class="service-card-two__title">
+            <a href="conversion-optimization.html">Conversion Rate Optimization</a>
+          </h3>
+          <!-- /.service-card-two__title -->
+          <p class="service-card-two__text">
+            There are many variations of pssages of Lorem Ipsum available is njected humou, but the majority have
+          </p>
+          <!-- /.service-card-two__text -->
+          <a href="services-details.html" class="service-card-two__link nionx-btn nionx-btn--black"
+            ><span class="service-card-two__link__icon"></span
+          ></a>
+          <!-- /.blog-card__link -->
+        </div>
+        <!-- /.service-card-two__content -->
+        <div class="service-card-two__element">
+          <img src="https://bracketweb.com/nionx-html/assets/images/shapes/line.png" alt height="" width="">
+        </div>
+        <!-- /.service-card-two__element -->
+      </div>
+
+      <!-- /.col-md-6 col-lg-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /.service-page -->
+{% schema %}
+{
+  "name": "Services Card Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "OUR SERVICE"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Service",
+      "type": "service",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "custom_icon",
+          "label": "Icon",
+          "info": "You can use Fontawesome Icon"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "icon-laptop",
+              "label": "Icon Laptop"
+            },
+            {
+              "value": "icon-play",
+              "label": "Icon Play"
+            },
+            {
+              "value": "icon-team",
+              "label": "Icon Team"
+            },
+            {
+              "value": "icon-massage",
+              "label": "Icon Massage"
+            },
+            {
+              "value": "icon-quite",
+              "label": "Icon Quite"
+            },
+            {
+              "value": "icon-filter1",
+              "label": "Icon Filter1"
+            },
+            {
+              "value": "icon-social-media",
+              "label": "Icon Social Media"
+            },
+            {
+              "value": "icon-light-bulb-1",
+              "label": "Icon Light Bulb 1"
+            },
+            {
+              "value": "icon-link-building-1",
+              "label": "Icon Link Building 1"
+            },
+            {
+              "value": "icon-email-1",
+              "label": "Icon Email 1"
+            },
+            {
+              "value": "icon-star1",
+              "label": "Icon Star 1"
+            },
+            {
+              "value": "icon-chat1",
+              "label": "Icon Chat 1"
+            },
+            {
+              "value": "icon-left-arrow2",
+              "label": "Icon Left Arrow 2"
+            },
+            {
+              "value": "icon-clock",
+              "label": "Icon Clock"
+            },
+            {
+              "value": "icon-user1",
+              "label": "Icon User 1"
+            },
+            {
+              "value": "icon-user",
+              "label": "Icon User"
+            },
+            {
+              "value": "icon-facebook",
+              "label": "Icon Facebook"
+            },
+            {
+              "value": "icon-envelope",
+              "label": "Icon Envelope"
+            },
+            {
+              "value": "icon-instagram",
+              "label": "Icon Instagram"
+            },
+            {
+              "value": "icon-pinterest",
+              "label": "Icon Pinterest"
+            },
+            {
+              "value": "icon-twitter",
+              "label": "Icon Twitter"
+            },
+            {
+              "value": "icon-search",
+              "label": "Icon Search"
+            },
+            {
+              "value": "icon-map-pin",
+              "label": "Icon Map Pin"
+            },
+            {
+              "value": "icon-right-arrow",
+              "label": "Icon Right Arrow"
+            },
+            {
+              "value": "icon-up-arrow",
+              "label": "Icon Up Arrow"
+            },
+            {
+              "value": "icon-down-arrow",
+              "label": "Icon Down Arrow"
+            },
+            {
+              "value": "icon-left-arrow",
+              "label": "Icon Left Arrow"
+            },
+            {
+              "value": "icon-bubble-chat-1",
+              "label": "Icon Bubble Chat 1"
+            },
+            {
+              "value": "icon-campaign-1",
+              "label": "Icon Campaign 1"
+            },
+            {
+              "value": "icon-clock-1",
+              "label": "Icon Clock 1"
+            },
+            {
+              "value": "icon-content-writing-1",
+              "label": "Icon Content Writing 1"
+            },
+            {
+              "value": "icon-copy-writing-1",
+              "label": "Icon Copy Writing 1"
+            },
+            {
+              "value": "icon-data-management-1",
+              "label": "Icon Data Management 1"
+            },
+            {
+              "value": "icon-keyword-1",
+              "label": "Icon Keyword 1"
+            },
+            {
+              "value": "icon-linkedin",
+              "label": "Icon LinkedIn"
+            },
+            {
+              "value": "icon-magnifying-glass-1",
+              "label": "Icon Magnifying Glass 1"
+            },
+            {
+              "value": "icon-megaphone-1",
+              "label": "Icon Megaphone 1"
+            },
+            {
+              "value": "icon-phone-1",
+              "label": "Icon Phone 1"
+            },
+            {
+              "value": "icon-search-1-1",
+              "label": "Icon Search 1-1"
+            },
+            {
+              "value": "icon-search-1",
+              "label": "Icon Search 1"
+            },
+            {
+              "value": "icon-search-2",
+              "label": "Icon Search 2"
+            },
+            {
+              "value": "icon-Search",
+              "label": "Icon Search"
+            },
+            {
+              "value": "icon-start-up-1",
+              "label": "Icon Start Up 1"
+            },
+            {
+              "value": "icon-statistics-1",
+              "label": "Icon Statistics 1"
+            },
+            {
+              "value": "icon-telephone-call-1",
+              "label": "Icon Telephone Call 1"
+            },
+            {
+              "value": "icon-trend-1",
+              "label": "Icon Trend 1"
+            },
+            {
+              "value": "icon-Twitter",
+              "label": "Icon Twitter"
+            },
+            {
+              "value": "icon-user-2",
+              "label": "Icon User 2"
+            },
+            {
+              "value": "icon-user-engagement-2",
+              "label": "Icon User Engagement 2"
+            },
+            {
+              "value": "icon-youtube",
+              "label": "Icon YouTube"
+            }
+          ],
+          "default": "icon-trend-1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_shape",
+          "label": "Background Shape"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Services Card Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

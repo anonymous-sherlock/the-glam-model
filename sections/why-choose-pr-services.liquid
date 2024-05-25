@@ -1,0 +1,237 @@
+{% liquid
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+%}
+
+<style>
+    .pr_services {
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+    .pr_services_header .pr_services_title {
+        text-align: center;
+        font-size: 42px;
+        line-height: 1.2em;
+        font-weight: 700;
+        margin-bottom: 45px;
+    }
+    .pr_services .inner {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .pr_services_header .pr_services_title .pr_services_featured_title{
+        color: #845ec2;
+    }
+    .pr_services .inner .pr_card {
+        display: flex;
+        margin-left: 25px;
+        justify-content: center;
+        align-items: center;
+        max-width: 560px;
+
+    }
+    .pr_services .line {
+        display: block;
+        margin: 0px auto 50px;
+        height: 2px;
+        width: 55%;
+        background-color: #D9D9D9;
+    }
+    .pr_services .inner .pr_card .pr_card_image {
+        height: 335px;
+        object-fit: contain;
+    }
+    .pr_card .card_title{
+        font-size: 26px;
+        color: #845ec2;
+        font-weight: 700;
+        margin: 0;
+    }
+  @media screen and (max-width: 768px) {
+    .pr_services {
+        margin-top: {{ mobile_margin_top | append: 'px' }};
+        margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+    }
+    .pr_services .inner {
+        flex-direction: column;
+    }
+    .pr_services .inner .pr_card {
+        flex-direction: column;
+    }
+    .pr_services .inner .pr_card .content {
+        text-align: center;
+        margin: 40px 10px 0 10px;
+        width: 100%;
+    }
+    .pr_services .inner .pr_card .pr_card_image{
+        width: 180px;
+        height: 260px;
+        object-fit: contain;
+        margin-top: 40px;
+    }
+    .pr_services_header .pr_services_title {
+        margin-bottom: 0;
+        font-size: 6.5vw;
+    }
+    .pr_services .inner .pr_card {
+        margin: 0;
+        width: 100%;
+    }
+    .pr_services .line {
+        margin-top: 50px;
+    }
+    .pr_services .pr_card .content p{
+        font-size: 14px;
+    }
+  }
+</style>
+<section class="pr_services">
+  <div class="container container-{{ section.settings.container }}">
+    <div class="pr_services_header">
+      <h2 class="pr_services_title">
+        Why Choose Our <br>
+        <span class="pr_services_featured_title">PR</span> Services
+      </h2>
+    </div>
+    <div class="inner">
+      {% for block in section.blocks %}
+        {% liquid
+          assign title = block.settings.title
+          assign description = block.settings.description
+          assign card_image = block.settings.image
+        %}
+        <div class="pr_card">
+          <img src="{{card_image | image_url }}" class="pr_card_image" alt="" width="" height="">
+          <div class="content">
+            <h4 class="card_title">{{- title -}}</h4>
+            {{- description -}}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="line"></div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Why Choose Pr Services",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Feature",
+      "type": "feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose Pr Services",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

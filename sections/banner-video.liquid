@@ -1,0 +1,43 @@
+<style>
+  .banner_new {
+    height: 100vh;
+    position: relative;
+  }
+
+  .banner_new video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .banner_new {
+      height: 32vh;
+    }
+  }
+</style>
+
+<section class="banner_new">
+  <video muted loop autoplay playsinline>
+    <source src="{{ section.settings.hero_video.sources[1].url }}" type="video/mp4">
+  </video>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner Video",
+  "settings": [
+    {
+      "type": "video",
+      "id": "hero_video",
+      "label": "Hero Video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner Video"
+    }
+  ]
+}
+{% endschema %}

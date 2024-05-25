@@ -1,0 +1,306 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero_banner_image_qYhqkc": {
+      "type": "hero-banner-image",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/webportfolio.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 15,
+        "desktop_height": 74
+      }
+    },
+    "portfolio_tab_section_Y8xP76": {
+      "type": "portfolio-tab-section",
+      "blocks": {
+        "tabs_JycWmK": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "UX\/UI",
+            "tab_id": "uxui"
+          }
+        },
+        "tabs_xmxPPw": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "Branding",
+            "tab_id": "branding"
+          }
+        },
+        "tabs_bpUMp8": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "Apps",
+            "tab_id": "mobile-app"
+          }
+        },
+        "items_a4j6qU": {
+          "type": "items",
+          "settings": {
+            "id": "uxui",
+            "title": "New Age",
+            "description": "<p>Project was about precision and information.<\/p>",
+            "image": "shopify:\/\/shop_images\/1.jpg",
+            "url": ""
+          }
+        },
+        "items_mfjGXF": {
+          "type": "items",
+          "settings": {
+            "id": "mobile-app",
+            "title": "Sebastian",
+            "description": "<p>Project was about precision and information.<\/p>",
+            "image": "shopify:\/\/shop_images\/3.jpg",
+            "url": ""
+          }
+        },
+        "items_6YBdBD": {
+          "type": "items",
+          "settings": {
+            "id": "branding",
+            "title": "Deloitte",
+            "description": "<p>Project was about precision and information.<\/p>",
+            "image": "shopify:\/\/shop_images\/2.jpg",
+            "url": ""
+          }
+        },
+        "items_zHrTLf": {
+          "type": "items",
+          "settings": {
+            "id": "uxui",
+            "title": "New Age",
+            "description": "<p>Project was about precision and information.<\/p>",
+            "image": "shopify:\/\/shop_images\/1.jpg",
+            "url": ""
+          }
+        },
+        "items_JEWtN4": {
+          "type": "items",
+          "settings": {
+            "id": "mobile-app",
+            "title": "Sebastian",
+            "description": "<p>Project was about precision and information.<\/p>",
+            "image": "shopify:\/\/shop_images\/3.jpg",
+            "url": ""
+          }
+        },
+        "items_Lb7ABX": {
+          "type": "items",
+          "settings": {
+            "id": "branding",
+            "title": "Mochnix",
+            "description": "<p>Project was about precision and information.<\/p>",
+            "image": "shopify:\/\/shop_images\/download.jpg",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "tabs_JycWmK",
+        "tabs_xmxPPw",
+        "tabs_bpUMp8",
+        "items_a4j6qU",
+        "items_mfjGXF",
+        "items_6YBdBD",
+        "items_zHrTLf",
+        "items_JEWtN4",
+        "items_Lb7ABX"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Our Recent Works",
+        "sub_text": "<p>We put your ideas and thus your wishes in the form of a unique web project that inspires you and you customers.<\/p>",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "pricing_plan_section_myMkkQ": {
+      "type": "pricing-plan-section",
+      "blocks": {
+        "plan_feature_4iVbPM": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Custom Domain",
+            "hover_content": "",
+            "basic_plan_content": "No",
+            "standard_plan_content": "Yes",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_Ag8VcV": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Number of Pages",
+            "hover_content": "Total no of pages",
+            "basic_plan_content": "Up to 5",
+            "standard_plan_content": "Up to 10",
+            "premium_plan_content": "Unlimited"
+          }
+        },
+        "plan_feature_UQcbLW": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Design Templates",
+            "hover_content": "Design Templates",
+            "basic_plan_content": "Limited Selection",
+            "standard_plan_content": "Wide Selection",
+            "premium_plan_content": "Custom Designs"
+          }
+        },
+        "plan_feature_GMzzF7": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Portfolio Section",
+            "hover_content": "",
+            "basic_plan_content": "Yes",
+            "standard_plan_content": "Yes",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_AWpRjL": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Responsive Design",
+            "hover_content": "Responsive Design",
+            "basic_plan_content": "Yes",
+            "standard_plan_content": "Yes",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_xM4PU3": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Contact Form",
+            "hover_content": "Contact Form",
+            "basic_plan_content": "Yes",
+            "standard_plan_content": "Yes",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_hmEmxJ": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Blog Section",
+            "hover_content": "Blogging Functionality",
+            "basic_plan_content": "No",
+            "standard_plan_content": "Yes",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_dJ7Nid": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "E-Commerce",
+            "hover_content": "E-commerce Functionality",
+            "basic_plan_content": "No",
+            "standard_plan_content": "No",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_WMwNKY": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "SEO Optimization",
+            "hover_content": "Search Engine Optimization",
+            "basic_plan_content": "Basic",
+            "standard_plan_content": "Advanced",
+            "premium_plan_content": "Premium"
+          }
+        },
+        "plan_feature_TxppAP": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Analytics",
+            "hover_content": "Analytics",
+            "basic_plan_content": "Basic",
+            "standard_plan_content": "Advanced",
+            "premium_plan_content": "Premium"
+          }
+        },
+        "plan_feature_gX77NQ": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Website Security Audit",
+            "hover_content": "Website Security Audit",
+            "basic_plan_content": "No",
+            "standard_plan_content": "No",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_wA4FtG": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "A\/B Testing of Website",
+            "hover_content": "",
+            "basic_plan_content": "No",
+            "standard_plan_content": "No",
+            "premium_plan_content": "Yes"
+          }
+        },
+        "plan_feature_GUfVVk": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Support",
+            "hover_content": "Support",
+            "basic_plan_content": "Email",
+            "standard_plan_content": "Email & Chat",
+            "premium_plan_content": "Priority Support"
+          }
+        }
+      },
+      "block_order": [
+        "plan_feature_4iVbPM",
+        "plan_feature_Ag8VcV",
+        "plan_feature_UQcbLW",
+        "plan_feature_GMzzF7",
+        "plan_feature_AWpRjL",
+        "plan_feature_xM4PU3",
+        "plan_feature_hmEmxJ",
+        "plan_feature_dJ7Nid",
+        "plan_feature_WMwNKY",
+        "plan_feature_TxppAP",
+        "plan_feature_gX77NQ",
+        "plan_feature_wA4FtG",
+        "plan_feature_GUfVVk"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Plans & Pr",
+        "heading_featured": "ici",
+        "heading_end": "ng",
+        "sub_text": "<p>Website Development Monthly Plan.<\/p>",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20,
+        "recomended_plan": "premium",
+        "plan_type": "month",
+        "custom_pricing_text": "",
+        "custom_pricing_link": "",
+        "show_currency_icon": true,
+        "basic_plan_name": "Essentials",
+        "basic_plan_price": "30,000",
+        "basic_plan_url": "",
+        "standard_plan_name": "Standard",
+        "standard_plan_price": "45,000",
+        "standard_plan_url": "",
+        "premium_plan_name": "Custom",
+        "premium_plan_price": "83,000",
+        "premium_plan_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_image_qYhqkc",
+    "portfolio_tab_section_Y8xP76",
+    "pricing_plan_section_myMkkQ"
+  ]
+}

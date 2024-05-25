@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "container": "container",
+        "padding_full_width": 65
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

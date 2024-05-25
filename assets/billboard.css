@@ -1,0 +1,27 @@
+.billboard__section{
+    margin: 40px auto;
+}
+.billboard {
+    text-align: center;
+}
+
+.billboard__section_title {
+    font-size: clamp(40px, 4vw, 40px);
+    font-weight: 600;
+}
+
+.billboard p {
+    color: #845EC2;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 20px;
+
+}
+.billboard__section .box {
+    width: 33.33%;
+    border-right: 1px solid rgb(215, 213, 213);
+}
+.billboard__section>*:last-child {
+    border-right: none;
+}

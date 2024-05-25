@@ -1,0 +1,295 @@
+{%- liquid
+  assign isEditor = request.design_mode
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+  assign background_color = section.settings.background_color
+  assign content_image = section.settings.content_image
+-%}
+
+<style>
+    .presence_section{
+        margin-top: {{ mobile_margin_top | append: 'px' }};
+        margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+        background: {{- background_color -}};
+    }
+
+  .presence-container h2 {
+    font-size: clamp(24px, 3vw, 40px);
+    color: #845ec2;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .presence-container h2 span {
+    background-color: #845ec2;
+    color: #fff;
+    border-radius: 15px;
+    padding: 0 5px;
+    margin-left: 5px;
+  }
+
+  .presence-container h4 {
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    color: #676767;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .presence-container p {
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+    line-height: 1.72222;
+  }
+
+  .presence-container .row {
+    --bs-gutter-x: 1.875rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+  }
+  .presence-container .row-first {
+    flex: 0 0 auto;
+    width: 8.3333333333%;
+  }
+
+  .presence-container .row-second {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+  }
+
+  .presence-container .row-second img {
+    max-width: 100%;
+  }
+
+  .presence-container .content-box {
+    flex: 0 0 auto;
+    width: 58.3333333333%;
+    display: block;
+    margin: auto;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .content-box h2 {
+      font-size: 25px;
+    }
+    .content-box h4 {
+      font-size: 17px;
+    }
+    .content-box p {
+      font-size: 11px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .presence_section{
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+    .row-first {
+      flex: 0 0 auto;
+      width: 8.3333333333%;
+    }
+    .row-second {
+      flex: 0 0 auto;
+      width: 33.3333333333%;
+    }
+    .content-box {
+      flex: 0 0 auto;
+      width: 58.3333333333%;
+    }
+  }
+  @media (max-width: 768px) {
+    .presence-container .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    .content-box{
+        padding: 0 5vw ;
+        margin-bottom: 20px !important;
+    }
+  }
+</style>
+<section class="presence_section">
+  <div class="presence-container container container-{{ section.settings.container }}">
+    <div class="row">
+      <div class="row-second">
+        <img src="{{ content_image |image_url }}" width="100%" alt="" height="">
+      </div>
+      <div class="content-box">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'title' -%}
+              <h2>
+                {{- block.settings.title -}}
+
+                <span>
+                  {{- block.settings.featured_title -}}
+                </span>
+              </h2>
+              <h4>{{- block.settings.sub_title -}}</h4>
+            {%- when 'content' -%}
+              {{- block.settings.description -}}
+            {%- else -%}
+          {%- endcase -%}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Smm Presence Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#e2dcdc"
+    },
+    {
+      "type": "image_picker",
+      "id": "content_image",
+      "label": "Content Image"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "featured_title",
+          "label": "Featured Title"
+        },
+        {
+          "type": "header",
+          "content": "Sub Title"
+        },
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title"
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "type": "content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Smm Presence Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

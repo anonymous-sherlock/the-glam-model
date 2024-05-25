@@ -1,0 +1,193 @@
+{% liquid
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+%}
+<style>
+    .pr_hero_section_header {
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+    .pr_hero_section_header .header_title {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .pr_hero_section_header .header_title .title{
+        color: #845ec2;
+        margin: 2%;
+        font-size: clamp(2rem, 28vw, 360px);
+        font-weight: 700;
+    }
+    .pr_hero_section_header .header_title .sub_title p {
+        font-size: clamp(2rem, 6vw, 70px);
+        font-weight: 700;
+        text-align: left;
+        line-height: 1.2;
+        margin: 0;
+    }
+    .pr_hero_section_header .header_title .sub_title .color_primary {
+        color: #845ec2;
+    }
+    .pr_hero_section_header .line{
+        display: block;
+        margin: 50px auto;
+        height: 2px;
+        width: 55%;
+        background-color: #D9D9D9;
+    }
+    .sub_header{
+        margin: 50px 6vw;
+    }
+    .sub_header .sub_header_title{
+        margin: 0;
+        text-align: center;
+        font-size: clamp(2rem, 6vw, 60px);
+        font-weight: 700;
+        line-height: 1;
+    }
+    .sub_header p{
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 20px 6vw 0;
+    }
+  @media screen and (max-width: 768px) {
+      .pr_hero_section_header {
+          margin-top: {{ mobile_margin_top | append: 'px' }};
+          margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+      }
+      .pr_hero_section_header .header_title .title {
+        font-size: 9em;
+      }
+      .pr_hero_section_header .header_title .sub_title p {
+        font-size: 2em;
+      }
+      .sub_header {
+            margin: 20px 0vw;
+      }
+      .sub_header p{
+        font-size: 14px;
+        margin: 20px 2vw 0;
+      }
+  }
+</style>
+<section class="pr_hero_section_header">
+  <div class="container container-{{ section.settings.container }}">
+    <div class="header_title">
+      <h2 class="title">GET</h2>
+      <div class="sub_title">
+        <p>Heard<span class="color_primary">.</span></p>
+        <p>Noticed<span class="color_primary">.</span></p>
+        <p>Results<span class="color_primary">.</span></p>
+      </div>
+    </div>
+
+    <div class="sub_header">
+      <h1 class="sub_header_title">Our Proven PR Services</h1>
+      <p>
+        In today's crowded marketplace, cutting through the noise is essential for business success. Our comprehensive
+        PR services help you achieve maximum brand awareness, build trust with your target audience, and ultimately
+        drive positive business outcomes.
+      </p>
+    </div>
+
+    <div class="line"></div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Pr Header Section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pr Header Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

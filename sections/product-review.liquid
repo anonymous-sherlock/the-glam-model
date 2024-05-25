@@ -1,0 +1,282 @@
+{{ 'component-product-review.css' | asset_url | stylesheet_tag }}
+{%- liquid
+    assign bg_color = section.settings.bg_color
+    assign border_color = section.settings.border_color
+    assign text_color_1 = section.settings.text_color_1
+    assign text_color_2 = section.settings.text_color_2
+    assign text_color_3 = section.settings.text_color_3
+
+    assign mg_top_desktop = section.settings.mg_top_desktop
+    assign mg_top_tablet = section.settings.mg_top_tablet
+    assign mg_top_mobile = section.settings.mg_top_mobile
+
+    assign mg_bottom_desktop = section.settings.mg_bottom_desktop
+    assign mg_bottom_tablet = section.settings.mg_bottom_tablet
+    assign mg_bottom_mobile = section.settings.mg_bottom_mobile
+
+    assign title_color = section.settings.title_color
+    assign text_color_1 = section.settings.text_color_1
+    assign text_color_2 = section.settings.text_color_2
+    assign liquid_app = section.settings.liquid_app
+    assign product = all_products[section.settings.customer_review]
+-%}
+
+<style>
+    .section-block-{{section.id}} {
+        background: {{ bg_color }};
+    }
+
+    .section-block-{{section.id}} .halo-block-content {
+        border-top: 2px solid {{ border_color }};
+    }
+
+    .section-block-{{section.id}} .productView-review--content .spr-content .spr-reviews .spr-review+.spr-review{
+        border-top: 1px solid {{ border_color }} !important;
+    }
+
+    .section-block-{{section.id}} .spr-header-title,
+    .section-block-{{section.id}} .spr-summary-actions-togglereviews,
+    .section-block-{{section.id}} .spr-content .spr-review .spr-review-header-title,
+    .section-block-{{section.id}} .spr-content .spr-review .spr-review-content .spr-review-content-body {
+        color: {{ text_color_1 }} !important;
+    }
+
+    .section-block-{{section.id}} .spr-content .spr-review .spr-review-header-byline {
+        color: {{ text_color_2 }} !important;
+    }
+
+    .section-block-{{section.id}} .spr-review .spr-review-reportreview {
+        color: {{ text_color_3 }} !important;
+    }
+
+    .product-review-block .new-review-form .spr-form-title,
+    .product-review-block .new-review-form .spr-form-label {
+        color: {{ text_color_1 }} !important;
+    }
+
+    @media (min-width: 1200px) {
+        .section-block-{{section.id}} {
+            padding-top: {{ mg_top_desktop | append: 'px' }};
+            padding-bottom: {{ mg_bottom_desktop | append: 'px' }};
+        }
+    }
+
+    @media (min-width: 1025px) {
+        {% if section.settings.container == 'fullwidth' %}
+            .section-block-{{section.id}} .container-full {
+                padding-left: {{ padding_full_width | append: 'px' }};
+                padding-right: {{ padding_full_width | append: 'px' }};
+            }
+        {% endif %}
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        .section-block-{{section.id}} {
+            padding-top: {{ mg_top_tablet | append: 'px' }};
+            padding-bottom: {{ mg_bottom_tablet | append: 'px' }};
+        }
+    }
+
+    @media (max-width: 1024px) {
+        {% if brand_bg_image != blank %}
+            .section-block-{{section.id}}{
+                background-position: center top;
+            }
+       {% endif %}
+    }
+
+    @media (max-width: 767px) {
+        .section-block-{{section.id}} {
+            padding-top: {{ mg_top_mobile | append: 'px' }};
+            padding-bottom: {{ mg_bottom_mobile | append: 'px' }};
+        }
+    }
+</style>
+
+<div class="product-review-block section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="product-reviews">
+    <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1170' %}container-1170{% elsif section.settings.container == '1770' %}container-1770{% else %}container{% endif %}">
+        <div class="halo-block-content">
+            <div class="review-block productView-review">
+                <div class="productView-review--content" id="shopify-product-reviews" data-id="{{ product.id }}">
+                    {{ liquid_app }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "t:settings_schema.product_card.settings.header__6.content",
+    "class": "sections-product-review-block",
+    "settings":
+    [
+        {
+            "type": "paragraph",
+            "content": "t:sections.app_partner.label_1"
+        },
+        {
+            "type": "paragraph",
+            "content": "t:sections.app_partner.label_2"
+        },
+        {
+            "type": "header",
+            "content": "t:settings_schema.general.name"
+        },
+        {
+            "type": "select",
+            "id": "container",
+            "label": "t:sections.layout.container.option",
+            "default": "container",
+            "options": [
+                {
+                    "value": "container",
+                    "label": "t:sections.layout.container.option1"
+                },
+                {
+                    "value": "1170",
+                    "label": "t:sections.layout.container.option4"
+                },
+                {
+                    "value": "1770",
+                    "label": "t:sections.layout.container.option3"
+                },
+                {
+                    "value": "fullwidth",
+                    "label": "t:sections.layout.container.option2"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "padding_full_width",
+            "label": "t:sections.layout.container.padding_full_width",
+            "min": 0,
+            "max": 50,
+            "step": 5,
+            "unit": "t:sections.layout.fontsize.fontsize_title.unit",
+            "default": 0,
+            "info": "t:sections.layout.container.info_full_width"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.layout.margin_top"
+        },
+        {
+            "type": "range",
+            "id": "mg_top_desktop",
+            "label": "t:sections.layout.mg_desktop.label",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 50
+        },
+        {
+            "type": "range",
+            "id": "mg_top_tablet",
+            "label": "t:sections.layout.mg_tablet.label",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 50
+        },
+        {
+            "type": "range",
+            "id": "mg_top_mobile",
+            "label": "t:sections.layout.mg_mobile.label",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 50
+        },
+        {
+            "type": "header",
+            "content": "t:sections.layout.margin_bottom"
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_desktop",
+            "label": "t:sections.layout.mg_desktop.label",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 50
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_tablet",
+            "label": "t:sections.layout.mg_tablet.label",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 50
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_mobile",
+            "label": "t:sections.layout.mg_mobile.label",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 50
+        },
+        {
+            "type" : "color",
+            "id" : "bg_color",
+            "label" : "t:settings_schema.colors.settings.colors_name.background_color",
+            "default" : "#fff"
+        },
+        {
+            "type" : "color",
+            "id" : "border_color",
+            "label" : "t:settings_schema.colors.settings.colors_name.border_color",
+            "default" : "#797b80"
+        },
+        {
+          "type": "liquid",
+          "id": "liquid_app",
+          "label": "t:sections.custom-liquid.settings.custom_liquid.label",
+          "info": "t:sections.custom-liquid.settings.custom_liquid.info",
+          "default": "{{product.metafields.spr.reviews.content}}"
+        },
+        {
+            "type": "product",
+            "id": "customer_review",
+            "label": "t:settings_schema.product_card.settings.header__6.content"
+        },
+        
+        {
+            "type": "color",
+            "id": "text_color_1",
+            "label": "t:sections.header.settings.header_top.label__2",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "text_color_2",
+            "label": "t:sections.header.settings.header_top.label__3",
+            "default": "#595d6b"
+        },
+        {
+            "type": "color",
+            "id": "text_color_3",
+            "label": "t:sections.header.settings.header_top.label__3_1",
+            "default": "#b60b32"
+        }
+    ],
+    "presets": [
+        {
+            "name": "t:settings_schema.product_card.settings.header__6.content"
+        }
+    ],
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    }
+}
+{% endschema %}

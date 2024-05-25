@@ -1,0 +1,516 @@
+{
+  "sections": {
+    "banner_video_aewgqd": {
+      "type": "banner-video",
+      "settings": {
+        "hero_video": "shopify:\/\/files\/videos\/web final.mp4"
+      }
+    },
+    "social_media_boxes_pJpTwH": {
+      "type": "social-media-boxes",
+      "blocks": {
+        "instagram_R8CJKA": {
+          "type": "instagram",
+          "settings": {
+            "icon": "",
+            "count": "1000",
+            "sub_text": "Instagram Followers"
+          }
+        },
+        "youtube_88bKj8": {
+          "type": "youtube",
+          "settings": {
+            "icon": "",
+            "count": "2000",
+            "sub_text": "Youtube Subscribers"
+          }
+        },
+        "facebook_6pbqE9": {
+          "type": "facebook",
+          "settings": {
+            "icon": "",
+            "count": "1400",
+            "sub_text": "Facebook Fans"
+          }
+        },
+        "total_likes_6THC9E": {
+          "type": "total_likes",
+          "settings": {
+            "icon": "",
+            "count": "800",
+            "sub_text": "Total Likes"
+          }
+        }
+      },
+      "block_order": [
+        "instagram_R8CJKA",
+        "youtube_88bKj8",
+        "facebook_6pbqE9",
+        "total_likes_6THC9E"
+      ],
+      "settings": {
+        "container": "1170"
+      }
+    },
+    "brand_analysis_section_q3eXbk": {
+      "type": "brand-analysis-section",
+      "settings": {
+        "container": "1170",
+        "content_image": "shopify:\/\/shop_images\/about-3.gif",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "magazine_section_UmUkxF": {
+      "type": "magazine-section",
+      "blocks": {
+        "feature_iNN4PL": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Swing",
+            "title_end": "magazines",
+            "image": "shopify:\/\/shop_images\/magazine1.jpg",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+          }
+        },
+        "feature_D44LJF": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Mac",
+            "title_end": "magazines",
+            "image": "shopify:\/\/shop_images\/magazine1.jpg",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+          }
+        },
+        "feature_DbUA3r": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Con",
+            "title_end": "magazines",
+            "image": "shopify:\/\/shop_images\/magazine1.jpg",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+          }
+        },
+        "feature_fKf4V8": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Uncover",
+            "title_end": "magazines",
+            "image": "shopify:\/\/shop_images\/magazine1.jpg",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_iNN4PL",
+        "feature_D44LJF",
+        "feature_DbUA3r",
+        "feature_fKf4V8"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Magaz",
+        "heading_featured": "i",
+        "heading_end": "nes",
+        "sub_text": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>",
+        "content_image": "shopify:\/\/shop_images\/model.png",
+        "content_image_alt": "",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "billboard_njG8qN": {
+      "type": "billboard",
+      "blocks": {
+        "feature_czLL9g": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/billboard-1.jpg",
+            "title": "the mountains",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt\n              quibusdam\n              corrupti aut, recusandae alias dolores ex expedita quaerat a in et.",
+            "url": ""
+          }
+        },
+        "feature_7aRztw": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/billboard-2.jpg",
+            "title": "the mountains",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt\n              quibusdam\n              corrupti aut, recusandae alias dolores ex expedita quaerat a in et.",
+            "url": ""
+          }
+        },
+        "feature_kV4Wx3": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/billboard-3.jpg",
+            "title": "the mountains",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt\n              quibusdam\n              corrupti aut, recusandae alias dolores ex expedita quaerat a in et.",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_czLL9g",
+        "feature_7aRztw",
+        "feature_kV4Wx3"
+      ],
+      "settings": {
+        "section_title": "",
+        "sub_text": "<p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, adipisci.<\/strong><\/p>"
+      }
+    },
+    "social_media_management_Ew8gDN": {
+      "type": "social-media-management",
+      "blocks": {
+        "feature_8JDjec": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Online",
+            "title_end": "Marketing",
+            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+          }
+        },
+        "feature_hQrBcU": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Latest",
+            "title_end": "Technology",
+            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+          }
+        },
+        "feature_MAFQ7D": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Content",
+            "title_end": "Writing",
+            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+          }
+        },
+        "feature_iKBcLT": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Social",
+            "title_end": "Marketing",
+            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+          }
+        },
+        "feature_4yqGD6": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "PPC",
+            "title_end": "Advertising",
+            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+          }
+        },
+        "feature_bK6KNR": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Quick",
+            "title_end": "Support",
+            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_8JDjec",
+        "feature_hQrBcU",
+        "feature_MAFQ7D",
+        "feature_iKBcLT",
+        "feature_4yqGD6",
+        "feature_bK6KNR"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "",
+        "heading_featured": "",
+        "heading_end": "",
+        "sub_text": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>",
+        "content_image": "shopify:\/\/shop_images\/smm.png",
+        "content_image_alt": "",
+        "desktop_margin_top": 100,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "services_filtered_tab_yyg3G4": {
+      "type": "services-filtered-tab",
+      "blocks": {
+        "tabs_LYiHTR": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "SMM",
+            "tab_id": "smm"
+          }
+        },
+        "tabs_dYz8hn": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "PR Activites",
+            "tab_id": "pr-activity"
+          }
+        },
+        "tabs_DQNayF": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "Brands",
+            "tab_id": "brands"
+          }
+        },
+        "tabs_R7exwY": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "Website Creations",
+            "tab_id": "website-creations"
+          }
+        },
+        "items_PwMy84": {
+          "type": "items",
+          "settings": {
+            "id": "website-creations",
+            "title": "Ui\/Ux design",
+            "image": "shopify:\/\/shop_images\/cart-item-2.jpg",
+            "url": "shopify:\/\/pages\/website-and-portfolio-creation"
+          }
+        },
+        "items_3CqVYF": {
+          "type": "items",
+          "settings": {
+            "id": "smm",
+            "title": "Instagram Growth",
+            "image": "shopify:\/\/shop_images\/cart-item-2.jpg",
+            "url": "shopify:\/\/pages\/pr-services"
+          }
+        },
+        "items_qyf6Az": {
+          "type": "items",
+          "settings": {
+            "id": "brands",
+            "title": "UGC Content",
+            "image": "shopify:\/\/shop_images\/cart-item-2.jpg",
+            "url": "shopify:\/\/pages\/brand-management-services"
+          }
+        },
+        "items_akAzjP": {
+          "type": "items",
+          "settings": {
+            "id": "website-creations",
+            "title": "On\/Off Page SEO",
+            "image": "shopify:\/\/shop_images\/cart-item-1.jpg",
+            "url": "shopify:\/\/pages\/website-and-portfolio-creation"
+          }
+        },
+        "items_7zDpyY": {
+          "type": "items",
+          "settings": {
+            "id": "brands",
+            "title": "Influencer Marketing",
+            "image": "shopify:\/\/shop_images\/cart-item-1.jpg",
+            "url": "shopify:\/\/pages\/brand-management-services"
+          }
+        },
+        "items_bffMjj": {
+          "type": "items",
+          "settings": {
+            "id": "pr-activity",
+            "title": "Event and Fashion Show",
+            "image": "shopify:\/\/shop_images\/cart-item-2.jpg",
+            "url": "shopify:\/\/pages\/pr-services"
+          }
+        },
+        "items_AGF9Dr": {
+          "type": "items",
+          "settings": {
+            "id": "pr-activity",
+            "title": "Interview Publication",
+            "image": "shopify:\/\/shop_images\/cart-item-1.jpg",
+            "url": "shopify:\/\/pages\/pr-services"
+          }
+        },
+        "items_X4yCMq": {
+          "type": "items",
+          "settings": {
+            "id": "smm",
+            "title": "Content Creation",
+            "image": "shopify:\/\/shop_images\/cart-item-1.jpg",
+            "url": "shopify:\/\/pages\/social-media-management"
+          }
+        }
+      },
+      "block_order": [
+        "tabs_LYiHTR",
+        "tabs_dYz8hn",
+        "tabs_DQNayF",
+        "tabs_R7exwY",
+        "items_PwMy84",
+        "items_3CqVYF",
+        "items_qyf6Az",
+        "items_akAzjP",
+        "items_7zDpyY",
+        "items_bffMjj",
+        "items_AGF9Dr",
+        "items_X4yCMq"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Our Serv",
+        "heading_featured": "i",
+        "heading_end": "ces",
+        "sub_text": "",
+        "desktop_margin_top": 100,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "testimonial_section_cWxNxx": {
+      "type": "testimonial-section",
+      "blocks": {
+        "testimonial_PKUrNT": {
+          "type": "testimonial",
+          "settings": {
+            "name": "PETER LEE",
+            "content": "<p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!<\/p>",
+            "image": "shopify:\/\/shop_images\/testimonials-01-179x179.png"
+          }
+        },
+        "testimonial_BH3nkq": {
+          "type": "testimonial",
+          "settings": {
+            "name": "JENNIFER",
+            "content": "<p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!<\/p>",
+            "image": "shopify:\/\/shop_images\/testimonials-02-306x306.png"
+          }
+        },
+        "testimonial_rKDjmf": {
+          "type": "testimonial",
+          "settings": {
+            "name": "PETER LEE",
+            "content": "<p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!<\/p>",
+            "image": "shopify:\/\/shop_images\/testimonials-03-179x179.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_PKUrNT",
+        "testimonial_BH3nkq",
+        "testimonial_rKDjmf"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Test",
+        "heading_featured": "imonia",
+        "heading_end": "l",
+        "sub_heading": "WHAT OUR CLIENTS SAY",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "featured_blog_ytEbbP": {
+      "type": "featured-blog",
+      "settings": {
+        "container": "container",
+        "padding_full_width": 0,
+        "mg_minus_desktop": 0,
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50,
+        "blog_bg": "#ffffff",
+        "blog_bg_gradient": "",
+        "featured_blog_title": "Latest Posts",
+        "margin_bottom_heading": 5,
+        "enable_border_title": true,
+        "custom_width_title": 420,
+        "border_color_title": "#232323",
+        "color_title": "#835dc0",
+        "fontsize_title": 24,
+        "fontsize_title_mb": 20,
+        "featured_blog_des": "",
+        "margin_bottom_desheading": 0,
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "view_all": "",
+        "view_all_align": "center",
+        "font_weight_view_all": "400",
+        "mg_top_view": 0,
+        "mg_bottom_view": 30,
+        "enable_border_view_all": false,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "view_all_pos": "under_title",
+        "blog_posts": "news",
+        "blog_results_per_row": "3",
+        "item_distance": 15,
+        "post_limit": 3,
+        "limit_content_des": 22,
+        "text_by": "",
+        "text_on": "",
+        "blog_show_author": true,
+        "blog_show_date": true,
+        "blog_show_des": true,
+        "show_more_pos": "under_content",
+        "blog_show_more_icon": "arrow-right",
+        "blog_date_format": "short_month",
+        "blog_item_bg": "#ffffff",
+        "border_radius_item": 0,
+        "margin_bottom_image": 0,
+        "margin_bottom_title": 10,
+        "margin_bottom_info": 13,
+        "margin_bottom_des": 6,
+        "block_item_style": "style_1",
+        "block_item_align": "left",
+        "block_button_text_transform": "none",
+        "block_button_fw": "400",
+        "enable_border_box": true,
+        "color_border_box": "#dbdbdb",
+        "color_title_item": "#232323",
+        "color_date_item": "#999999",
+        "color_des_item": "#3c3c3c",
+        "color_button_item": "#835dc0",
+        "enable_blog_button": false,
+        "color_button_item_border": "#1e1e1e",
+        "color_button_item_bg": "#1e1e1e",
+        "color_button_item_hover": "#000000",
+        "color_button_item_border_hover": "#ffffff",
+        "color_button_item_bg_hover": "#ffffff",
+        "content_on_image": false,
+        "content_bg": "",
+        "content_gradient": ""
+      }
+    }
+  },
+  "order": [
+    "banner_video_aewgqd",
+    "social_media_boxes_pJpTwH",
+    "brand_analysis_section_q3eXbk",
+    "magazine_section_UmUkxF",
+    "billboard_njG8qN",
+    "social_media_management_Ew8gDN",
+    "services_filtered_tab_yyg3G4",
+    "testimonial_section_cWxNxx",
+    "featured_blog_ytEbbP"
+  ]
+}

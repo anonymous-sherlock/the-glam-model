@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "hero_banner_image_rQUf8V": {
+      "type": "hero-banner-image",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/brand-management-services_e6ff3e5d-caa5-467d-a280-e1896ee95d74.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 50,
+        "desktop_height": 50
+      }
+    },
+    "main": {
+      "type": "main-wishlist-page",
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_alignment": "center",
+        "breadcrumb_bg": "",
+        "breadcrumb_gradient": "",
+        "breadcrumb_bg_mb": "#f6f6f6",
+        "breadcrumb_gradient_mb": "",
+        "show_page_title": false,
+        "page_title_alignment": "left",
+        "container": "container",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "default_layout_desktop": "4"
+      }
+    }
+  },
+  "order": [
+    "hero_banner_image_rQUf8V",
+    "main"
+  ]
+}

@@ -1,0 +1,581 @@
+{%- liquid
+  assign title = section.settings.heading_start
+  assign sub_text = section.settings.sub_text
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+  assign column_count = section.settings.column_count
+  assign item_sizer = '32%'
+
+  case column_count
+    when '2'
+      assign item_sizer = '48%'
+    when '3'
+      assign item_sizer = '32%'
+    when '4'
+      assign item_sizer = '23%'
+  endcase
+  assign tabs = section.blocks | where: 'type', 'tabs'
+  assign items = section.blocks | where: 'type', 'items'
+-%}
+<style>
+  :root {
+    --tj-body: #dddddd;
+    --tj-white: #ffffff;
+    --tj-off-white: #f6f3fc;
+    --tj-black: #000000;
+    --tj-black-2: #050709;
+    --tj-heading-primary: #102039;
+    --tj-heading-secondary: #ea1826;
+    --tj-theme-primary: #8750f7;
+    --tj-theme-secondary: #2a1454;
+    --tj-theme-accent-1: #0f0715;
+    --tj-theme-accent-2: #140c1c;
+    --tj-grey-1: #747779;
+    --tj-grey-2: #d9d9d9;
+    --tj-grey-3: #dddddd;
+    --tj-grey-4: #22272c;
+  }
+  .portfolio-section {
+    background: var(--tj-white);
+  }
+  .portfolio-section .section-header {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .portfolio-filter {
+    overflow-x: auto;
+  }
+  .portfolio-filter::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .portfolio-filter .button-group {
+    background-color: var(--tj-off-white);
+    border-radius: 60px;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+  }
+  .portfolio-filter .button-group button {
+    background: transparent;
+    border: none;
+    color: var(--tj-theme-primary);
+    text-transform: capitalize;
+    font-size: 15px;
+    line-height: 1;
+    padding: 12px 25px;
+    border-radius: 50px;
+    z-index: 10;
+    position: relative;
+  }
+  .portfolio-filter .button-group {
+    position: relative;
+  }
+  .portfolio-filter .button-group button.active {
+    color: #ffffff;
+  }
+  .portfolio-filter .button-group .active-bg {
+    border-radius: 50px;
+    top: 0px;
+    width: 0;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    z-index: 1;
+    background: var(--tj-theme-primary);
+    background: -o-linear-gradient(190deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+    background: linear-gradient(260deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .portfolio-box {
+    padding-top: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .portfolio-box:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 35%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--tj-theme-primary);
+    background: -o-linear-gradient(190deg, var(--tj-theme-primary) 0%, rgba(115, 67, 210, 0) 100%);
+    background: linear-gradient(260deg, var(--tj-theme-primary) 0%, rgba(115, 67, 210, 0) 100%);
+    -webkit-filter: blur(150px);
+    filter: blur(150px);
+  }
+  .portfolio-box .portfolio-sizer {
+    width: {{item_sizer}};
+    position: absolute;
+  }
+  .portfolio-box .portfolio-item {
+    background-color: var(--tj-theme-accent-2);
+    margin-bottom: 2%;
+    padding: 36px 36px 0 36px;
+    border-radius: 10px;
+    width: {{item_sizer}};
+  }
+  .portfolio-box .gutter-sizer {
+    width: 2%;
+    position: absolute;
+  }
+  .portfolio-box .image-box {
+    text-align: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+  }
+  .portfolio-box .image-box img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+  }
+  .portfolio-box .content-box {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    background: #000;
+    width: calc(100% - 40px);
+    border-radius: 15px;
+    margin: 0 auto;
+    right: 0;
+    padding: 20px;
+    padding-right: 50px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    background: var(--tj-theme-primary);
+    background: -o-linear-gradient(190deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+    background: linear-gradient(260deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+  }
+  .portfolio-box .portfolio-item:hover .content-box {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .portfolio-box .portfolio-item .content-box .portfolio-title {
+    font-size: clamp(20px, 2vw, 22px);
+    margin: 0;
+    color: var(--tj-white);
+  }
+  .portfolio-box .portfolio-item .content-box p {
+    margin-bottom: 0;
+    color: var(--tj-white);
+  }
+  .portfolio-box .portfolio-item .content-box .portfolio-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .portfolio-box .portfolio-item .content-box i {
+    font-size: 20px;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: var(--tj-white);
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+  }
+  .portfolio-box .portfolio-item:hover .content-box i {
+    -webkit-transform: translateY(-50%) rotate(360deg);
+    -ms-transform: translateY(-50%) rotate(360deg);
+    transform: translateY(-50%) rotate(360deg);
+  }
+  @media (max-width: 768px) {
+    .portfolio-box {
+      padding-top: 20px;
+    }
+    .portfolio-filter {
+      padding-bottom: 0;
+    }
+    .portfolio-box .gutter-sizer {
+      width: 0%;
+    }
+    .portfolio-box .portfolio-sizer {
+      width: 100%;
+    }
+    .portfolio-box .portfolio-item {
+      width: 100%;
+    }
+  }
+  .section-header {
+    margin-bottom: 50px;
+    max-width: 700px;
+    width: 100%;
+  }
+  .section-header p:last-child {
+    margin-bottom: 0;
+  }
+  .section-header p {
+    margin-top: 15px;
+    font-size: clamp(14px, 2vw, 16px);
+  }
+  .portfolio-section .section-header .section-title {
+    background: var(--tj-theme-primary);
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(var(--tj-theme-primary)),
+      to(var(--tj-theme-secondary))
+    );
+    background: -o-linear-gradient(left, var(--tj-theme-primary) 0%, var(--tj-theme-secondary) 100%);
+    background: linear-gradient(to right, var(--tj-theme-primary) 0%, var(--tj-theme-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(22px, 4vw, 45px);
+    line-height: 1;
+    margin: 5px;
+  }
+</style>
+<style>
+  #works-section {
+    margin-top: {{ desktop_margin_top | append: 'px' }};
+    margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+  }
+  @media (max-width:768px){
+    #works-section {
+        margin-top: {{ mobile_margin_top | append: 'px' }};
+        margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+    }
+  }
+</style>
+<section class="portfolio-section" id="works-section">
+  <div class="container">
+    <div class="row">
+      <div class="section-header text-center">
+        <h2
+          class="section-title wow fadeInUp"
+          data-wow-delay=".3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
+        >
+          {{ title | default: 'Our Recent Works' }}
+        </h2>
+        {{ sub_text }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="portfolio-filter text-center wow fadeInUp" data-wow-delay=".5s">
+          <div class="button-group filter-button-group">
+            <button data-filter="*" class="active" id="all_portfolio_button">All</button>
+            {% for block in tabs %}
+              {% liquid
+                assign tab_id = block.settings.tab_id
+                assign tab_title = block.settings.tab_title
+              %}
+              <button data-filter=".{{- tab_id -}}">{{- tab_title -}}</button>
+            {% endfor %}
+            <div class="active-bg"></div>
+          </div>
+        </div>
+        <div class="wrapper" style="height: 100%;">
+          <div class="portfolio-box">
+            <div class="portfolio-sizer"></div>
+            <div class="gutter-sizer"></div>
+            {% for item in items %}
+              {% liquid
+                assign porfolio_image = item.settings.image
+                assign id = item.settings.id
+                assign title = item.settings.title
+                assign description = item.settings.description
+                assign url = item.settings.url
+              %}
+              <div class="portfolio-item {{ id }}" data-category="{{- id -}}">
+                <div class="image-box">
+                  <img src="{{porfolio_image |  image_url }}" alt="" height="302" width="302">
+                </div>
+
+                <div class="content-box">
+                  {%- if url != blank -%}
+                    <a href="{{url}}">
+                  {%- endif -%}
+                  <h3 class="portfolio-title">{{ title }}</h3>
+
+                  {{- description -}}
+                  {% if url != blank %}
+                    <a href="{{url}}">
+                      <i class="flaticon-up-right-arrow"></i>
+                    </a>
+                  {% endif %}
+                  <button
+                    data-mfp-src="#portfolio-wrapper"
+                    class="portfolio-link modal-popup"
+                  ></button>
+                  {%- if url != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{"isotope.pkgd.min.js"| asset_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /*------------------------------------------------------
+  	/  Portfolio Filter
+  	/------------------------------------------------------*/
+    var $grid = $('.portfolio-box').isotope({
+      // options
+      itemSelector: '.portfolio-item',
+      masonry: {
+        columnWidth: '.portfolio-box .portfolio-sizer',
+        gutter: '.portfolio-box .gutter-sizer',
+      },
+      itemSelector: '.portfolio-box .portfolio-item',
+      percentPosition: true,
+    });
+
+    // filter items on button click
+    $('.filter-button-group').on('click', 'button', function () {
+      $('.filter-button-group button').removeClass('active');
+      $(this).addClass('active');
+
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+
+    function filter_animation() {
+      var active_bg = $('.portfolio-filter .button-group .active-bg');
+      var element = $('.portfolio-filter .button-group .active');
+      $('.portfolio-filter .button-group button').on('click', function () {
+        var e = $(this);
+        activeFilterBtn(active_bg, e);
+      });
+      activeFilterBtn(active_bg, element);
+    }
+    filter_animation();
+    function activeFilterBtn(active_bg, e) {
+      if (!e.length) {
+        return false;
+      }
+      var leftOff = e.offset().left;
+      var width = e.outerWidth();
+      var menuLeft = $('.portfolio-filter .button-group').offset().left;
+      e.siblings().removeClass('active');
+      e.closest('button').siblings().addClass('.portfolio-filter .button-group');
+      active_bg.css({ left: leftOff - menuLeft + 'px', width: width + 'px' });
+    }
+    $('#all_portfolio_button').trigger('click');
+  });
+</script>
+{% schema %}
+{
+  "name": "Portfolio Filter Tab",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Title Start",
+      "default": "Our Recent Works"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text"
+    },
+    {
+      "type": "select",
+      "id": "column_count",
+      "label": "Column",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Tab",
+      "type": "tabs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title"
+        },
+        {
+          "type": "text",
+          "id": "tab_id",
+          "label": "Tab Id",
+          "info": "Id must be unique between different tabs"
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "type": "items",
+      "settings": [
+        {
+          "type": "text",
+          "id": "id",
+          "label": "Tab Id",
+          "info": "Id must be same as Id mention in Tab"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portfolio Filter Tab",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

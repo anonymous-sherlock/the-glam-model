@@ -1,0 +1,251 @@
+{%- liquid
+  assign title_start = section.settings.heading_start
+  assign title_feature = section.settings.heading_featured
+  assign title_end = section.settings.heading_end
+  assign sub_text = section.settings.sub_text
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+-%}
+
+<style>
+  .client-container {
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    margin-top: {{ mobile_margin_top | append: 'px' }};
+    margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+  }
+  .client-container p {
+    color: #845ec2;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  .client__section_title {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .client-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .client-box {
+    width: calc(50% - 20px);
+    flex: 0 0 auto;
+    height: 200px;
+  }
+
+  .client-box .square-holder {
+    border: 1px solid #cecece;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+  }
+  .square-holder img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 992px) {
+    .client-container{
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+    .client-box {
+      flex: 0 0 auto;
+      width: calc(25% - 20px);
+      height: 200px;
+    }
+    .client-box .square-holder {
+      height: 100%;
+    }
+    .square-holder img {
+      max-width: 100%;
+      filter: grayscale(100%);
+      max-height: 174px;
+      object-fit: contain;
+      transition: all 0.3s;
+    }
+    .square-holder:hover img {
+      filter: none;
+    }
+  }
+</style>
+
+<section class="container container-{{ section.settings.container }}">
+  <div class="client">
+    <div class="client-container">
+      {%- if title_start != blank -%}
+        <div class="client__section_title">
+          {{- title_start -}}
+          <span class="halfStyled" data-content="{{ title_feature }}">{{ title_feature }}</span>
+          {{- title_end -}}
+        </div>
+      {%- else -%}
+        <div class="client__section_title">Our Cl<span class="halfStyled" data-content="i">i</span>ents</div>
+      {%- endif -%}
+      {%- if sub_text != blank -%}
+        {{ sub_text }}
+      {%- endif -%}
+      <div class="row">
+        {% for block in section.blocks %}
+          {% liquid
+            assign image = block.settings.logo_image
+            assign alt = block.settings.logo_alt
+          %}
+          <div class="client-box">
+            <div class="square-holder">
+              <img alt="{{alt}}" src="{{image | image_url }}" width="" height="">
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Clients Logo",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Title Start"
+    },
+    {
+      "type": "text",
+      "id": "heading_featured",
+      "label": "Title Feature"
+    },
+    {
+      "type": "text",
+      "id": "heading_end",
+      "label": "Title End"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Logo",
+      "type": "logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "logo_alt",
+          "label": "Image Alt Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clients Logo",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

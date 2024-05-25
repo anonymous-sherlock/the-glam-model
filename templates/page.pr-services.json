@@ -1,0 +1,217 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero_banner_with_text_fJYgf8": {
+      "type": "hero-banner-with-text",
+      "blocks": {
+        "title_B3TJDq": {
+          "type": "title",
+          "settings": {
+            "title_start": "PR Serv",
+            "featured_title": "i",
+            "title_end": "ces"
+          }
+        },
+        "image_f3KBfG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/speeker_copy.png",
+            "alt_text": "Banner Content Image"
+          }
+        }
+      },
+      "block_order": [
+        "title_B3TJDq",
+        "image_f3KBfG"
+      ],
+      "settings": {
+        "container": "1770",
+        "banner_image": "shopify:\/\/shop_images\/PR_servives2.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 30,
+        "desktop_height": 80
+      }
+    },
+    "pr_header_section_QBztMj": {
+      "type": "pr-header-section",
+      "settings": {
+        "container": "1770",
+        "desktop_margin_top": 100,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 60,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "why_choose_pr_services_cAgtVA": {
+      "type": "why-choose-pr-services",
+      "blocks": {
+        "feature_6N3n3f": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card1.png",
+            "title": "Experienced Team",
+            "description": "<p>Our team of seasoned PR<br\/>professionals has a proven track<br\/>record of securing placements in<br\/>top-tier media outlets.<\/p>"
+          }
+        },
+        "feature_ViXFNN": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card2.png",
+            "title": "Measurable Results",
+            "description": "<p>We track key metrics to ensure<br\/>your PR campaigns are delivering<br\/>a return on investment.<\/p>"
+          }
+        },
+        "feature_a9Gqfk": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card3.png",
+            "title": "Strategic Approach",
+            "description": "<p>We take the time to understand your unique brand story and develop a targeted PR strategy that aligns with your overall business goals.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_6N3n3f",
+        "feature_ViXFNN",
+        "feature_a9Gqfk"
+      ],
+      "settings": {
+        "container": "1770",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "detailed_pr_services_PifxxH": {
+      "type": "detailed-pr-services",
+      "blocks": {
+        "service_cCQG3k": {
+          "type": "service",
+          "settings": {
+            "title": "Press Release Writing &Distribution",
+            "description": "<p>We write and share exciting news about your business. Our team helps your announcements reach more people by sharing them with newspapers, websites, and other places where people can read them.<\/p>"
+          }
+        },
+        "service_V7TngG": {
+          "type": "service",
+          "settings": {
+            "title": "Event & Fashion ShowEnrollment",
+            "description": "<p>Get chance to Enroll in event & fashion shows to showcase your talent. We help you to stand at the right event & fashion show. We handle everything, from finding the Event & Show that suits to your talent, to making sure everything goes smoothly and matches your talent.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "service_cCQG3k",
+        "service_V7TngG"
+      ],
+      "settings": {
+        "container": "1770",
+        "background_color": "#845ec2",
+        "heading_start": "Our Detailed",
+        "heading_featured": "PR Services",
+        "sub_text": "",
+        "content_image": "shopify:\/\/shop_images\/side-image.jpg",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "benefits_section_Mh6WKE": {
+      "type": "benefits-section",
+      "blocks": {
+        "feature_FYQEeq": {
+          "type": "feature",
+          "settings": {
+            "title": "Increased Brand Awareness",
+            "image": "shopify:\/\/shop_images\/element1.png",
+            "title_color": "",
+            "description": "<p>Get your brand noticed by a wider audience.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        },
+        "feature_qJp87i": {
+          "type": "feature",
+          "settings": {
+            "title": "Enhanced Credibility",
+            "image": "shopify:\/\/shop_images\/element2.png",
+            "title_color": "",
+            "description": "<p>Build trust and establish yourself as an authority in your field.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        },
+        "feature_eniLfT": {
+          "type": "feature",
+          "settings": {
+            "title": "Improved Customer Engagement",
+            "image": "shopify:\/\/shop_images\/element3.png",
+            "title_color": "",
+            "description": "<p>Drive more traffic to your website and attract new customers.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        },
+        "feature_kk3YHW": {
+          "type": "feature",
+          "settings": {
+            "title": "Boosted Sales and Revenue",
+            "image": "shopify:\/\/shop_images\/element4.png",
+            "title_color": "",
+            "description": "<p>Generate leads and convert them into paying customers.<\/p>",
+            "description_color": "",
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_FYQEeq",
+        "feature_qJp87i",
+        "feature_eniLfT",
+        "feature_kk3YHW"
+      ],
+      "settings": {
+        "container": "1770",
+        "heading_start": "",
+        "heading_featured": "",
+        "heading_end": "",
+        "sub_text": "",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "cta_section_8fYhrF": {
+      "type": "cta-section",
+      "settings": {
+        "container": "1770",
+        "heading": "",
+        "sub_text": "",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 0,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 0,
+        "button_text": "SEE OUR PLANS",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_subtext": "No credit card required!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_with_text_fJYgf8",
+    "pr_header_section_QBztMj",
+    "why_choose_pr_services_cAgtVA",
+    "detailed_pr_services_PifxxH",
+    "benefits_section_Mh6WKE",
+    "cta_section_8fYhrF"
+  ]
+}
