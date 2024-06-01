@@ -49,7 +49,7 @@
             .section-header-navigation:not(.scrolled-past-header) .header-hamburger--transparent .header__icon:hover svg {fill: {{section.settings.transparent_color_hover}}}
             .section-header-navigation:not(.scrolled-past-header) .header-hamburger--transparent .stroke-icon {stroke: {{section.settings.transparent_color}}}
             .section-header-navigation:not(.scrolled-past-header) .header-hamburger--transparent .stroke-icon:hover{stroke: {{section.settings.transparent_color_hover}}}
-            /* .section-header-navigation:not(.scrolled-past-header) .header-hamburger--transparent .logo__main {display: none} */
+            .section-header-navigation:not(.scrolled-past-header) .header-hamburger--transparent .logo__main {display: none}
             .scrolled-past-header .header-nav-hamburger .logo--transparent{display: none}
             .shopify-section-header-hidden .header-navigation-wrapper {transform: translateY(-100%);}
         {%- endif -%}
@@ -94,7 +94,10 @@
         .halo-language-currency-sidebar .halo-sidebar-close{top:35px}
         .shopify-section:not(.scrolled-past-header) .header-nav-hamburger--style1 .main-menu .container{max-width:inherit;transition:max-width .3s cubic-bezier(.52,0,.61,.99)}
         .header-nav-hamburger .halo-language-currency-sidebar .disclosure__item {text-align: left}
-        .header-nav-hamburger--style1 .header-item--side {min-width: 300px}
+        .header-nav-hamburger--style1 .header-item--side {
+            /* min-width: 300px */
+            min-width:235px
+        }
         .header-nav-hamburger .header-item:first-child {justify-content: flex-start}.header-nav-hamburger .header-item:nth-child(2){justify-content: center}.header-nav-hamburger .header-item:nth-child(3) {justify-content: flex-end}.header-nav-hamburger .header-icons .link-effect>span:after, .header-nav-hamburger .header-icons .link-effect:hover>span:after{background:var(--header_icons_color_hover)}.header-nav-hamburger .header__icon--account .text {font-size: var(--text_font_size)}.header-nav-hamburger .header__icon--account .text-bold {font-weight: var(--font-weight-medium)}.header-nav-hamburger .header__icon--search .icon-search{margin-top: 1px}
         {%- if settings.enable_layout_rtl -%}
             .layout_rtl.lang-currency-sidebar-show .halo-language-currency-sidebar {left:calc(var(--page-content-distance) * -1)}.layout_rtl.lang-currency-sidebar-show .halo-language-currency-sidebar {right: auto;left:calc(var(--page-content-distance) * -1)}
@@ -128,7 +131,7 @@
                         <a href="{{ routes.root_url }}" class="header__heading-link focus-inset d-flex flex-align-center">
                             {%- liquid 
                                 assign logo_transparent = block.settings.logo_transparent
-                                assign check_transparent = false
+                                assign check_transparent = true
                                 if request.page_type == 'index' and section.settings.enable_transparent and logo_transparent != blank
                                     assign check_transparent = true                                    
                                 endif
@@ -140,9 +143,9 @@
                                 {%- assign logo_width_img = logo_width | append: 'x' -%}
                                 {%- assign logo_width_retina = logo_width | times: 2 | append: 'x'  -%}
                                 {%- assign logo_height = logo_width | divided_by: logo.aspect_ratio | round -%}
-                                {%- if logo != blank -%}
+                                {%- if logo != blank  -%}
                                     <img srcset="{{ logo | img_url: logo_width_img }}, {{ logo | img_url: logo_width_retina }} 2x" src="{{ logo | img_url: logo_width_img }}" loading="lazy" class="header__heading-logo logo__main w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
-                                {%- endif -%}
+                                {%- endif -%} 
                                 {%- if check_transparent -%}
                                     <img srcset="{{ logo_transparent | img_url: logo_width_img }}, {{ logo_transparent | img_url: logo_width_retina }} 2x" src="{{ logo_transparent | img_url: logo_width_img }}" loading="lazy" class="header__heading-logo logo--transparent d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
                                 {%- endif -%}

@@ -1,5 +1,17 @@
 {
   "sections": {
+    "hero_banner_image_tfnhTw": {
+      "type": "hero-banner-image",
+      "settings": {
+        "desktop_banner_image": "shopify:\/\/shop_images\/PR_servives2.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 10,
+        "mobile_min_height": 200,
+        "desktop_height": 50,
+        "desktop_min_height": 200
+      }
+    },
     "main": {
       "type": "main-cart",
       "settings": {
@@ -144,6 +156,7 @@
     }
   },
   "order": [
+    "hero_banner_image_tfnhTw",
     "main",
     "16497261635f6f948e"
   ]

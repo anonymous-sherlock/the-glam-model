@@ -2,19 +2,26 @@
   assign banner_image = section.settings.banner_image
   assign object_fit = section.settings.object_fit
   assign desktop_height = section.settings.desktop_height
+  assign desktop_min_height = section.settings.desktop_min_height
   assign mobile_height = section.settings.mobile_height
+  assign mobile_min_height = section.settings.mobile_min_height
   assign image_blocks = section.blocks | where: 'type', 'image'
   assign image_blocks = image_blocks[0]
+  assign title_blocks = section.blocks | where: 'type', 'title'
+  assign title_blocks = title_blocks[0]
 %}
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   .hero_banner{
       width: 100%;
       height: {{ desktop_height | append: 'vh'}};
-      min-height: 600px;
+      min-height: {{desktop_min_height | append: 'px'}};
+      background-color: black;
+      background-image: url({{ banner_image | image_url }});
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: var(--bg-fit);
       overflow-x: clip;
   }
   .banner_filler_image{
@@ -28,16 +35,28 @@
       height: 100%;
   }
   .banner_container .row{
-      display: flex;
-      height: 100%;
+    display: flex;
+    height: 100%;
   }
   .page_title_container{
-       width: 50%;
-       flex: 0 0 auto;
-       display: flex;
-       justify-content: start;
-       align-items: center;
+    width: 50%;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
   }
+  .page_title_container.style_2{
+    justify-content: center;
+    align-items: center;
+    color: #845ec2;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
+
   .banner_filler_image{
     position: absolute;
     bottom: -4%;
@@ -46,18 +65,25 @@
     padding: 0;
   }
   .page_title_container .heading{
-    color: #fff;
-    font-weight: 700;
+    color: inherit;
+    font-weight: 900;
     font-size: clamp(4rem, 5vw, 170px);
     line-height: 1;
+    margin: 0;
   }
-  .page_title_container .heading .halfStyled {
-    color:white;
+  .page_title_container.style_2 .sub_title{
+    color: white;
+    font-size: clamp(18px,3vw,20px);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 15px;
+    margin: 0;
+    margin-top: 8px;
   }
   @media screen and (max-width:1024px) {
     .hero_banner {
           height: {{ mobile_height | append: 'vh'}};
-          min-height: 400px;
+          min-height:{{mobile_min_height | append: 'px'}};
       }
 
       .page_title_container .heading {
@@ -83,23 +109,23 @@
 </style>
 <section
   class="hero_banner"
-  style="
-    background: url('{{ banner_image | image_url }}') center;
-    background-size: {{ object_fit | default: 'cover' }};
-  "
+  style="--bg-fit:{{ object_fit | default: 'cover' }};"
 >
   <div class="banner_container container container-{{ section.settings.container }}">
     <div class="row relative">
-      <div class="page_title_container">
-        <h1 class="heading">PR Serv<span class="halfStyled" data-content="i">i</span>ces</h1>
+      <div class="page_title_container {{title_blocks.settings.title_style}}">
+        <h1 class="heading">{{ title_blocks.settings.title }}</h1>
+        <p class="sub_title">{{ title_blocks.settings.sub_title }}</p>
       </div>
-      <img
-        src="{{ image_blocks.settings.image |  image_url  }}"
-        class="banner_filler_image"
-        alt=""
-        width=""
-        height=""
-      >
+      {%- if image_blocks.settings.image != blank -%}
+        <img
+          src="{{ image_blocks.settings.image |  image_url  }}"
+          class="banner_filler_image"
+          alt=""
+          width=""
+          height=""
+        >
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -171,8 +197,17 @@
       "default": 50,
       "min": 10,
       "max": 100,
-      "step": 1,
-      "unit": "vh"
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile_min_height",
+      "label": "Mobile Height (px)",
+      "default": 280,
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px"
     },
     {
       "type": "range",
@@ -181,8 +216,17 @@
       "default": 80,
       "min": 10,
       "max": 100,
-      "step": 1,
-      "unit": "vh"
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "desktop_min_height",
+      "label": "Desktop Height (px)",
+      "default": 550,
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px"
     }
   ],
   "blocks": [
@@ -207,19 +251,30 @@
       "type": "title",
       "settings": [
         {
-          "type": "text",
-          "id": "title_start",
-          "label": "Title Start"
+          "type": "select",
+          "id": "title_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "style_1",
+              "label": "Style 1"
+            },
+            {
+              "value": "style_2",
+              "label": "Style 2"
+            }
+          ],
+          "default": "style_2"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
         },
         {
           "type": "text",
-          "id": "featured_title",
-          "label": "Featured Title"
-        },
-        {
-          "type": "text",
-          "id": "title_end",
-          "label": "Title End"
+          "id": "sub_title",
+          "label": "Sub Title"
         }
       ]
     }

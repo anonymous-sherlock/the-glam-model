@@ -8,11 +8,13 @@
     "hero_banner_image_qYhqkc": {
       "type": "hero-banner-image",
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/smm-banner.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/smm-banner.jpg",
         "image_alt": "",
         "object_fit": "cover",
-        "mobile_height": 15,
-        "desktop_height": 55
+        "mobile_height": 40,
+        "mobile_min_height": 280,
+        "desktop_height": 60,
+        "desktop_min_height": 500
       }
     },
     "smm_presence_section_TcEnRU": {
@@ -21,15 +23,15 @@
         "title_y4GwPp": {
           "type": "title",
           "settings": {
-            "title": "Take Control of Your Social Media",
-            "featured_title": "Presence.",
-            "sub_title": "Unplash the Power with Glam Models Social Management Services."
+            "title": "Rule the Social Media",
+            "featured_title": "Game!",
+            "sub_title": ""
           }
         },
         "content_F8bRPF": {
           "type": "content",
           "settings": {
-            "description": "<p>In today's digital age, social media is no longer just a placeto connect with friends and family. It's a powerful marketing tool that can help brands & models of all sizes to reach new audiences, build brand awareness, and drive sales. However, managing multiple social media accounts can be a time-consuming and complex task. That's where our social media management services come in.s<\/p>"
+            "description": "<p>Social Media is the fashion industry's BFF. It is not just for sharing pics, it's the ultimate recipe for models and the fashion industry. This is not a secret weapon anymore. If you wanna dominate the fashion scene, you gonna have to play it well. You have to connect with fans and collab with brands like a boss. <\/p><p>Don’t have time? How to do it? Ease down! We are going to help you. With every post, story, and reel, we will create a wave of magic. We have got the secret sauce to take your online presence from “hmm” to “Wow.”<\/p>"
           }
         }
       },
@@ -40,7 +42,7 @@
       "settings": {
         "container": "1170",
         "background_color": "#e2dcdc",
-        "content_image": "shopify:\/\/shop_images\/smm022-removebg-preview.png",
+        "content_image": "shopify:\/\/shop_images\/4_GIRLS_FOR_SMM_PAGE_1.jpg",
         "desktop_margin_top": 0,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 0,
@@ -53,33 +55,33 @@
         "items_WjCGkL": {
           "type": "items",
           "settings": {
-            "title": "The Mountains",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt quibusdam corrupti aut, recusandae alias dolores ex expedita quaerat a in et.<\/p>",
-            "image": "shopify:\/\/shop_images\/1623123014_3-pibig_info-p-znachenie-vodi-v-prirode-priroda-krasivo-f-3.jpg"
+            "title": "Instagram Growth",
+            "description": "<p>Get your Instagram Reeling! We drive engagement, followers, and overall vibe, making sure that you are always trending.<\/p>",
+            "image": "shopify:\/\/shop_images\/insta_growth.jpg"
           }
         },
         "items_G764yk": {
           "type": "items",
           "settings": {
-            "title": "The Mountains",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt quibusdam corrupti aut, recusandae alias dolores ex expedita quaerat a in et.<\/p>",
-            "image": "shopify:\/\/shop_images\/1647169883_1-sportishka-com-p-prozrachnii-led-baikala-turizm-krasivo-fot-1.jpg"
+            "title": "Content Creation",
+            "description": "<p>Get drool-worthy content! Be the star of every content that highlights your charisma and keeps your feed looking flawless.<\/p>",
+            "image": "shopify:\/\/shop_images\/content_creator.jpg"
           }
         },
         "items_eWQgct": {
           "type": "items",
           "settings": {
-            "title": "The Mountains",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt quibusdam corrupti aut, recusandae alias dolores ex expedita quaerat a in et.<\/p>",
-            "image": "shopify:\/\/shop_images\/j-lee-FkQT9PXZIM0-unsplash.jpg"
+            "title": "Portfolio Management",
+            "description": "<p>Showcase your best self! Glam Models will organize and curate portfolios to climb the ladder higher.<\/p>",
+            "image": "shopify:\/\/shop_images\/portfolio.jpg"
           }
         },
         "items_ENnKe3": {
           "type": "items",
           "settings": {
-            "title": "The Mountains",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt quibusdam corrupti aut, recusandae alias dolores ex expedita quaerat a in et.<\/p>",
-            "image": "shopify:\/\/shop_images\/1623572328_14-pibig_info-p-zimnie-gori-priroda-krasivo-foto-14.jpg"
+            "title": "Digital Advertisement",
+            "description": "<p>Get the brands calling!<strong> <\/strong>We plan targeted ad campaigns that put you front and center, catching the eye of top fashion and beauty brands.<\/p>",
+            "image": "shopify:\/\/shop_images\/digital_advertisment.jpg"
           }
         }
       },
@@ -91,10 +93,10 @@
       ],
       "settings": {
         "container": "1170",
-        "heading_start": "Explore Our Offer",
+        "heading_start": "Change the Soc",
         "heading_featured": "i",
-        "heading_end": "ngs",
-        "sub_text": "<p>Here are a few areas of expertise we specialize in.<\/p>",
+        "heading_end": "al Landscape",
+        "sub_text": "<p>Glam Models has got the inside scoop to take your social media to a new level. Let’s show the world what you have got in a captivating way.<\/p>",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
@@ -107,25 +109,25 @@
         "feature_hahYTe": {
           "type": "feature",
           "settings": {
-            "title": "4+ years’ experience",
-            "description": "<p>Theglammodel takes pride as we have been providing our services to models and photographers for 4+ years now. We have strong networks in the industry. We have knowledge and experience that serve models and photographers with opportunities and possibilities that further help in career growth.<\/p>",
-            "image": "shopify:\/\/shop_images\/2-bg.webp"
+            "title": "Expert team - We have got the know-how",
+            "description": "<p>Our squad consists of the best professionals who know the modeling game in and out. We are talking about top-tier photographers, stylists, and coaches. From posing to portfolio creation, we have got your back. <\/p>",
+            "image": "shopify:\/\/shop_images\/expert_team.jpg"
           }
         },
         "feature_3nicdq": {
           "type": "feature",
           "settings": {
-            "title": "Customized package as per our client’s need",
-            "description": "<p>We understand that one package doesn't fit all, which is why we offer customized packages to perfectly suit your specific needs.<\/p>",
-            "image": "shopify:\/\/shop_images\/3-bg.jpg"
+            "title": "Experience Pros - We have seen it all",
+            "description": "<p>Whether it is print or digital, we have been around the block. We have seen and done it all, and our track record speaks for itself. We are seasoned, savvy, and ready to share our wisdom with you. <\/p>",
+            "image": "shopify:\/\/shop_images\/print_or_digital.jpg"
           }
         },
         "feature_dTW7w9": {
           "type": "feature",
           "settings": {
-            "title": "Expert team",
-            "description": "<p>Our expert team consists of talent explorers, managers, and creative<br\/>                                            professionals, collaborators to shape and elevate the careers of the models.<br\/>                                            These experts provide a path to a successful career. We have a dedicated and<br\/>                                            hardworking team. <\/p>",
-            "image": "shopify:\/\/shop_images\/1-bg.webp"
+            "title": "Unique Personalization - Exclusively for you",
+            "description": "<p>One size fits all? Not here. We know every artist is unique, and we match their vibe. Whether you are a catwalk queen, a commercial star, or somewhere in between, we’ve got the perfect plan to make you shine.<\/p>",
+            "image": "shopify:\/\/shop_images\/exclusively_for_you.jpg"
           }
         }
       },
@@ -136,100 +138,14 @@
       ],
       "settings": {
         "container": "1170",
-        "heading_start": "Here",
-        "heading_featured": "'",
-        "heading_end": "s Why You Need Us",
-        "sub_text": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, veniam.<\/p>",
+        "heading_start": "Modell",
+        "heading_featured": "i",
+        "heading_end": "ng Pros Love Us",
+        "sub_text": "<p>We don’t just go by the name, we go by the work. We have our fair share in the successful stories of our clients. Yeah, we know the biz.<\/p>",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
         "mobile_margin_bottom": 20
-      }
-    },
-    "work_flow_section_aXJAQP": {
-      "type": "work-flow-section",
-      "blocks": {
-        "feature_beDEgi": {
-          "type": "feature",
-          "settings": {
-            "title": "Audit your Instagram handle",
-            "description": "<p>With the help of our modeling agency's professional Instagram handle audit, you can improve your online exposure and make your profile stand out in the competitive world of fashion.<\/p>",
-            "image": "shopify:\/\/shop_images\/dadbae.png"
-          }
-        },
-        "feature_UjQEPC": {
-          "type": "feature",
-          "settings": {
-            "title": "Understand your profile",
-            "description": "<p>At our modeling agency, we carefully look at and understand your profile to create customized plans that will highlight your special qualities and help you advance your career in the constantly evolving industry.<\/p>",
-            "image": "shopify:\/\/shop_images\/uyp.png"
-          }
-        },
-        "feature_XpeB9U": {
-          "type": "feature",
-          "settings": {
-            "title": "Create goals",
-            "description": "<p>Our modeling agency provides models with a 'Create Goals' service that helps them set attainable goals and reach their maximum potential in the rapid world of fashion.<\/p>",
-            "image": "shopify:\/\/shop_images\/Create_goals.png"
-          }
-        },
-        "feature_mQ9jQL": {
-          "type": "feature",
-          "settings": {
-            "title": "Develop a strategy by an expert",
-            "description": "<p>Our modeling agency uses the experience of experienced professionals to create a customized plan that helps models succeed by guiding them through the world of the industry with knowledge and precision.<\/p>",
-            "image": "shopify:\/\/shop_images\/dasbae.png"
-          }
-        },
-        "feature_V6b4HE": {
-          "type": "feature",
-          "settings": {
-            "title": "Design Profile",
-            "description": "<p>Our modeling agency focuses on creating attractive profiles that highlight each model's unique personality, as well as creating interesting narratives that help promote an appealing charm in the competitive industry.<\/p>",
-            "image": "shopify:\/\/shop_images\/design_profile.png"
-          }
-        },
-        "feature_YVE9rQ": {
-          "type": "feature",
-          "settings": {
-            "title": "Content Creation & Sharing",
-            "description": "<p>We provide creative shoots, photographs, and videos that uniquely highlight models. We do this in a creative and planned way to help models become renowned in the industry<\/p>",
-            "image": "shopify:\/\/shop_images\/cc_s.png"
-          }
-        },
-        "feature_FCk4rN": {
-          "type": "feature",
-          "settings": {
-            "title": "Track content performance",
-            "description": "<p>We make sure you get known and gain popularity in the industry by tracking how many people like your photos and videos.<\/p>",
-            "image": "shopify:\/\/shop_images\/tcp.png"
-          }
-        },
-        "feature_jfq3bE": {
-          "type": "feature",
-          "settings": {
-            "title": "Reporting to clients",
-            "description": "<p>we give simple reports to our clients about updates, making sure they know and feel happy with the work we're doing for them.<\/p>",
-            "image": "shopify:\/\/shop_images\/rtc.png"
-          }
-        }
-      },
-      "block_order": [
-        "feature_beDEgi",
-        "feature_UjQEPC",
-        "feature_XpeB9U",
-        "feature_mQ9jQL",
-        "feature_V6b4HE",
-        "feature_YVE9rQ",
-        "feature_FCk4rN",
-        "feature_jfq3bE"
-      ],
-      "settings": {
-        "container": "1170",
-        "desktop_margin_top": 40,
-        "desktop_margin_bottom": 0,
-        "mobile_margin_top": 50,
-        "mobile_margin_bottom": 0
       }
     },
     "pricing_plan_section_gCLcDi": {
@@ -238,79 +154,79 @@
         "plan_feature_bmTacL": {
           "type": "plan_feature",
           "settings": {
-            "title": "Monthly Email Sends",
-            "hover_content": "Monthly Email Sends",
-            "basic_plan_content": "5,000",
-            "standard_plan_content": "16,000",
-            "premium_plan_content": "150,000"
+            "title": "Content Enhancement",
+            "hover_content": "Utilizing various content tactics, like stories, reels, photos, videos, and social posts, to keep your followers hooked.",
+            "basic_plan_content": "4 Posts + 2 Reels\/2 Tiktok video editing",
+            "standard_plan_content": "6 Posts + 3 Reels + Collab post",
+            "premium_plan_content": "10 posts + 5 reels + Collab post"
           }
         },
         "plan_feature_mzjTb8": {
           "type": "plan_feature",
           "settings": {
-            "title": "Users",
-            "hover_content": "Users",
-            "basic_plan_content": "3 Seats",
-            "standard_plan_content": "5 Seats",
-            "premium_plan_content": "Unlimited"
+            "title": "Bio Optimization",
+            "hover_content": "Crafting a compelling bio that attracts the audience and showcases your personality and story.",
+            "basic_plan_content": "true",
+            "standard_plan_content": "true",
+            "premium_plan_content": "true"
           }
         },
         "plan_feature_qytGbH": {
           "type": "plan_feature",
           "settings": {
-            "title": "Audiences",
-            "hover_content": "Audiences",
-            "basic_plan_content": "3 Audiences",
-            "standard_plan_content": "5 Audiences",
-            "premium_plan_content": "<i class=\"fa-solid fa-infinity\"><\/i>"
+            "title": "Hashtag Optimization",
+            "hover_content": "Posting content along with a unique hashtag approach to make you trending on social media.",
+            "basic_plan_content": "true",
+            "standard_plan_content": "true",
+            "premium_plan_content": "true"
           }
         },
         "plan_feature_wXyrmK": {
           "type": "plan_feature",
           "settings": {
-            "title": "24\/7 Email & Chat Support",
-            "hover_content": "24\/7 Email & Chat Support",
-            "basic_plan_content": "24\/7 Email & Chat Support",
-            "standard_plan_content": "24\/7 Email & Chat Support",
-            "premium_plan_content": "Phone & Priority Support"
+            "title": "Post Scheduling",
+            "hover_content": "Plan and schedule your posts at optimal times to reach the maximum audience.",
+            "basic_plan_content": "true",
+            "standard_plan_content": "true",
+            "premium_plan_content": "true"
           }
         },
         "plan_feature_X7nhmA": {
           "type": "plan_feature",
           "settings": {
-            "title": "Pre-built Email Templates",
-            "hover_content": "Pre-built Email Templates",
-            "basic_plan_content": "true",
-            "standard_plan_content": "true",
-            "premium_plan_content": "<i class=\"fa-solid fa-infinity\"><\/i>"
+            "title": "Instant Assistance",
+            "hover_content": "Get quick and reliable support whenever you need help with social media strategies or technical issues.",
+            "basic_plan_content": "Chat & Email",
+            "standard_plan_content": "Chat & Email",
+            "premium_plan_content": "Chat & Call, Chat & Email"
           }
         },
         "plan_feature_CjCxgW": {
           "type": "plan_feature",
           "settings": {
-            "title": "300+ Integrations",
-            "hover_content": "300+ Integrations",
-            "basic_plan_content": "true",
-            "standard_plan_content": "true",
-            "premium_plan_content": "true"
+            "title": "Website Portfolio Creation",
+            "hover_content": "Creating a stunning portfolio that effectively showcases your best work and achievements.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
+            "standard_plan_content": "Digital and Physical copy",
+            "premium_plan_content": "Digital and Physical copy"
           }
         },
         "plan_feature_GHaxFY": {
           "type": "plan_feature",
           "settings": {
-            "title": "Reporting & Analytics",
-            "hover_content": "Reporting & Analytics",
-            "basic_plan_content": "Limited",
-            "standard_plan_content": "true",
-            "premium_plan_content": "true"
+            "title": "Monthly Analytics Report",
+            "hover_content": "Get detailed monthly reports giving you insight on clicks, likes, engagements, and views.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
+            "standard_plan_content": "Detailed Metrics & Growth by Expert",
+            "premium_plan_content": "Detailed Metrics & Growth by Expert"
           }
         },
         "plan_feature_d3wnPH": {
           "type": "plan_feature",
           "settings": {
-            "title": "Forms & Landing Pages",
-            "hover_content": "Forms & Landing Pages",
-            "basic_plan_content": "true",
+            "title": "Audience Interaction",
+            "hover_content": "Organizing proactive live sessions to engage with your followers to build a loyal base.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
             "standard_plan_content": "true",
             "premium_plan_content": "true"
           }
@@ -318,9 +234,39 @@
         "plan_feature_rB6Ymc": {
           "type": "plan_feature",
           "settings": {
-            "title": "Creative Assistant",
-            "hover_content": "Creative Assistant",
-            "basic_plan_content": "Limited",
+            "title": "Magazine Submission",
+            "hover_content": "Connecting with digital and print magazines to get published, increasing your credibility and reach.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
+            "standard_plan_content": "Confirm 1 issue with free digital copy",
+            "premium_plan_content": "Confirm 1 issue with free front cover, free digital copy"
+          }
+        },
+        "plan_feature_EwHfzM": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Community Engagement",
+            "hover_content": "Arranging event participation to connect with key individuals and groups in the industry.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
+            "standard_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
+            "premium_plan_content": "true"
+          }
+        },
+        "plan_feature_zpY6fW": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Photoshoot",
+            "hover_content": "Regular photoshoot sessions for various magazines to give you the exposure you need.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
+            "standard_plan_content": "Choose from 100+ photographers with 15% discount",
+            "premium_plan_content": "Choose from 100+ photographers with 20% discount"
+          }
+        },
+        "plan_feature_XrjmnM": {
+          "type": "plan_feature",
+          "settings": {
+            "title": "Pr Activities",
+            "hover_content": "Managing all the press activities and paparazzi to maintain a positive public image.",
+            "basic_plan_content": "<i class=\"fa-solid fa-xmark\"><\/i>",
             "standard_plan_content": "true",
             "premium_plan_content": "true"
           }
@@ -335,7 +281,10 @@
         "plan_feature_CjCxgW",
         "plan_feature_GHaxFY",
         "plan_feature_d3wnPH",
-        "plan_feature_rB6Ymc"
+        "plan_feature_rB6Ymc",
+        "plan_feature_EwHfzM",
+        "plan_feature_zpY6fW",
+        "plan_feature_XrjmnM"
       ],
       "settings": {
         "container": "1170",
@@ -351,16 +300,79 @@
         "plan_type": "month",
         "custom_pricing_text": "",
         "custom_pricing_link": "shopify:\/\/pages\/contact",
+        "currency": "USD",
         "show_currency_icon": true,
         "basic_plan_name": "Essentials",
-        "basic_plan_price": "20,000",
-        "basic_plan_url": "",
+        "basic_plan_price": "69.99",
+        "basic_plan_url": "https:\/\/buy.stripe.com\/test_cN24hH4YCcbYeB2cMM",
         "standard_plan_name": "Standard",
-        "standard_plan_price": "40,599",
+        "standard_plan_price": "99.99",
         "standard_plan_url": "",
         "premium_plan_name": "Premium",
-        "premium_plan_price": "",
+        "premium_plan_price": "149.99",
         "premium_plan_url": ""
+      }
+    },
+    "work_flow_section_aXJAQP": {
+      "type": "work-flow-section",
+      "blocks": {
+        "feature_beDEgi": {
+          "type": "feature",
+          "settings": {
+            "title": "Instagram Audit",
+            "description": "<p>Get your Insta game on point with our analytical audit. We fetch the details like no one ever did and outline the needs accordingly. <\/p>",
+            "image": "shopify:\/\/shop_images\/dadbae.png"
+          }
+        },
+        "feature_UjQEPC": {
+          "type": "feature",
+          "settings": {
+            "title": "Understand Your Profile",
+            "description": "<p>We’re gonna get all up in your profile, figuring out what makes you unique. Our experts will derive a perfect recipe for you to bring the spotlight on you.<\/p>",
+            "image": "shopify:\/\/shop_images\/uyp.png"
+          }
+        },
+        "feature_mQ9jQL": {
+          "type": "feature",
+          "settings": {
+            "title": "Implement the Right Strategy",
+            "description": "<p>Our A-team of fashion gurus will get the campaign rolling for you, guiding you through the fashion maze like a boss.<\/p>",
+            "image": "shopify:\/\/shop_images\/dasbae.png"
+          }
+        },
+        "feature_V6b4HE": {
+          "type": "feature",
+          "settings": {
+            "title": "Revamp the Profile",
+            "description": "<p>Glam Models is going to design eye-catching profiles that scream your unique style and tell your story in a way that is pure fire.<\/p>",
+            "image": "shopify:\/\/shop_images\/design_profile.png"
+          }
+        },
+        "feature_FCk4rN": {
+          "type": "feature",
+          "settings": {
+            "title": "Buzz Check",
+            "description": "<p>Watch your popularity soar as we track the engagement on all your pics, videos, and stories. Planning and pacing accordingly to push you further.<\/p>",
+            "image": "shopify:\/\/shop_images\/tcp.png"
+          }
+        }
+      },
+      "block_order": [
+        "feature_beDEgi",
+        "feature_UjQEPC",
+        "feature_mQ9jQL",
+        "feature_V6b4HE",
+        "feature_FCk4rN"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "Our&nbsp;",
+        "heading_featured": "Work",
+        "heading_end": "Flow",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 0,
+        "mobile_margin_top": 50,
+        "mobile_margin_bottom": 0
       }
     }
   },
@@ -370,7 +382,7 @@
     "smm_presence_section_TcEnRU",
     "explore_our_offerings_YfBaXF",
     "why_you_need_us_smm_a3VDd7",
-    "work_flow_section_aXJAQP",
-    "pricing_plan_section_gCLcDi"
+    "pricing_plan_section_gCLcDi",
+    "work_flow_section_aXJAQP"
   ]
 }

@@ -52,6 +52,7 @@
   display: block;
   aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 50%;
 }
 .testimonial-section .row .tabs li::before {
   position: absolute;

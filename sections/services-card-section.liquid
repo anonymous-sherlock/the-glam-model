@@ -10,6 +10,10 @@
 -%}
 {{ 'nionx-icons.css' | asset_url | stylesheet_tag }}
 <style>
+  .service_card_section{
+    margin-top: {{ desktop_margin_top | append: 'px' }};
+    margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+  }
   .service_card_section {
     position: relative;
     padding: 60px 0;
@@ -48,7 +52,6 @@
     text-transform: uppercase;
     margin-bottom: 8px;
   }
-
   .sec-title__title {
     color: var(--nionx-title, #1d1729);
     font-size: 30px;
@@ -63,7 +66,6 @@
     font-size: clamp(14px, 2vw, 16px);
     color: var(--nionx-text, #6c6a72);
   }
-
   .service_card_section .card_row {
     display: flex;
     justify-content: center;
@@ -329,6 +331,10 @@
   }
 
   @media (max-width: 768px) {
+    .service_card_section{
+        margin-top: {{ mobile_margin_top | append: 'px' }};
+        margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+    }
     .service_page__top {
       flex-direction: column;
       gap: 0px;
@@ -366,79 +372,49 @@
     </div>
     <!-- /.service-page__top -->
     <div class="card_row">
-      <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-        <div class="service-card-two__content">
-          <div class="service-card-two__icon">
-            <i class="icon-Search"></i>
+      {% for block in section.blocks %}
+        {% liquid
+          assign card_title = block.settings.title
+          assign card_description = block.settings.description
+          assign card_icon = block.settings.icon
+          assign custom_icon = block.settings.custom_icon
+          assign card_background_shape = block.settings.background_shape
+          assign card_link = block.settings.link
+        %}
+        <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+          <div class="service-card-two__content">
+            <div class="service-card-two__icon">
+              {%- if custom_icon == blank -%}
+                <i class="{{card_icon}}"></i>
+              {%- else -%}
+                {{ custom_icon }}
+              {%- endif -%}
+            </div>
+            <!-- /.service-card-two__price -->
+            <h3 class="service-card-two__title">
+              <a href="{{card_link}}">
+                {{ card_title }}
+              </a>
+            </h3>
+            <!-- /.service-card-two__title -->
+            <div class="service-card-two__text">
+              {{ card_description }}
+            </div>
+            <!-- /.service-card-two__text -->
+            <a href="{{card_link | default:"#"}}" class="service-card-two__link nionx-btn nionx-btn--black"
+              ><span class="service-card-two__link__icon"></span
+            ></a>
+            <!-- /.blog-card__link -->
           </div>
-          <!-- /.service-card-two__price -->
-          <h3 class="service-card-two__title"><a href="search-enginen.html">Search Engine Optimization</a></h3>
-          <!-- /.service-card-two__title -->
-          <p class="service-card-two__text">
-            There are many variations of pssages of Lorem Ipsum available is njected humou, but the majority have
-          </p>
-          <!-- /.service-card-two__text -->
-          <a href="services-details.html" class="service-card-two__link nionx-btn nionx-btn--black"
-            ><span class="service-card-two__link__icon"></span
-          ></a>
-          <!-- /.blog-card__link -->
-        </div>
-        <!-- /.service-card-two__content -->
-        <div class="service-card-two__element">
-          <img src="https://bracketweb.com/nionx-html/assets/images/shapes/line.png" alt height="" width="">
-        </div>
-        <!-- /.service-card-two__element -->
-      </div>
-
-      <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-        <div class="service-card-two__content">
-          <div class="service-card-two__icon">
-            <i class="icon-content-writing-1"></i>
+          <!-- /.service-card-two__content -->
+          <div class="service-card-two__element">
+            {%- if card_background_shape != blank -%}
+              <img src="{{card_background_shape | image_url }}" alt height="" width="">
+            {%- endif -%}
           </div>
-          <!-- /.service-card-two__price -->
-          <h3 class="service-card-two__title"><a href="content-marketing.html">Content Marketing</a></h3>
-          <!-- /.service-card-two__title -->
-          <p class="service-card-two__text">
-            There are many variations of pssages of Lorem Ipsum available is njected humou, but the majority have
-          </p>
-          <!-- /.service-card-two__text -->
-          <a href="services-details.html" class="service-card-two__link nionx-btn nionx-btn--black"
-            ><span class="service-card-two__link__icon"></span
-          ></a>
-          <!-- /.blog-card__link -->
+          <!-- /.service-card-two__element -->
         </div>
-        <!-- /.service-card-two__content -->
-        <div class="service-card-two__element">
-          <img src="https://bracketweb.com/nionx-html/assets/images/shapes/line.png" alt height="" width="">
-        </div>
-        <!-- /.service-card-two__element -->
-      </div>
-
-      <div class="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
-        <div class="service-card-two__content">
-          <div class="service-card-two__icon">
-            <i class="icon-start-up-1"></i>
-          </div>
-          <!-- /.service-card-two__price -->
-          <h3 class="service-card-two__title">
-            <a href="conversion-optimization.html">Conversion Rate Optimization</a>
-          </h3>
-          <!-- /.service-card-two__title -->
-          <p class="service-card-two__text">
-            There are many variations of pssages of Lorem Ipsum available is njected humou, but the majority have
-          </p>
-          <!-- /.service-card-two__text -->
-          <a href="services-details.html" class="service-card-two__link nionx-btn nionx-btn--black"
-            ><span class="service-card-two__link__icon"></span
-          ></a>
-          <!-- /.blog-card__link -->
-        </div>
-        <!-- /.service-card-two__content -->
-        <div class="service-card-two__element">
-          <img src="https://bracketweb.com/nionx-html/assets/images/shapes/line.png" alt height="" width="">
-        </div>
-        <!-- /.service-card-two__element -->
-      </div>
+      {% endfor %}
 
       <!-- /.col-md-6 col-lg-4 -->
     </div>

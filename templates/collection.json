@@ -3,11 +3,13 @@
     "hero_banner_image_h7ULtJ": {
       "type": "hero-banner-image",
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/brand-management-services.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/SHOP_BANNER_2.jpg",
         "image_alt": "",
         "object_fit": "cover",
         "mobile_height": 50,
-        "desktop_height": 60
+        "mobile_min_height": 280,
+        "desktop_height": 60,
+        "desktop_min_height": 450
       }
     },
     "banner": {
@@ -80,6 +82,7 @@
         "show_page_title": true,
         "page_title_alignment": "center",
         "container": "default",
+        "padding_full_width": 0,
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
         "mg_top_mobile": 0,
@@ -145,7 +148,7 @@
         "show_toolbar": true,
         "show_sorting": true,
         "show_item_per_page": true,
-        "show_view_as": true,
+        "show_view_as": false,
         "products_per_page": "10",
         "layout": "5",
         "show_infinite_scrolling": "show_more",
@@ -350,7 +353,8 @@
         "mg_bottom_mobile": 0,
         "rich_text_bg": "#ffffff",
         "rich_text_bg_gradient": "",
-        "enable_column": false
+        "enable_column": false,
+        "content_align": "center"
       }
     },
     "product-recently-viewed": {

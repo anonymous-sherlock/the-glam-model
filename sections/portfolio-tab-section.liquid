@@ -19,6 +19,8 @@
   assign tabs = section.blocks | where: 'type', 'tabs'
   assign items = section.blocks | where: 'type', 'items'
 -%}
+{{ 'nionx-icons.css' | asset_url | stylesheet_tag }}
+
 <style>
   :root {
     --tj-body: #dddddd;
@@ -202,7 +204,7 @@
     line-height: 1;
     position: absolute;
     top: 50%;
-    right: 25px;
+    right: -25px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -327,15 +329,13 @@
 
                 <div class="content-box">
                   {%- if url != blank -%}
-                    <a href="{{url}}">
+                    <a href="{{url}}" style="position: relative;z-index: 99;">
                   {%- endif -%}
                   <h3 class="portfolio-title">{{ title }}</h3>
 
                   {{- description -}}
                   {% if url != blank %}
-                    <a href="{{url}}">
-                      <i class="flaticon-up-right-arrow"></i>
-                    </a>
+                    <i class="icon-left-arrow2"></i>
                   {% endif %}
                   <button
                     data-mfp-src="#portfolio-wrapper"
@@ -372,8 +372,8 @@
     });
 
     // filter items on button click
-    $('.filter-button-group').on('click', 'button', function () {
-      $('.filter-button-group button').removeClass('active');
+    $('.portfolio-section .filter-button-group').on('click', 'button', function () {
+      $('.portfolio-section .filter-button-group button').removeClass('active');
       $(this).addClass('active');
 
       var filterValue = $(this).attr('data-filter');
@@ -381,9 +381,9 @@
     });
 
     function filter_animation() {
-      var active_bg = $('.portfolio-filter .button-group .active-bg');
-      var element = $('.portfolio-filter .button-group .active');
-      $('.portfolio-filter .button-group button').on('click', function () {
+      var active_bg = $('.portfolio-section .portfolio-filter .button-group .active-bg');
+      var element = $('.portfolio-section .portfolio-filter .button-group .active');
+      $('.portfolio-section .portfolio-filter .button-group button').on('click', function () {
         var e = $(this);
         activeFilterBtn(active_bg, e);
       });
@@ -396,9 +396,9 @@
       }
       var leftOff = e.offset().left;
       var width = e.outerWidth();
-      var menuLeft = $('.portfolio-filter .button-group').offset().left;
+      var menuLeft = $('.portfolio-section .portfolio-filter .button-group').offset().left;
       e.siblings().removeClass('active');
-      e.closest('button').siblings().addClass('.portfolio-filter .button-group');
+      e.closest('button').siblings().addClass('.portfolio-section .portfolio-filter .button-group');
       active_bg.css({ left: leftOff - menuLeft + 'px', width: width + 'px' });
     }
     $('#all_portfolio_button').trigger('click');

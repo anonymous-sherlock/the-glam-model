@@ -28,14 +28,14 @@
     line-height: 1.2;
   }
 
-  .work-flow h3 span {
+  .work-flow h3 .featured_title {
     background-color: #845ec2;
     color: white;
     border-radius: 12px;
     padding: 0px 6px;
   }
 
-  .work-flow h3 span-1 {
+  .work-flow h3 span {
     color: #845ec2;
   }
 
@@ -217,8 +217,9 @@
 <section class="work-flow">
   <div class="container container-{{ section.settings.container }}">
     <h3>
-      Our <span>Work</span>
-      <span-1>Flow</span-1>
+      {{- title_start -}}
+      <span class="featured_title">{{- title_feature -}}</span>
+      <span>{{- title_end -}}</span>
     </h3>
     {% for block in section.blocks %}
       {% liquid
@@ -284,6 +285,24 @@
           "label": "t:sections.layout.container.option2"
         }
       ]
+    },
+    {
+      "type": "textarea",
+      "id": "heading_start",
+      "label": "Title Start",
+      "default": "Our&nbsp;"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_featured",
+      "label": "Title Feature",
+      "default": "Work"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_end",
+      "label": "Title End",
+      "default": "Flow"
     },
     {
       "type": "header",

@@ -23,6 +23,7 @@
        text-align: center;
        font-size: 40px;
        font-weight: 600;
+       line-height: 1;
    }
    .magzine_section_header p {
        color: #845ec2;
@@ -153,6 +154,7 @@
           assign featured_title_center = block.settings.title_featured
           assign featured_title_end = block.settings.title_end
           assign featured_description = block.settings.description
+          assign featured_link = block.settings.link
         %}
         <div
           class="magazines_box"
@@ -163,13 +165,25 @@
           {% endunless %}
         >
           <div class="magazines_box_image">
+            {%- if featured_link != blank -%}
+              <a href="{{featured_link}}">
+            {%- endif -%}
             <img src="{{ featured_image | image_url  }}" width="" height="">
+            {%- if featured_link != blank -%}
+              </a>
+            {%- endif -%}
           </div>
           <div class="magazines_box_content">
             <h5 class="content_title">
+              {%- if featured_link != blank -%}
+                <a href="{{featured_link}}">
+              {%- endif -%}
               {{ featured_title_start }}
               <span class="content_featured_title">{{ featured_title_center }}</span>
               {{ featured_title_end }}
+              {%- if featured_link != blank -%}
+                </a>
+              {%- endif -%}
             </h5>
             {{- featured_description -}}
           </div>
@@ -189,6 +203,7 @@
           assign featured_title_center = block.settings.title_featured
           assign featured_title_end = block.settings.title_end
           assign featured_description = block.settings.description
+          assign featured_link = block.settings.link
         %}
         <div
           class="magazines_box"
@@ -199,13 +214,25 @@
           {% endunless %}
         >
           <div class="magazines_box_image">
+            {%- if featured_link != blank -%}
+              <a href="{{featured_link}}">
+            {%- endif -%}
             <img src="{{ featured_image | image_url  }}" width="" height="">
+            {%- if featured_link != blank -%}
+              </a>
+            {%- endif -%}
           </div>
           <div class="magazines_box_content">
             <h5 class="content_title">
+              {%- if featured_link != blank -%}
+                <a href="{{featured_link}}">
+              {%- endif -%}
               {{ featured_title_start }}
               <span class="content_featured_title">{{ featured_title_center }}</span>
               {{ featured_title_end }}
+              {%- if featured_link != blank -%}
+                </a>
+              {%- endif -%}
             </h5>
             {{- featured_description -}}
           </div>
@@ -358,6 +385,11 @@
           "type": "richtext",
           "id": "description",
           "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
         }
       ]
     }

@@ -1,8 +1,17 @@
 {
   "sections": {
-    "banner_video_F6VAYU": {
-      "type": "banner-video",
-      "settings": {}
+    "hero_banner_image_HfLXRi": {
+      "type": "hero-banner-image",
+      "settings": {
+        "desktop_banner_image": "shopify:\/\/shop_images\/FAQ.jpg",
+        "mobile_banner_image": "shopify:\/\/shop_images\/FAQ_banner.jpg",
+        "image_alt": "",
+        "object_fit": "cover",
+        "mobile_height": 40,
+        "mobile_min_height": 280,
+        "desktop_height": 51,
+        "desktop_min_height": 400
+      }
     },
     "main": {
       "type": "main-faqs-page",
@@ -10,21 +19,21 @@
         "15d9d2f4-1bdd-49c8-9a99-58246020f05c": {
           "type": "paragraph",
           "settings": {
-            "title": "Pre Sale Questions",
-            "question_1": "Q: “Will your template be fully compatible with Shopify?”",
-            "answer_1": "<p>Yes it will be<\/p>",
-            "question_2": "Q: “What is included in the theme package?”",
-            "answer_2": "<p>Please make sure that you follow below steps:\n<br><br>\n1\/ Download the package from themeforest.net (The file is in zip format)\n<br><br>\n2\/ Extract the file you've just downloaded (Don't forget this step).\n<br><br>\n3\/ Find this file: ella-x.x.x-sections-ready.zip in the folder Ella Sections Ready x.x.x, then you just need to upload ella-x.x.x-sections-ready.zip file to your Shopify store.\n<br><br>\n- If you would like to use Ella RTL version. Please find this file: ella-x.x.x-sections-ready-rtl.zip in the folder Ella Sections Ready x.x.x RTL, then you just need to upload ella-x.x.x-sections-ready-rtl.zip file to your Shopify store\n<br><br>\n- If you want to install child theme, please go to the corresponding theme folder<\/p>",
-            "question_3": "Q: “Do you guys offer a refund or exchange?”",
-            "answer_3": "<p>To save your time and reach our support quickly, please follow below steps:\n\t<br>\n\t<\/p>\n\t<ul style=\"list-style-type: none; padding: 0; margin: 0; margin-top: 8px;\">\n\t<li class=\"list-item\">\n\t<div class=\"list-circle-container\">\n\t\t<span class=\"list-circle\"><\/span>\n\t<\/div>\n\t<span class=\"list-item-content\">Create a staff account for us (with Themes permission and Settings permission) <a style=\"color: #0688E2;\" href=\"http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members\">http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members<\/a><\/span>\n\t<\/li>\n\t<li class=\"list-item\">\n\t<div class=\"list-circle-container\">\n\t\t<span class=\"list-circle\"><\/span>\n\t<\/div>\n\t<span class=\"list-item-content\">\n\tCapture screenshot or video for the issue you get.\n\t<\/span>\n\t<\/li>\n\t<li class=\"list-item\">\n\t<div class=\"list-circle-container\">\n\t\t<span class=\"list-circle\"><\/span>\n\t<\/div>\n\t<span class=\"list-item-content\">\n\tSpecify which template and version you are using.\n\t<\/span>\n\t<\/li>\n\t<li class=\"list-item\">\n\t<div class=\"list-circle-container\">\n\t\t<span class=\"list-circle\"><\/span>\n\t<\/div>\n\t<span class=\"list-item-content\">\n\tDescribe clearly how to reproduce the issue.\n\t<\/span>\n\t<\/li>\n\t<li class=\"list-item\">\n\t<div class=\"list-circle-container\">\n\t\t<span class=\"list-circle\"><\/span>\n\t<\/div>\n\t<span class=\"list-item-content\">\n\tSend all information (staff account, screenshot, video, template name and version, description of the issues, link) to \n\t<a href=\"mailto:email@domain.com\">email@domain.com<\/a>\n\t<\/span>\n\t<\/li>\n\t<\/ul>\n\t<p><\/p>\n\t<style>\n\t\t.list-item {\n\t\t\tmargin-top: 13px;\n\t\t\theight: max-content;\n\t\t\tdisplay: flex;\n\t\t\tgap: 11px;\n\t}\n\n\t.list-circle-container {\n\t\theight: 100%;\n\t\twidth: 7px;\n\t\tmargin: 0;\n\t\tpadding: 0;\n\t}\n\t\n\t.list-item:first-child {\n\t\tmargin-top: 18px;\n\t}\n\t\n\t.list-circle {\n\t\twidth: 7px;\n\t\theight: 7px;\n\t\tborder-radius: 50%;\n\t\tbackground-color: var(--color-text);\n\t}\n\t\n\t.list-circle:empty {\n\t\tdisplay: inline-block;\n\t}\n\n\t.list-item a {\n\ttext-decoration: underline;\n\t}\n\n\t<\/style>",
-            "question_4": "Q: “Would assistance be available to upload the template if needed?”",
-            "answer_4": "<p>Yes, we will assist you to install the template if needed<\/p>",
-            "question_5": "Q: “Do you guys offer customisation services for your themes?”",
-            "answer_5": "<p> Yes, we do. Please send your customisation requests to email@domain.com, we will give you our quote. Thank you.\n<\/p>",
-            "question_6": "Q: “Do you guys provide customer support during weekends \/ holidays?”",
-            "answer_6": "<p>Normally we don't provide support during weekends, except for urgent cases. In these cases, you only need to mark “Urgent” in your email, we will get back to you ASAP.\n<\/p>",
-            "question_7": "Q: “What I have to do when I need your support?”",
-            "answer_7": "<p>1\/ Create a staff account for us (with Themes permission and Settings permission) <a href=\"http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members\" title=\"http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members\">http:\/\/docs.shopify.com\/manual\/settings\/account\/staff-members<\/a><\/p>\n<p>2\/ Capture screenshot or video for the issue you get.<\/p>\n<p>3\/ Specify which template and version you are using.<\/p>\n<p>4\/ Describe clearly how to reproduce the issue.<\/p>\n<p>5\/ Submit a support ticket at here: <a href=\"https:\/\/halosoft.ticksy.com\/\" title=\"https:\/\/halosoft.ticksy.com\/\">https:\/\/halosoft.ticksy.com\/<\/a>. Our support team will get back to you soonest, please help us to wait.<\/p>",
+            "title": "General Questions",
+            "question_1": "Q: “How do I apply to join Glam Models?”",
+            "answer_1": "<p>It is easy to join Glam Models. Just navigate to the contact us page and fill out the form along with a brief introduction of yourself. Our team will connect with you to explore the opportunities. \n<\/p>",
+            "question_2": "Q: “What services does Glam Models offer?”",
+            "answer_2": "We are here to take every artist to the top of the billboard. We offer customized social media, website &amp; portfolio, and PR services. Along with these you will get mentorship from the fines names in the industry.",
+            "question_3": "Q: “What are your requirements to become a model?”",
+            "answer_3": "We don’t have specific requirements. All we look for individuals full with passion, confidence, and a professional attitude. If you have the fiery attitude, then contact us today.",
+            "question_4": "Q: “What types of models do you represent?”",
+            "answer_4": "For the last four years, we have idealized the diversity in the industry. We have proudly represented fitness, commercial, plus-size, fashion, and sports models.",
+            "question_5": "Q: “How much do you charge for the services?”",
+            "answer_5": "The cost of each service will differ. We understand that in the industry, one size fits all is a myth. So, we have planned services according to needs with different price packages. So you don’t have to pay for any unnecessary services.",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
             "question_8": "",
             "answer_8": "",
             "question_9": "",
@@ -33,29 +42,80 @@
             "answer_10": ""
           }
         },
-        "f4d12560-a07c-4bd4-a934-2a8eddeaccc9": {
+        "paragraph_mtyATT": {
           "type": "paragraph",
-          "disabled": true,
           "settings": {
-            "title": "Technical + Theme Questions",
-            "question_1": "Q: “I cannot upload the theme to my Shopify store \/ Shopify alerts that the file is too big to upload, what is the problem?”",
-            "answer_1": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_2": "Q: “Can I turn on\/off Lazy Loading Image \/ Item Animation \/ Fade Up on the page?”",
-            "answer_2": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_3": "Q: “I want to have the dropdown cart displayed automatically every time clients hover over it (instead of clicking on it). Is it possible?”",
-            "answer_3": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_4": "Q: “Can I turn on\/off some blocks on the page?”",
-            "answer_4": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_5": "Q: “I notice that the images used in the theme are all portrait. Will that be a problem if I use square images for our products? How will they be displayed in the theme?”",
-            "answer_5": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_6": "Q: “Does the theme support image resizing and cropping?”",
-            "answer_6": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_7": "Q: “Can I add borders around our product images?”",
-            "answer_7": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_8": "Q: “Can I have multi level menu?”",
-            "answer_8": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
-            "question_9": "Q: “Does the theme support variant image?”",
-            "answer_9": "<p>Use overlay text to give your customers insight into your brand. Select image and text that relates to your style and story.<\/p>",
+            "title": "Social Media Services",
+            "question_1": "Q: “Will Glam Models help me in managing my social media account?”",
+            "answer_1": "<p>One of the basic perks of SM services of Glam Models is that we will take charge of your social media handles and manage content creation, posting, &amp; scheduling.\n<\/p>",
+            "question_2": "Q: “What kind of strategy will you apply to my modeling profile?”",
+            "answer_2": "<p>We will convey your journey to the audience through engaging posts, behind the shoot videos, brands collaboration, and professional photos. Along with these we will also hold Q\/A session, polls to interact with your followers. \n.<\/p>",
+            "question_3": "Q: “How aggressively will you post on my social media?”",
+            "answer_3": "<p>We don’t define any standard rule of posting. Glam Models will analyze your social media reach, weigh the importance of events or story and decide a strategy accordingly.<\/p>",
+            "question_4": "Q: “What do your social media services offer?”",
+            "answer_4": "<p>Our service explores and utilize every aspect of social media. Our team will plan the content, grow your instagram, track the metrics to analyze the growth. \n<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "paragraph_dKRM9G": {
+          "type": "paragraph",
+          "settings": {
+            "title": "PR Services",
+            "question_1": "Q: “What do Glam Models PR services include?”",
+            "answer_1": "<p>We will put you on a road to fame through our PR services. It includes press release writing, interview preparation, enrolling in events and getting featured in magazines &amp; online publications. \n<\/p>",
+            "question_2": "Q: “How can your PR services be a good choice for my career?”",
+            "answer_2": "<p>Our team takes every opportunity seriously. It will drive PR campaigns to boost your visibility and credibility, leading to doors of new opportunities. \n<\/p>",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        },
+        "paragraph_rFJLTd": {
+          "type": "paragraph",
+          "settings": {
+            "title": "Website & Portfolio Services",
+            "question_1": "Q: “Do I really need a personal website?”",
+            "answer_1": "<p>Having a digital presence is necessary for every mode. Above all if you have your own website, then it will drive authentic traffic to your portal. It also helps the  designer to discover you more easily.\n<\/p>",
+            "question_2": "Q: “Do Glam Models offer website maintenance services?”",
+            "answer_2": "<p>Our website development services covers from portal creation to maintenance service. You will get exclusive service under one hood. Our maintenance service will keep your website updated and secured. \n<\/p>",
+            "question_3": "Q: “Can you help with portfolio shoots?”",
+            "answer_3": "<p>Yes. Glam Models specializes in carrying out portfolio shoots. Whether it be full body shots or head shots, our professional photographers, stylists, and makeup artists, will create a stunning images for you.<\/p>",
+            "question_4": "Q: “How do you ensure that I get the best opportunities?”",
+            "answer_4": "<p>To make sure that our models receive the best opportunities, we keep up with the market trends, actively promote them on various channels, and connect them with our extensive network. We leave no stone unturned. \n<\/p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
             "question_10": "",
             "answer_10": ""
           }
@@ -63,7 +123,9 @@
       },
       "block_order": [
         "15d9d2f4-1bdd-49c8-9a99-58246020f05c",
-        "f4d12560-a07c-4bd4-a934-2a8eddeaccc9"
+        "paragraph_mtyATT",
+        "paragraph_dKRM9G",
+        "paragraph_rFJLTd"
       ],
       "settings": {
         "show_breadcrumb": false,
@@ -91,7 +153,7 @@
         "message_method_text_2": "Contact Us",
         "contact_content_text": "Unable to find satisfactory answers ?",
         "contact_text": "Contact Support",
-        "contact_link": "shopify:\/\/pages\/contact-us-2",
+        "contact_link": "shopify:\/\/pages\/contact",
         "contact_color": "#ffffff",
         "contact_color_border": "#835dc0",
         "contact_color_bg": "#835dc0",
@@ -104,7 +166,7 @@
     }
   },
   "order": [
-    "banner_video_F6VAYU",
+    "hero_banner_image_HfLXRi",
     "main"
   ]
 }

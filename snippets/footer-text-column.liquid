@@ -42,16 +42,28 @@
     .btn_1_br_outside .footer-block__newsletter .newsletter-form__field-wrapper {flex-wrap: nowrap}
   }
 </style>
-<div class="footer-block__item footer-block__column footer-block__{{ block.type }}{% if block.type == 'text' %} block_text--{{ layout_style }}{% endif %} {{ block__text_first }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--block-custom-width: {{custom_width}};--block-margin-bottom: {{ mg_bottom }}">
+<div
+  class="footer-block__item footer-block__column footer-block__{{ block.type }}{% if block.type == 'text' %} block_text--{{ layout_style }}{% endif %} {{ block__text_first }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+  style="--block-custom-width: {{custom_width}};--block-margin-bottom: {{ mg_bottom }}"
+>
   <div class="{% if block.settings.enable_side_border %}side-bordered{% endif %}">
     {%- if heading != blank -%}
       <h2 class="footer-block__heading" data-toggle-column-footer>{{- heading | escape -}}</h2>
     {%- endif -%}
-    <div class="footer-block__details{% if block.settings.enable_custom_position_icon != blank %} enable_custom_position_icon{% endif %}{% if block.settings.phone_text != blank or block.settings.address_text != blank or block.settings.email_text != blank %} has-content-piece{% endif %}" style="--icon-color: {{ final_icon_color }}; --icon-size: {{ block.settings.icon_size | append: 'px' }}; --content-spacing: {{ block.settings.content_spacing | append: 'px' }}">
+    <div
+      class="footer-block__details{% if block.settings.enable_custom_position_icon != blank %} enable_custom_position_icon{% endif %}{% if block.settings.phone_text != blank or block.settings.address_text != blank or block.settings.email_text != blank %} has-content-piece{% endif %}"
+      style="--icon-color: {{ final_icon_color }}; --icon-size: {{ block.settings.icon_size | append: 'px' }}; --content-spacing: {{ block.settings.content_spacing | append: 'px' }}"
+    >
       {%- if logo != blank -%}
         <div class="image_logo" style="--margin-bottom: {{ logo_margin_bottom }}">
           {%- assign logo_height = logo.width | divided_by: logo.aspect_ratio | round -%}
-          <img data-srcset="{{ logo | img_url: '420x' }}" class="lazyload" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo.width }}" height="{{ logo_height }}">
+          <img
+            data-srcset="{{ logo | img_url: '420x' }}"
+            class="lazyload"
+            alt="{{ logo.alt | default: shop.name | escape }}"
+            width="{{ logo.width }}"
+            height="{{ logo_height }}"
+          >
         </div>
       {%- endif -%}
       <div class="rte">
@@ -70,39 +82,51 @@
             <div>{{ block.settings.address_text | default: ' ' }}</div>
           </div>
         {%- endif -%}
-        {%- if block.settings.enable_custom_position_icon != blank -%}
-        <div class="content-wrapper">
+        {%- if block.settings.address_text_2 != blank and address_last == false -%}
+          <div class="address-wrapper content-piece 12">
+            {%- if block.settings.show_address_icon -%}
+              <span class="icon">
+                {%- if block.settings.address_icon == 'point_icon' -%}
+                  {% render 'icon-point' %}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+            <div>{{ block.settings.address_text_2 | default: ' ' }}</div>
+          </div>
         {%- endif -%}
-          {%- if block.settings.phone_text != blank -%}
-            <div class="phone-wrapper content-piece">
-              {%- if block.settings.show_phone_icon -%}
-                <span class="icon">
-                  {%- if block.settings.phone_icon == 'message_icon' -%}
-                    {% render 'icon-message' %}
-                  {%- elsif block.settings.phone_icon == 'phone_icon' -%}
-                    {% render 'icon-mobile-phone' %}
-                  {%- endif -%}
-                </span>
-              {%- endif -%}
-              <div>{{ block.settings.phone_text | default: ' ' }}</div>
-            </div>
-          {%- endif -%}
-          {%- if block.settings.email_text != blank -%}
-            <div class="email-wrapper content-piece">
-              {%- if block.settings.show_email_icon -%}
-                <span class="icon">
-                  {%- if block.settings.email_icon == 'envelope_icon' -%}
-                    {% render 'icon-envelop' %}
-                  {%- elsif block.settings.email_icon == 'envelope_outline_icon' -%}
-                    {% render 'icon-outline-envelope' %}
-                  {%- endif -%}
-                </span>
-              {%- endif -%}
-              <div>{{ block.settings.email_text | default: ' ' }}</div>
-            </div>
-          {%- endif -%}
         {%- if block.settings.enable_custom_position_icon != blank -%}
-        </div>
+          <div class="content-wrapper">
+        {%- endif -%}
+        {%- if block.settings.phone_text != blank -%}
+          <div class="phone-wrapper content-piece">
+            {%- if block.settings.show_phone_icon -%}
+              <span class="icon">
+                {%- if block.settings.phone_icon == 'message_icon' -%}
+                  {% render 'icon-message' %}
+                {%- elsif block.settings.phone_icon == 'phone_icon' -%}
+                  {% render 'icon-mobile-phone' %}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+            <div>{{ block.settings.phone_text | default: ' ' }}</div>
+          </div>
+        {%- endif -%}
+        {%- if block.settings.email_text != blank -%}
+          <div class="email-wrapper content-piece">
+            {%- if block.settings.show_email_icon -%}
+              <span class="icon">
+                {%- if block.settings.email_icon == 'envelope_icon' -%}
+                  {% render 'icon-envelop' %}
+                {%- elsif block.settings.email_icon == 'envelope_outline_icon' -%}
+                  {% render 'icon-outline-envelope' %}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+            <div>{{ block.settings.email_text | default: ' ' }}</div>
+          </div>
+        {%- endif -%}
+        {%- if block.settings.enable_custom_position_icon != blank -%}
+          </div>
         {%- endif -%}
         {%- if block.settings.address_text != blank and address_last == true -%}
           <div class="address-wrapper content-piece is-last">

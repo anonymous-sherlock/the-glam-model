@@ -9,17 +9,36 @@
   assign mobile_margin_bottom = section.settings.mobile_margin_bottom
   assign button_text = section.settings.button_text
   assign button_link = section.settings.button_link
+  assign show_button_subtext = section.settings.show_button_subtext
   assign button_subtext = section.settings.button_subtext
+  assign custom_popup_button = section.settings.custom_popup_button
+  assign overlay_image = section.settings.overlay_image | image_url
+  assign default_overlay_image = 'proposition-image.webp' | asset_url
+  if overlay_image
+    assign background_overlay_image_url = overlay_image
+  else
+    assign background_overlay_image_url = default_overlay_image
+  endif
 -%}
 
 <style>
     #cta {
-      background-color: black;
-    }
-    .cta_section {
         margin-top: {{ mobile_margin_top | append: 'px' }};
         margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
-
+    }
+    #cta .propositon-bg{
+      background-image: url('{{background_overlay_image_url}}');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .cta_section {
+        border-radius: 20px;
+        position: relative;
+        background-color: #0c0c0c;
+        background: linear-gradient(260deg, #48258b 0%, #0c0c0c 100%);
     }
     .wrapper-body{
         padding-bottom: 0px;
@@ -40,6 +59,7 @@
       font-size: 24px;
       text-align: center;
       line-height: 30px;
+      margin: 0;
     }
   .cta_section .inner .l-side .heading span {
     color: #845ec2;
@@ -56,9 +76,12 @@
     text-align: center;
   }
   .cta_btn{
-    width: 238px;
-    margin: 0;
     background: white;
+    margin: 0;
+    color: #845ec2;
+    border-radius: 25px;
+    border: none;
+    outline: none !important;
   }
   .l-side p{
     color: #cfcfcf;
@@ -66,12 +89,13 @@
     margin-bottom: 20px;
   }
    @media (min-width: 768px){
-      .cta_section{
+      #cta{
           margin-top: {{ desktop_margin_top | append: 'px' }};
           margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
       }
       .cta_section .inner {
         flex-direction: row;
+        padding-inline: 25px;
       }
       .cta_section .inner .l-side .heading {
         font-size: 38px;
@@ -80,19 +104,24 @@
         line-height: 44px;
       }
       .cta_section .inner .l-side {
-       width: 70%;
+       width: 60%;
       }
       .cta_section .r-side {
-        width: 30%;
+        width: 40%;
       }
       .l-side p{
         text-align: left;
         font-size: 15px;
+        margin-top: 20px;
+      }
+      .l-side p:last-child {
+        margin-bottom: 0;
       }
   }
 </style>
-<section id="cta">
-  <div class="cta_section container container-{{ section.settings.container }} ">
+<section id="cta" class="container container-{{ section.settings.container }}">
+  <div class="cta_section container">
+    <div class="propositon-bg"></div>
     <div class="inner">
       <div class="l-side">
         <h3 class="heading">
@@ -104,9 +133,13 @@
       <div class="r-side">
         <div>
           {%- if button_text != blank -%}
-            <a href="{{ button_link }}" class="cta_btn button">{{ button_text }}</a>
+            {%- if custom_popup_button != blank -%}
+              <button class="cta_btn button" {{ custom_popup_button }}>{{ button_text }}</button>
+            {%- else -%}
+              <a href="{{ button_link }}" class="cta_btn button">{{ button_text }}</a>
+            {%- endif -%}
           {%- endif -%}
-          {%- if button_subtext != blank -%}
+          {%- if button_subtext != blank and show_button_subtext -%}
             <p>{{ button_subtext }}</p>
           {%- endif -%}
         </div>
@@ -172,6 +205,11 @@
       "label": "Sub Text"
     },
     {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay Image"
+    },
+    {
       "type": "header",
       "content": "Desktop Settings"
     },
@@ -221,14 +259,26 @@
     },
     {
       "type": "text",
+      "id": "custom_popup_button",
+      "label": "Custom Popup button Id",
+      "info": "Add id that you copied from popup"
+    },
+    {
+      "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "SEE OUR PLANS"
+      "default": "Get Started"
     },
     {
       "type": "url",
       "id": "button_link",
       "label": "Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_subtext",
+      "label": "Show Button Subtext",
+      "default": false
     },
     {
       "type": "text",

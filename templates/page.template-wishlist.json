@@ -3,11 +3,14 @@
     "hero_banner_image_rQUf8V": {
       "type": "hero-banner-image",
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/brand-management-services_e6ff3e5d-caa5-467d-a280-e1896ee95d74.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/PR_servives2.jpg",
+        "mobile_banner_image": "shopify:\/\/shop_images\/brand_1_is_to_1_1.jpg",
         "image_alt": "",
         "object_fit": "cover",
-        "mobile_height": 50,
-        "desktop_height": 50
+        "mobile_height": 40,
+        "mobile_min_height": 280,
+        "desktop_height": 50,
+        "desktop_min_height": 200
       }
     },
     "main": {

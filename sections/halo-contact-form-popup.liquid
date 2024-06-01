@@ -1,0 +1,250 @@
+{%- liquid
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+  assign button_text = section.settings.button_text
+  assign custom_button = section.settings.custom_button
+  assign custom_blocks = section.blocks | where: 'type', 'custom'
+%}
+
+<style>
+   .contact-popup_section{
+      margin-top: {{ mobile_margin_top | append: 'px' }};
+      margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+   }
+  body.contact-popup-show {
+    overflow: hidden;
+  }
+  body.contact-popup-show .background-overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+  body.contact-popup-show .halo-contact-popup {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 201;
+  }
+  .contact-popup_section [data-open-contact-popup] {
+    margin: auto;
+    display: flex;
+    background: #845ec2;
+    color: white;
+    width: max-content;
+    outline: none;
+    border: none;
+    font-size: clamp(20px, 3vw, 25px);
+    padding: 10px 45px;
+    border-radius: 28px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+  }
+  .contact-popup_section [data-open-contact-popup]:hover {
+    background: transparent;
+    border: 2px solid #845ec2;
+    color: #845ec2;
+  }
+
+  .halo-contact-popup .halo-popup-content{
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  @media (min-width: 768px){
+    .submission-popup_section{
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+    .halo-contact-popup .halo-popup-content{
+        margin-left: -35px;
+        margin-right: -35px;
+   }
+  }
+</style>
+{%- if custom_button == false -%}
+  <section class="contact-popup_section container-{{ section.settings.container }}">
+    <button data-open-contact-popup>{{ button_text }}</button>
+  </section>
+{%- endif -%}
+<div
+  class="halo-popup halo-contact-popup customPopup-large halo-popup-LeftRight"
+  data-contact-popup
+  id="contact-popup"
+>
+  <div class="halo-popup-wrapper">
+    <div class="halo-popup-header customPopup-header">
+      <button type="button" class="halo-popup-close clearfix" data-close-contact-popup aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path d="M 38.982422 6.9707031 A 2.0002 2.0002 0 0 0 37.585938 7.5859375 L 24 21.171875 L 10.414062 7.5859375 A 2.0002 2.0002 0 0 0 8.9785156 6.9804688 A 2.0002 2.0002 0 0 0 7.5859375 10.414062 L 21.171875 24 L 7.5859375 37.585938 A 2.0002 2.0002 0 1 0 10.414062 40.414062 L 24 26.828125 L 37.585938 40.414062 A 2.0002 2.0002 0 1 0 40.414062 37.585938 L 26.828125 24 L 40.414062 10.414062 A 2.0002 2.0002 0 0 0 38.982422 6.9707031 z"></path>
+        </svg>
+        Close
+      </button>
+      <h5 class="halo-popup-title customPopup-title text-center">{{ section.settings.form_title | escape }}</h5>
+    </div>
+    <div class="halo-popup-content halo-popup-scroll custom-scrollbar">
+      {% for block in custom_blocks %}
+        {{ block.settings.custom_script }}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    var $body = $('body'),
+      $doc = $(document),
+      $html = $('html'),
+      $win = $(window);
+
+    $doc.on('click', '[data-open-contact-popup]', function (event) {
+      event.preventDefault();
+      $body.addClass('contact-popup-show');
+    });
+
+    $doc.on('click', '[data-close-contact-popup]', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $body.removeClass('contact-popup-show');
+    });
+
+    // Optional: Close the popup when clicking outside of the content area
+    $doc.on('click', (event) => {
+      if ($body.hasClass('contact-popup-show')) {
+        if (
+          $(event.target).closest('[data-open-contact-popup]').length === 0 &&
+          $(event.target).closest('[data-contact-popup]').length === 0
+        ) {
+          $body.removeClass('contact-popup-show');
+        }
+      }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Contact Form Popup",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_button",
+      "label": "Use Different Button For Dynamic Popup",
+      "default": false,
+      "info": "[data-open-contact-popup] use this id for dynamic popup"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Popup Button Text"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Custom Script",
+      "type": "custom",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "custom_script",
+          "label": "Custom Script"
+        }
+      ],
+      "limit": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Form Popup",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

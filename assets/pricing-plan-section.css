@@ -365,3 +365,57 @@ button.mobile__nav__btn:nth-child(2) {
     color: #fff;
   }
 }
+
+
+.plans-filter {
+  overflow-x: auto;
+}
+.plans-filter::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.plans-filter .button-group {
+  background-color: #f6f3fc;
+  border-radius: 60px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: auto;
+  position: relative;
+}
+
+.plans-filter .button-group button.active {
+  color: #ffffff;
+}
+
+.plans-filter .button-group button {
+  background: transparent;
+  border: none;
+  color: #8750f7;
+  text-transform: capitalize;
+  font-size: 15px;
+  line-height: 1;
+  padding: 12px 25px;
+  border-radius: 50px;
+  z-index: 10;
+  position: relative;
+}
+.plans-filter .button-group .active-bg {
+  border-radius: 50px;
+  top: 0px;
+  width: 0;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  z-index: 1;
+  background: #8750f7;
+  background: -o-linear-gradient(190deg, #2a1454 0%, #8750f7 100%);
+  background: linear-gradient(260deg, #2a1454 0%, #8750f7 100%);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}

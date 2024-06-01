@@ -25,10 +25,13 @@
           font-weight: 700;
       }
       .explore_offering_section .title_section p {
-          font-size: clamp(16px, 2vw, 18px);
-          color: #845ec2;
-          font-weight: 700;
-          margin-top: 5px;
+        font-size: clamp(16px, 2vw, 17px);
+        color: #845ec2;
+        font-weight: 600;
+        margin-top: 5px;
+        text-wrap: balance;
+        max-width: 750px;
+        margin-inline: auto;
       }
     @media (max-width:768px){
         .explore_offering_section{
@@ -72,12 +75,10 @@
       content: "";
       position: absolute;
       inset: 0;
-
       background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.9) 60%);
       z-index: -1;
       opacity: 1;
       transform: translateY(70%);
-
       transition: var(--transition) calc(var(--delay) * 2); /* [1] */
   }
   .offering_card:is(:hover, :focus)::before {
@@ -90,13 +91,12 @@
     transform: scale(1.05);
   }
 
-  .card__content {
+  .explore_offering_section .card__content {
     display: flex;
     justify-self: end;
     flex-direction: column;
     gap: 0.5em;
     padding: 1em;
-
     opacity: 1;
     transform: translateY(78%);
     transition: 0ms;
@@ -104,9 +104,9 @@
     transition: var(--transition) var(--delay); /* [3] */
   }
 
-  .card__title {
+  .explore_offering_section .card__title {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: white;
   }
 
@@ -115,7 +115,7 @@
     scale: 1;
   }
 
-  .card__content p{
+  .explore_offering_section .card__content p{
     color: white;
     margin: 0;
   }
@@ -145,7 +145,7 @@
       z-index: -5;
     }
 
-    .card__img {
+    .explore_offering_section .card__img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -198,7 +198,10 @@
 <section class="explore_offering_section">
   <div class="container container-{{ section.settings.container }}">
     <div class="title_section">
-      <h2 class="heading">Explore Our Offer<span class="halfStyled" data-content="i">i</span>ngs</h2>
+      <h2 class="heading">
+        {{- title_start -}}
+        <span class="halfStyled" data-content="{{- title_feature -}}">{{- title_feature -}}</span>{{ title_end }}
+      </h2>
       {{ sub_text }}
     </div>
     <div class="card_container offering_desktop_section">

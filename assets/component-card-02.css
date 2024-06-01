@@ -79,6 +79,11 @@
   
   .product-card-layout-02 .card-information {
 	padding: 20px 20px 20px 20px;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 37%;
   }
   
   .product-card-layout-02 .sidebarBlock-product .card-information {

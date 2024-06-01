@@ -210,10 +210,6 @@
   <div class="row">
     <div
       class="smm_column"
-
-      {% unless isEditor %}
-        data-aos="fade-right" data-aos-offset="50" data-aos-easing="ease-in-sine"
-      {%- endunless -%}
     >
       {% for block in section.blocks limit: half_blocks_count %}
         {% liquid
@@ -223,7 +219,14 @@
           assign featured_description = block.settings.description
         %}
 
-        <div class="featured_item">
+        <div
+          class="featured_item"
+          {% unless isEditor %}
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="3800"
+          {% endunless %}
+        >
           <div class="">
             <h4 class="card_title">
               {{ featured_title_start }}
@@ -242,9 +245,6 @@
     </div>
     <div
       class="smm_column"
-      {% unless isEditor %}
-        data-aos="fade-left" data-aos-offset="50" data-aos-easing="ease-in-sine"
-      {%- endunless -%}
     >
       {% for block in section.blocks offset: half_blocks_count %}
         {% liquid
@@ -254,7 +254,14 @@
           assign featured_description = block.settings.description
         %}
 
-        <div class="featured_item">
+        <div
+          class="featured_item"
+          {% unless isEditor %}
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="3800"
+          {% endunless %}
+        >
           <div class="">
             <h4 class="card_title">
               {{ featured_title_start }}
@@ -318,9 +325,10 @@
       ]
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "heading_start",
-      "label": "Title Start"
+      "label": "Title Start",
+      "info": "<span class=\"halfStyled\" data-content=\"i\">i</span>"
     },
     {
       "type": "textarea",

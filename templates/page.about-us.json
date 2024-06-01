@@ -8,11 +8,14 @@
     "hero_banner_image_MxcYUA": {
       "type": "hero-banner-image",
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/about-banner.png",
+        "desktop_banner_image": "shopify:\/\/shop_images\/ABOUT_US.jpg",
+        "mobile_banner_image": "shopify:\/\/shop_images\/about_us_1-1.jpg",
         "image_alt": "",
         "object_fit": "cover",
         "mobile_height": 25,
-        "desktop_height": 75
+        "mobile_min_height": 280,
+        "desktop_height": 50,
+        "desktop_min_height": 330
       }
     },
     "about_us_hero_KRwj9N": {
@@ -21,36 +24,36 @@
         "feature_jDEK9B": {
           "type": "feature",
           "settings": {
-            "title": "ROI Focused",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+            "title": "We are Passionate",
+            "description": "<p>Our passion lies in propelling talents to the forefront of the fashion universe, where they shine like a constellation in the sky.<\/p>"
           }
         },
         "feature_BAjAQy": {
           "type": "feature",
           "settings": {
-            "title": "ROI Focused",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+            "title": "Comprehensive Representation",
+            "description": "<p>From PR to digital design, we offer an inclusive suite of services tailored to your unique needs and career goals.<\/p>"
           }
         },
         "feature_BeAqcc": {
           "type": "feature",
           "settings": {
-            "title": "ROI Focused",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+            "title": "Proven Track Record",
+            "description": "<p>Our models and photographers consistently land high-profile gigs and cover positions, a testament to our effective strategies and industry connections.<\/p>"
           }
         },
         "feature_9i79TC": {
           "type": "feature",
           "settings": {
-            "title": "ROI Focused",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+            "title": "Personalized Approach",
+            "description": "<p>We believe in creating a stand-out persona. Our strategies are customized to highlight your unique strengths and market you effectively.<\/p>"
           }
         },
         "feature_3hJfEy": {
           "type": "feature",
           "settings": {
-            "title": "ROI Focused",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, culpa.<\/p>"
+            "title": "Global Network",
+            "description": "<p>With a vast network of connections spanning across continents, Glam Model opens doors to international opportunities, collaborations, and exposure.<\/p>"
           }
         }
       },
@@ -66,7 +69,7 @@
         "heading_start": "Your journey to the",
         "heading_featured": "Spotlight Starts",
         "heading_end": "from here",
-        "sub_text": "<p>Theglammodel is a modeling agency that represents models and photographers. Many models and photographers have started their journey from here.<\/p>",
+        "sub_text": "<p>Welcome to Glam Model, the ultimate destination of the next generation of models and photographers. We don’t just represent talent - we elevate careers. At Glam Model, we are passionate about discovering and nurturing exceptional models. <\/p>",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
@@ -85,7 +88,8 @@
           "settings": {
             "text": "<p>Welcome to our store<\/p>",
             "color": "#ffffff",
-            "color_mb": "#ffffff"
+            "color_mb": "#ffffff",
+            "enable_border_bottom": false
           }
         }
       },
@@ -95,7 +99,9 @@
       "settings": {
         "mq_background": "#835dc0",
         "mq_gradient": "",
+        "type_tab_font": "font_1",
         "text_size": 40,
+        "text_font_weight": "400",
         "gap_blocks": 20,
         "border": "none",
         "border_color": "#000000",
@@ -115,10 +121,10 @@
         "feature_QcHWUw": {
           "type": "feature",
           "settings": {
-            "title": "Heading1",
+            "title": "Social Media Management",
             "icon": "",
             "title_color": "rgba(0,0,0,0)",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description": "<p>Our social media experts curate content, manage interactions, and grow followers to boost visibility and influence across platforms.<\/p>",
             "description_color": "rgba(0,0,0,0)",
             "background_color": "rgba(0,0,0,0)"
           }
@@ -126,10 +132,10 @@
         "feature_BHww7g": {
           "type": "feature",
           "settings": {
-            "title": "Heading2",
+            "title": "Website and Portfolio Management",
             "icon": "",
             "title_color": "",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description": "<p>SEO Analytics driven website and portfolio management to keep the talent’s digital presence updated and compelling for more engagement.<\/p>",
             "description_color": "",
             "background_color": ""
           }
@@ -137,10 +143,10 @@
         "feature_URUQbc": {
           "type": "feature",
           "settings": {
-            "title": "Heading3",
+            "title": "PR\/Interviews",
             "icon": "",
             "title_color": "",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description": "<p>We manage media relations, event appearances, and press releases to ensure our models and photographers remain in the spotlight.<\/p>",
             "description_color": "",
             "background_color": ""
           }
@@ -148,10 +154,10 @@
         "feature_rT3q7c": {
           "type": "feature",
           "settings": {
-            "title": "Heading4",
+            "title": "Exclusive Store",
             "icon": "",
             "title_color": "",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur.<\/p>",
+            "description": "<p>Buy exclusive premium products. Grab the sizzling trends and irresistible pieces that promise to turn heads and make a statement.<\/p>",
             "description_color": "",
             "background_color": ""
           }
@@ -168,7 +174,7 @@
         "heading_start": "",
         "heading_featured": "",
         "heading_end": "",
-        "sub_text": "<p>We are made of sweat blood and a whole lot of passion for <\/p>",
+        "sub_text": "<p>we are the architects of aspiration, the maestros of magnificence, and the guardians of glamor.<\/p>",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
@@ -250,11 +256,30 @@
         "heading_start": "Our Cl",
         "heading_featured": "i",
         "heading_end": "ent",
-        "sub_text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, adipisci.<\/p>",
+        "sub_text": "<p>Meet the Trendsetters, the Visionaries, and the Faces that Define Style<\/p>",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
         "mobile_margin_bottom": 20
+      }
+    },
+    "cta_section_L8DTHq": {
+      "type": "cta-section",
+      "settings": {
+        "container": "1770",
+        "heading": "Are you ready to embrace the",
+        "heading_feature": "&nbsp;spotlight",
+        "heading_end": "&nbsp;?",
+        "sub_text": "<p>Experience the Difference with Glam Model - where every pose tells a story, and every shot captures your essence.<\/p>",
+        "desktop_margin_top": 50,
+        "desktop_margin_bottom": 50,
+        "mobile_margin_top": 40,
+        "mobile_margin_bottom": 40,
+        "custom_popup_button": "",
+        "button_text": "get started",
+        "button_link": "",
+        "show_button_subtext": false,
+        "button_subtext": "No credit card required!"
       }
     }
   },
@@ -264,6 +289,7 @@
     "about_us_hero_KRwj9N",
     "marquee_XUX6kz",
     "featured_card_section_nCCPjj",
-    "clients_logo_XLhjGP"
+    "clients_logo_XLhjGP",
+    "cta_section_L8DTHq"
   ]
 }

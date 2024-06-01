@@ -15,7 +15,8 @@
             "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>",
             "address_icon": "point_icon",
             "show_address_icon": true,
-            "address_text": "<p><strong>Gurugram, Haryana, India<\/strong><\/p>",
+            "address_text": "<p><strong>Gurugram, Haryana, India.<\/strong><\/p>",
+            "address_text_2": "<p><strong>330 West 64th Street Sixth Floor<br\/>New York, NY 10001, USA.<\/strong><\/p>",
             "phone_icon": "message_icon",
             "show_phone_icon": false,
             "phone_text": "",
@@ -60,7 +61,7 @@
           "settings": {
             "custom_width": "20",
             "heading": "Quick Links",
-            "menu": "main-menu",
+            "menu": "footer-quick-links",
             "mg_bottom": 0
           }
         },

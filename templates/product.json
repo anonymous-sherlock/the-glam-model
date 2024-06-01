@@ -3,10 +3,11 @@
     "hero_banner_image_AgpY4k": {
       "type": "hero-banner-image",
       "settings": {
-        "banner_image": "shopify://shop_images/brand-management-services_e6ff3e5d-caa5-467d-a280-e1896ee95d74.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/brand.jpg",
+        "mobile_banner_image": "shopify:\/\/shop_images\/brand_1_is_to_1_1.jpg",
         "image_alt": "",
         "object_fit": "cover",
-        "mobile_height": 50,
+        "mobile_height": 40,
         "desktop_height": 50
       }
     },
@@ -39,7 +40,7 @@
           }
         },
         "judge_me_reviews_preview_badge_yaK7DW": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
         "0e4ea696-4820-4c98-aaa6-806d41782a3d": {
@@ -203,7 +204,7 @@
             "open_tab_mobile": false,
             "title": "Additional Information",
             "type": "all",
-            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.Donec pretium egestas sapien et mollis. Pellentesque diam dolor cosmopolis etos lobortis.</p>\n<dl>\n<dt>Comodous:</dt>\n<dd>Comodous in tempor ullamcorper miaculis</dd>\n</dl>\n<dl>\n<dt>Mattis laoreet:</dt>\n<dd>Pellentesque vitae neque mollis urna mattis laoreet.</dd>\n</dl>\n<dl>\n<dt>Divamus de ametos:</dt>\n<dd>Divamus sit amet purus justo.</dd>\n</dl>\n<dl>\n<dt>Molestie:</dt>\n<dd>Proin molestie egestas orci ac suscipit risus posuere loremous</dd>\n</dl>",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.Donec pretium egestas sapien et mollis. Pellentesque diam dolor cosmopolis etos lobortis.<\/p>\n<dl>\n<dt>Comodous:<\/dt>\n<dd>Comodous in tempor ullamcorper miaculis<\/dd>\n<\/dl>\n<dl>\n<dt>Mattis laoreet:<\/dt>\n<dd>Pellentesque vitae neque mollis urna mattis laoreet.<\/dd>\n<\/dl>\n<dl>\n<dt>Divamus de ametos:<\/dt>\n<dd>Divamus sit amet purus justo.<\/dd>\n<\/dl>\n<dl>\n<dt>Molestie:<\/dt>\n<dd>Proin molestie egestas orci ac suscipit risus posuere loremous<\/dd>\n<\/dl>",
             "enable_btn_show_more": false,
             "maximum_des_to_show": 300,
             "product_custom_source": "dynamic",
@@ -216,7 +217,7 @@
             "open_tab_mobile": false,
             "title": "Shipping & Return",
             "type": "all",
-            "content": "<h3>Returns Policy</h3>\n<p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).</p>\n<p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).</p>\n<p>If you need to return an item, simply login to your account, view the order using the \"Complete Orders\" link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.</p>\n<h3>Shipping</h3>\n<p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.</p>\n<p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.</p>\n<p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</p>",
+            "content": "<h3>Returns Policy<\/h3>\n<p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).<\/p>\n<p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).<\/p>\n<p>If you need to return an item, simply login to your account, view the order using the \"Complete Orders\" link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.<\/p>\n<h3>Shipping<\/h3>\n<p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.<\/p>\n<p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.<\/p>\n<p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.<\/p>",
             "enable_btn_show_more": false,
             "maximum_des_to_show": 300,
             "product_custom_source": "dynamic",
@@ -229,7 +230,7 @@
             "open_tab_mobile": false,
             "title": "Custom Tab",
             "type": "all",
-            "content": "<table>\n    <tbody>\n        <tr>\n            <td class=\"tb-title\">Drostique</td>\n            <td>Nam tempus turpis at metus scelerisque placerat nulla deumantos</td>\n        </tr>\n        <tr>\n            <td class=\"tb-title\">Pharetro Lorem</td>\n            <td>Pellentesque diam dolor elementum etos lobortis des mollis</td>\n        </tr>\n        <tr>\n            <td class=\"tb-title\">Milancelos</td>\n            <td>Donec pretium egestas sapien et mollis</td>\n        </tr>\n        <tr>\n            <td class=\"tb-title\">Pellentesque</td>\n            <td>Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras</td>\n        </tr>\n        <tr>\n            <td class=\"tb-title\">Proin Molestie</td>\n            <td>Pellentesque diam dolor elementum etos lobortis des mollis</td>\n        </tr>\n        <tr>\n            <td class=\"tb-title\">Cosmopolis</td>\n            <td>Donec pretium egestas sapien et mollis</td>\n        </tr>\n    </tbody>\n</table>",
+            "content": "<table>\n    <tbody>\n        <tr>\n            <td class=\"tb-title\">Drostique<\/td>\n            <td>Nam tempus turpis at metus scelerisque placerat nulla deumantos<\/td>\n        <\/tr>\n        <tr>\n            <td class=\"tb-title\">Pharetro Lorem<\/td>\n            <td>Pellentesque diam dolor elementum etos lobortis des mollis<\/td>\n        <\/tr>\n        <tr>\n            <td class=\"tb-title\">Milancelos<\/td>\n            <td>Donec pretium egestas sapien et mollis<\/td>\n        <\/tr>\n        <tr>\n            <td class=\"tb-title\">Pellentesque<\/td>\n            <td>Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras<\/td>\n        <\/tr>\n        <tr>\n            <td class=\"tb-title\">Proin Molestie<\/td>\n            <td>Pellentesque diam dolor elementum etos lobortis des mollis<\/td>\n        <\/tr>\n        <tr>\n            <td class=\"tb-title\">Cosmopolis<\/td>\n            <td>Donec pretium egestas sapien et mollis<\/td>\n        <\/tr>\n    <\/tbody>\n<\/table>",
             "enable_btn_show_more": false,
             "maximum_des_to_show": 300,
             "product_custom_source": "dynamic",
@@ -248,10 +249,10 @@
         "a86220cf-8641-4e06-87d3-b5ffa195501b": {
           "type": "custom_information",
           "settings": {
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\"></path></svg>",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\"><\/path><\/svg>",
             "text": "Free Shipping",
             "color_title": "#232323",
-            "text_description": "<p>Free standard shipping on orders over $99</p>\n<p>Estimated to be delivered on 12/01/2022 - 15/10/2022.</p>",
+            "text_description": "<p>Free standard shipping on orders over $99<\/p>\n<p>Estimated to be delivered on 12\/01\/2022 - 15\/10\/2022.<\/p>",
             "color_des": "#4d4d4d",
             "content_popup": "",
             "fontsize_text": 12,
@@ -262,12 +263,12 @@
         "058d88b7-6cce-4aae-a5c4-b8193bbdfa7f": {
           "type": "custom_information",
           "settings": {
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shield-alt\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 512 512\">\n    <path fill=\"currentColor\" d=\"M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM262.2 478.8c-4 1.6-8.4 1.6-12.3 0C152 440 48 304 48 128c0-6.5 3.9-12.3 9.8-14.8l192-80c3.9-1.6 8.4-1.6 12.3 0l192 80c6 2.5 9.9 8.3 9.8 14.8.1 176-103.9 312-201.7 350.8zM256 411V100l-142.7 59.5c10.1 120.1 77.1 215 142.7 251.5zm-32-66.8c-36.4-39.9-65.8-97.8-76.1-164.5L224 148z\"></path>\n</svg>",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shield-alt\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\">\n    <path fill=\"currentColor\" d=\"M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM262.2 478.8c-4 1.6-8.4 1.6-12.3 0C152 440 48 304 48 128c0-6.5 3.9-12.3 9.8-14.8l192-80c3.9-1.6 8.4-1.6 12.3 0l192 80c6 2.5 9.9 8.3 9.8 14.8.1 176-103.9 312-201.7 350.8zM256 411V100l-142.7 59.5c10.1 120.1 77.1 215 142.7 251.5zm-32-66.8c-36.4-39.9-65.8-97.8-76.1-164.5L224 148z\"><\/path>\n<\/svg>",
             "text": "Free Returns",
             "color_title": "#232323",
             "text_description": "Learn More.",
             "color_des": "#4d4d4d",
-            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\n<p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).</p>\n<p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).</p>\n<p>If you need to return an item, simply login to your account, view the order using the \"Complete Orders\" link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.</p>\n\t\t\t\t\t\t\t</div>",
+            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\n<p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).<\/p>\n<p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).<\/p>\n<p>If you need to return an item, simply login to your account, view the order using the \"Complete Orders\" link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.<\/p>\n\t\t\t\t\t\t\t<\/div>",
             "fontsize_text": 12,
             "spacing_top": 0,
             "spacing_bottom": 14
@@ -276,12 +277,12 @@
         "36addb13-cd73-4713-a15c-7d846c4724e7": {
           "type": "custom_information",
           "settings": {
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"exclamation-triangle\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 576 512\"><path fill=\"currentColor\" d=\"M270.2 160h35.5c3.4 0 6.1 2.8 6 6.2l-7.5 196c-.1 3.2-2.8 5.8-6 5.8h-20.5c-3.2 0-5.9-2.5-6-5.8l-7.5-196c-.1-3.4 2.6-6.2 6-6.2zM288 388c-15.5 0-28 12.5-28 28s12.5 28 28 28 28-12.5 28-28-12.5-28-28-28zm281.5 52L329.6 24c-18.4-32-64.7-32-83.2 0L6.5 440c-18.4 31.9 4.6 72 41.6 72H528c36.8 0 60-40 41.5-72zM528 480H48c-12.3 0-20-13.3-13.9-24l240-416c6.1-10.6 21.6-10.7 27.7 0l240 416c6.2 10.6-1.5 24-13.8 24z\"></path></svg>",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"exclamation-triangle\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 576 512\"><path fill=\"currentColor\" d=\"M270.2 160h35.5c3.4 0 6.1 2.8 6 6.2l-7.5 196c-.1 3.2-2.8 5.8-6 5.8h-20.5c-3.2 0-5.9-2.5-6-5.8l-7.5-196c-.1-3.4 2.6-6.2 6-6.2zM288 388c-15.5 0-28 12.5-28 28s12.5 28 28 28 28-12.5 28-28-12.5-28-28-28zm281.5 52L329.6 24c-18.4-32-64.7-32-83.2 0L6.5 440c-18.4 31.9 4.6 72 41.6 72H528c36.8 0 60-40 41.5-72zM528 480H48c-12.3 0-20-13.3-13.9-24l240-416c6.1-10.6 21.6-10.7 27.7 0l240 416c6.2 10.6-1.5 24-13.8 24z\"><\/path><\/svg>",
             "text": "Built And Shipped Within 5 - 7 Bussiness Days",
             "color_title": "#232323",
             "text_description": "",
             "color_des": "#999999",
-            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\t\t\t\t\t\t\t</div>",
+            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\n\t\t\t\t\t\t\t<\/div>",
             "fontsize_text": 12,
             "spacing_top": 0,
             "spacing_bottom": 0
@@ -360,7 +361,7 @@
         "icon_color": "#000000",
         "show_thumbnail_mobile": true,
         "thumnail_layout": "1",
-        "thumbnail_to_show": 5,
+        "thumbnail_to_show": 6,
         "show_sidebar": false,
         "show_sidebar_collapse": true,
         "enable_sticky": false,
@@ -439,7 +440,7 @@
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0,
         "product_block_layout": "slider",
-        "product_bg": "#fff",
+        "product_bg": "#ffffff",
         "style_block_header": "style1",
         "product_block_title": "Related Products",
         "enable_border_title": true,
@@ -492,7 +493,7 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 30,
         "product_recently_viewed_layout": "slider",
-        "product_bg": "#fff",
+        "product_bg": "#ffffff",
         "product_bg_gradient": "",
         "style_block_header": "style3",
         "product_recently_viewed_title": "Recently Viewed Products",
@@ -531,5 +532,10 @@
       }
     }
   },
-  "order": ["hero_banner_image_AgpY4k", "main", "product-recommendations", "product-recently-viewed"]
+  "order": [
+    "hero_banner_image_AgpY4k",
+    "main",
+    "product-recommendations",
+    "product-recently-viewed"
+  ]
 }

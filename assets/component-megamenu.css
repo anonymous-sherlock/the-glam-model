@@ -627,7 +627,7 @@
         z-index: 20;
     }
     .scrolled-past-header {
-        z-index: 101 !important;
+        z-index: 100 !important;
     }
     .shopify-section-header-hidden:not(.sticky-search-menu-custom-open) {
         top: calc(-1 * var(--header-height));

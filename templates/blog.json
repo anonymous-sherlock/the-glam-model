@@ -3,11 +3,13 @@
     "hero_banner_image_nJKkmW": {
       "type": "hero-banner-image",
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/billboard-3.jpg",
+        "desktop_banner_image": "shopify:\/\/shop_images\/OUR_BLOGS_banner_1.jpg",
         "image_alt": "",
         "object_fit": "cover",
-        "mobile_height": 50,
-        "desktop_height": 70
+        "mobile_height": 40,
+        "mobile_min_height": 280,
+        "desktop_height": 30,
+        "desktop_min_height": 400
       }
     },
     "main": {

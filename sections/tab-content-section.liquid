@@ -1,0 +1,303 @@
+{{ 'tab-content-section.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign title_start = section.settings.heading_start
+  assign title_feature = section.settings.heading_featured
+  assign title_end = section.settings.heading_end
+  assign sub_text = section.settings.sub_text
+  assign desktop_margin_top = section.settings.desktop_margin_top
+  assign desktop_margin_bottom = section.settings.desktop_margin_bottom
+  assign mobile_margin_top = section.settings.mobile_margin_top
+  assign mobile_margin_bottom = section.settings.mobile_margin_bottom
+  assign tab_blocks = section.blocks | where: 'type', 'tab'
+  assign selected_tab_id = ''
+  assign has_active_tab = tab_blocks | map: 'settings' | where: 'tab_active', true
+%}
+<style>
+  #{{section.id}}{
+      margin-top: {{ mobile_margin_top | append: 'px' }};
+      margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
+  }
+
+  @media (min-width:769px){
+    #{{section.id}}{
+        margin-top: {{ desktop_margin_top | append: 'px' }};
+        margin-bottom: {{ desktop_margin_bottom | append: 'px' }};
+    }
+  }
+</style>
+<section class="tabs_section" id="{{section.id}}">
+  <div class="container container-{{ section.settings.container }}">
+    <div class="benefits_section_header">
+      {%- if title_start != blank -%}
+        <div class="benefits_section_title">
+          {{- title_start -}}
+          <span class="halfStyled" data-content="{{ title_feature }}">{{ title_feature }}</span>
+          {{- title_end -}}
+        </div>
+      {%- else -%}
+        <div class="benefits_section_title">
+          Glam g<span class="halfStyled" data-content="i">i</span>ves you many ways to be seen
+        </div>
+      {%- endif -%}
+      {%- if sub_text != blank -%}
+        {{ sub_text }}
+      {%- endif -%}
+    </div>
+    <div class="advance_tabs">
+      <div class="tabs_nav">
+        <ul class="tab_inline_icon" role="tablist">
+          {% for block in tab_blocks %}
+            {% liquid
+              assign tab_active = block.settings.tab_active
+              assign tab_name = block.settings.tab_name
+              assign tab_icon = block.settings.tab_icon
+              assign sanitized_tab_name = tab_name | replace: ' ', '-' | replace: '[^a-zA-Z0-9-]', '' | downcase
+              assign tab_id = sanitized_tab_name | append: '-' | append: forloop.index
+              assign active_class = ''
+              if tab_active == true or tab_active == 'true'
+                assign selected_tab_id = tab_id
+                assign active_class = 'active'
+              endif
+              if has_active_tab == blank or null
+                if forloop.index == 1
+                  assign active_class = 'active'
+                endif
+              endif
+            %}
+            <li
+              class="tab_item_trigger {% if forloop.first %}first_tab{% endif %} {{active_class}} "
+              data-tab="{{tab_id}}"
+              role="tab"
+            >
+              {{ tab_icon }}
+              <span class="tab_title">{{ tab_name }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="tabs_content">
+        {% for block in tab_blocks %}
+          {% liquid
+            assign tab_active = block.settings.tab_active
+            assign tab_name = block.settings.tab_name
+            assign tab_title = block.settings.tab_title
+            assign tab_description = block.settings.tab_description
+            assign tab_image = block.settings.tab_image
+            assign sanitized_tab_name = tab_name | replace: ' ', '-' | replace: '[^a-zA-Z0-9-]', '' | downcase
+            assign tab_id = sanitized_tab_name | append: '-' | append: forloop.index
+            assign active_class = ''
+            if tab_active == true or tab_active == 'true'
+              assign active_class = 'active'
+            endif
+
+            if has_active_tab == blank or null
+              if forloop.index == 1
+                assign active_class = 'active'
+              endif
+            endif
+          %}
+          <div
+            class="tab_content_item {{tab_id}}  {% if forloop.first %}first_tab{% endif %} {{active_class}}"
+            data-tab-content="{{tab_id}}"
+          >
+            <img
+              alt=""
+              width="480"
+              height="630"
+              src="{{tab_image | image_url }}"
+            >
+            <div class="tabs_inner">
+              <h3 class="tabs_inner_title">{{ tab_title }}</h3>
+              <p class="tabs_inner_description">
+                {{ tab_description }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{"isotope.pkgd.min.js"| asset_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $(function () {
+      const $grid = $('.tabs_content').isotope({
+        filter: '.{%- if selected_tab_id != blank -%}{{selected_tab_id}}{%- else -%}first_tab{%- endif -%}',
+        itemSelector: '.tabs_content .tab_content_item',
+        percentPosition: true,
+      });
+
+      // filter items on button click
+      $('.tabs_nav').on('click', '.tab_item_trigger', function () {
+        $('.tabs_nav .tab_item_trigger').removeClass('active');
+        $('.tabs_content .tab_content_item').removeClass('active');
+        $(this).addClass('active');
+
+        const filterValue = $(this).attr('data-tab');
+        const tab_content_id = $(`.tabs_content [data-tab-content="${filterValue}"]`).addClass('active');
+
+        $grid.isotope({ filter: `.${filterValue}` });
+      });
+
+      $('.tabs_nav .tab_item_trigger.active').trigger('click');
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Tab Content",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Title Start"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_featured",
+      "label": "Title Feature"
+    },
+    {
+      "type": "text",
+      "id": "heading_end",
+      "label": "Title End"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Tab",
+      "type": "tab",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "tab_active",
+          "label": "Make this tab open By Default",
+          "info": "If you have multiple tab then the last tab which has checked this box will be active",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "tab_name",
+          "label": "Tab Name"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_icon",
+          "label": "Tab Icon",
+          "info": "You can use custom svg or font awesome icon"
+        },
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_description",
+          "label": "Tab Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_image",
+          "label": "Tab Content Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab Content",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

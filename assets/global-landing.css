@@ -1,38 +1,39 @@
 :root {
-    --purple-text: #845ec2
+  --purple-text: #845ec2;
 }
-body{
-    overflow-x: hidden !important;
+body {
+  overflow-x: hidden !important;
 }
 
 .truncate_title {
-    letter-spacing: 0.2px;
-    text-transform: math-auto;
+  letter-spacing: 0.2px;
+  text-transform: math-auto;
 }
 
 .halfStyled {
-    position: relative;
-    color: black;
-    white-space: pre;
-    overflow: hidden;
-    display: inline;
-    line-height: normal;
+  position: relative;
+  color: black;
+  white-space: pre;
+  overflow: hidden;
+  line-height: inherit;
+  display: inline-flex;
 }
 
-.article-card__footer .icon,.article-card__footer .icon path {
-    fill: #845ec2;
+.article-card__footer .icon,
+.article-card__footer .icon path {
+  fill: #845ec2;
 }
 
 .halfStyled:before {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: -2px;
-    left: 0;
-    content: attr(data-content);
-    height: 40%;
-    overflow: hidden;
-    color: #845ec2;
-    line-height: normal;
-    display: inline;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0;
+  content: attr(data-content);
+  height: 28%;
+  overflow: hidden;
+  color: #845ec2;
+  line-height: inherit;
+  display: inline-flex;
 }

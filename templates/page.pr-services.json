@@ -11,36 +11,30 @@
         "title_B3TJDq": {
           "type": "title",
           "settings": {
-            "title_start": "PR Serv",
-            "featured_title": "i",
-            "title_end": "ces"
-          }
-        },
-        "image_f3KBfG": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/speeker_copy.png",
-            "alt_text": "Banner Content Image"
+            "title_style": "style_2",
+            "title": "Public \n<br>\nRelation",
+            "sub_title": "Services"
           }
         }
       },
       "block_order": [
-        "title_B3TJDq",
-        "image_f3KBfG"
+        "title_B3TJDq"
       ],
       "settings": {
         "container": "1770",
-        "banner_image": "shopify:\/\/shop_images\/PR_servives2.jpg",
+        "banner_image": "shopify:\/\/shop_images\/PR_service_banner_1.jpg",
         "image_alt": "",
         "object_fit": "cover",
         "mobile_height": 30,
-        "desktop_height": 80
+        "mobile_min_height": 280,
+        "desktop_height": 10,
+        "desktop_min_height": 550
       }
     },
     "pr_header_section_QBztMj": {
       "type": "pr-header-section",
       "settings": {
-        "container": "1770",
+        "container": "1170",
         "desktop_margin_top": 100,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 60,
@@ -81,7 +75,7 @@
         "feature_a9Gqfk"
       ],
       "settings": {
-        "container": "1770",
+        "container": "1170",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
@@ -111,7 +105,7 @@
         "service_V7TngG"
       ],
       "settings": {
-        "container": "1770",
+        "container": "1170",
         "background_color": "#845ec2",
         "heading_start": "Our Detailed",
         "heading_featured": "PR Services",
@@ -178,7 +172,7 @@
         "feature_kk3YHW"
       ],
       "settings": {
-        "container": "1770",
+        "container": "1170",
         "heading_start": "",
         "heading_featured": "",
         "heading_end": "",
@@ -191,17 +185,76 @@
     },
     "cta_section_8fYhrF": {
       "type": "cta-section",
+      "disabled": true,
       "settings": {
         "container": "1770",
         "heading": "",
+        "heading_feature": "",
+        "heading_end": "",
         "sub_text": "",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 0,
         "mobile_margin_top": 20,
         "mobile_margin_bottom": 0,
+        "custom_popup_button": "",
         "button_text": "SEE OUR PLANS",
         "button_link": "shopify:\/\/pages\/contact",
+        "show_button_subtext": false,
         "button_subtext": "No credit card required!"
+      }
+    },
+    "tab_content_section_jj7ARa": {
+      "type": "tab-content-section",
+      "blocks": {
+        "tab_YXYkCE": {
+          "type": "tab",
+          "settings": {
+            "tab_active": false,
+            "tab_name": "Editorials",
+            "tab_icon": "<i class=\"far fa-edit\"><\/i>",
+            "tab_title": "Get On Forbes",
+            "tab_description": "Spynn offers personalized services such as writing and editing, as well as providing the necessary connections to get your piece published in Forbes and other globally leading publications.",
+            "tab_image": "shopify:\/\/shop_images\/FPRBES_COVER.png"
+          }
+        },
+        "tab_yFPb7E": {
+          "type": "tab",
+          "settings": {
+            "tab_active": false,
+            "tab_name": "Interviews",
+            "tab_icon": "<i class=\"fas fa-users\"><\/i>",
+            "tab_title": "Profile Features",
+            "tab_description": "Being interviewed by a reputable magazine like CEO Weekly can have several benefits for your personal brand. Enjoy increased visibility and credibility helping establish you as an authority in your field. Share your story and expertise and inspire and educate others. Enhancing your company’s image contributing to its success and growth.",
+            "tab_image": "shopify:\/\/shop_images\/ELLE_COVER.png"
+          }
+        },
+        "tab_yMRXBQ": {
+          "type": "tab",
+          "settings": {
+            "tab_active": false,
+            "tab_name": "Announcements",
+            "tab_icon": "<i class=\"fas fa-microphone\"><\/i>",
+            "tab_title": "Build Your Brand’s Reputation",
+            "tab_description": "Sharing company news on well-respected platforms elevates your brand’s reputation and credibility in the eyes of potential clients, investors, and partners. A company announcement on a popular platform can drive more traffic to your website or social media channels and generate greater interest in your products or services.",
+            "tab_image": "shopify:\/\/shop_images\/Business-Insider-Magazine-Cover.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_YXYkCE",
+        "tab_yFPb7E",
+        "tab_yMRXBQ"
+      ],
+      "settings": {
+        "container": "1170",
+        "heading_start": "",
+        "heading_featured": "",
+        "heading_end": "",
+        "sub_text": "",
+        "desktop_margin_top": 70,
+        "desktop_margin_bottom": 0,
+        "mobile_margin_top": 50,
+        "mobile_margin_bottom": 0
       }
     }
   },
@@ -212,6 +265,7 @@
     "why_choose_pr_services_cAgtVA",
     "detailed_pr_services_PifxxH",
     "benefits_section_Mh6WKE",
-    "cta_section_8fYhrF"
+    "cta_section_8fYhrF",
+    "tab_content_section_jj7ARa"
   ]
 }

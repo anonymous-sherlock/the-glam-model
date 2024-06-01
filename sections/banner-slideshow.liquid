@@ -1,0 +1,279 @@
+{{ 'banner-slideshow.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign slides = section.blocks | where: 'type', 'slide'
+-%}
+<section class="banner_slide_show">
+  <div class="tp-portfolio">
+    <div class="swiper main_swiper">
+      <div class="swiper-wrapper">
+        {% for slide in slides %}
+          {% liquid
+            assign title = slide.settings.title
+            assign sub_title = slide.settings.sub_title
+            assign banner_image = slide.settings.banner_image
+            assign year = slide.settings.year
+          %}
+          <div class="swiper-slide">
+            <div
+              class="portfolio-slider-bg"
+              style="background-image: url('{{banner_image | image_url }}')"
+            >
+              <div class="portfolio_main_container container container-{{ section.settings.container }}">
+                <div class="portfolio-slider-content">
+                  <div class="portfolio-slider-link">
+                    <a href="#" tabindex="0">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M1 1L17 17" stroke="white" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M17 1V17H1" stroke="white" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <span class="portfolio-slider-subtitle">
+                    {{ year }}
+                    <br>
+                    {{ sub_title }}
+                  </span>
+                  <h3 class="portfolio-slider-title">
+                    <a href="#" tabindex="0">
+                      {{ title }}
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="tp-portfolio_right">
+      <div class="swiper thumbs_swiper" thumbsSlider="">
+        <div class="swiper-wrapper">
+          {% for slide in slides %}
+            {% liquid
+              assign title = slide.settings.title
+              assign sub_title = slide.settings.sub_title
+              assign card_image = slide.settings.banner_image
+              assign year = slide.settings.year
+              if slide.settings.card_image != blank
+                assign card_image = slide.settings.card_image
+              endif
+            %}
+            <div class="swiper-slide">
+              <div class="tp-portfolio-slider-nav-item">
+                <div class="tp-portfolio-slider-nav-thumb">
+                  <img
+                    src="{{card_image | image_url }}"
+                    alt=""
+                    height=""
+                    width=""
+                  >
+                </div>
+                <div class="tp-portfolio-slider-nav-content-wrap">
+                  <div class="tp-portfolio-slider-nav-content">
+                    <div class="tp-portfolio-slider-nav-year">
+                      <span>{{ year }}</span>
+                    </div>
+                    <div class="tp-portfolio-slider-nav-tittle-box">
+                      <span class="tp-portfolio-slider-nav-subtittle">{{ sub_title | strip_html }}</span>
+                      <h4 class="tp-portfolio-slider-nav-tittle">
+                        <a href="#" tabindex="0">{{ title | strip_html }} </a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="tp_thumbnail_controls">
+        <div class="button_controls">
+          <button type="button" class="tp_portfolio_prev_button">
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+          <button type="button" class="tp_portfolio_next_button">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+        <div class="slides-numbers">
+          <div class="slider-line"></div>
+          <span class="current_slide_number">02</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const thumbSwiper = new Swiper('.thumbs_swiper', {
+      loop: true,
+      loopedSlides: 5,
+      spaceBetween: 10,
+      slidesPerView: 3,
+      slideToClickedSlide: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    const swiper = new Swiper('.main_swiper', {
+      effect: 'fade',
+      loop: true,
+      loopedSlides: 5,
+      navigation: {
+        nextEl: '.tp_portfolio_next_button',
+        prevEl: '.tp_portfolio_prev_button',
+      },
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+      slideToClickedSlide: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    // controls
+    // swiper.controller.control = thumbSwiper;
+    // thumbSwiper.controller.control = swiper;
+    // controls
+    swiper.on('slideChange', function () {
+      var currentIndex = swiper.realIndex + 1;
+      document.querySelector('.current_slide_number').textContent = currentIndex.toString().padStart(2, '0');
+    });
+    const initialIndex = swiper.realIndex + 1;
+    document.querySelector('.current_slide_number').textContent = initialIndex.toString().padStart(2, '0');
+  });
+</script>
+{% schema %}
+{
+  "name": "Banner Slide Show",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "t:sections.layout.container.option",
+      "default": "1770",
+      "options": [
+        {
+          "value": "1170",
+          "label": "t:sections.layout.container.option4"
+        },
+        {
+          "value": "1370",
+          "label": "t:sections.layout.container.option8"
+        },
+        {
+          "value": "1470",
+          "label": "t:sections.layout.container.option5"
+        },
+        {
+          "value": "1570",
+          "label": "t:sections.layout.container.option6"
+        },
+        {
+          "value": "1770",
+          "label": "t:sections.layout.container.option3"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.layout.container.option2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_top",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_top",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "sub_title",
+          "label": "Sub Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Main Banner image"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image",
+          "info": "Card image is optional if you don't provide it will use main banner image"
+        },
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Slide Show",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

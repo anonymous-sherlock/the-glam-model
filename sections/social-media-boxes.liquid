@@ -12,7 +12,10 @@
               {%- else -%}
                 <i class="custom-icon fab fa-instagram fa-3x"></i>
               {%- endif -%}
-              <div class="counter" data-target="{{ block.settings.count }}">0</div>
+              <div class="counter_box">
+                <span class="counter" data-target="{{ block.settings.count }}">0</span>
+                <span>{{ block.settings.sufix }}</span>
+              </div>
               <span>{{ block.settings.sub_text }}</span>
             </div>
           {%- when 'youtube' -%}
@@ -22,7 +25,10 @@
               {%- else -%}
                 <i class="custom-icon fab fa-youtube fa-3x"></i>
               {%- endif -%}
-              <div class="counter" data-target="{{ block.settings.count }}">0</div>
+              <div class="counter_box">
+                <span class="counter" data-target="{{ block.settings.count }}">0</span>
+                <span>{{ block.settings.sufix }}</span>
+              </div>
               <span>{{ block.settings.sub_text }}</span>
             </div>
           {%- when 'facebook' -%}
@@ -32,7 +38,10 @@
               {%- else -%}
                 <i class="custom-icon fab fa-facebook fa-3x"></i>
               {%- endif -%}
-              <div class="counter" data-target="{{ block.settings.count }}">0</div>
+              <div class="counter_box">
+                <span class="counter" data-target="{{ block.settings.count }}">0</span>
+                <span>{{ block.settings.sufix }}</span>
+              </div>
               <span>{{ block.settings.sub_text }}</span>
             </div>
           {%- when 'total_likes' -%}
@@ -42,7 +51,10 @@
               {%- else -%}
                 <i class="custom-icon fa-solid fa-heart fa-3x"></i>
               {%- endif -%}
-              <div class="counter" data-target="{{ block.settings.count }}">0</div>
+              <div class="counter_box">
+                <span class="counter" data-target="{{ block.settings.count }}">0</span>
+                <span>{{ block.settings.sufix }}</span>
+              </div>
               <span>{{ block.settings.sub_text }}</span>
             </div>
         {% endcase %}
@@ -51,22 +63,49 @@
   </div>
 </section>
 
-{% javascript %}
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach((counter) => {
-    counter.innerText = '0';
-    const updateCounter = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-      const increment = target / 20;
-      if (count < target) {
-        counter.innerText = `${Math.ceil(count + increment)}`;
-        setTimeout(updateCounter, 1);
-      } else counter.innerText = target;
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select the section to observe
+    const section = document.querySelector('#section_counter_1');
+    const counters = document.querySelectorAll('.counter');
+
+    const runCounterAnimation = (counter) => {
+      $(counter)
+        .prop('Counter', 0)
+        .animate(
+          {
+            Counter: $(counter).data('target'),
+          },
+          {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+              $(this).text(Math.ceil(now));
+            },
+          }
+        );
     };
-    updateCounter();
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observerCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          counters.forEach((counter) => runCounterAnimation(counter));
+          observer.unobserve(section); // Stop observing once animation has run
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    observer.observe(section);
   });
-{% endjavascript %}
+</script>
 
 {% schema %}
 {
@@ -125,6 +164,11 @@
         },
         {
           "type": "text",
+          "id": "sufix",
+          "label": "Sufix"
+        },
+        {
+          "type": "text",
           "id": "sub_text",
           "label": "Sub Text",
           "default": "Instagram Followers"
@@ -146,6 +190,11 @@
           "id": "count",
           "label": "Count",
           "default": "1000"
+        },
+        {
+          "type": "text",
+          "id": "sufix",
+          "label": "Sufix"
         },
         {
           "type": "text",
@@ -173,6 +222,11 @@
         },
         {
           "type": "text",
+          "id": "sufix",
+          "label": "Sufix"
+        },
+        {
+          "type": "text",
           "id": "sub_text",
           "label": "Sub Text",
           "default": "Facebook Fans"
@@ -194,6 +248,11 @@
           "id": "count",
           "label": "Count",
           "default": "1000"
+        },
+        {
+          "type": "text",
+          "id": "sufix",
+          "label": "Sufix"
         },
         {
           "type": "text",

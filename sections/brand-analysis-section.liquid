@@ -5,6 +5,10 @@
   assign mobile_margin_top = section.settings.mobile_margin_top
   assign mobile_margin_bottom = section.settings.mobile_margin_bottom
   assign content_image = section.settings.content_image
+  assign content_video = section.settings.content_video
+  assign button_text = section.settings.button_text
+  assign button_sub_text = section.settings.button_sub_text
+  assign button_url = section.settings.button_url
 %}
 <style>
     .brand_analysis {
@@ -58,7 +62,14 @@
         border-radius: 37px;
         padding: 6px 54px 12px 12px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
     }
+    .analysis_button:hover {
+    background-color: #e3d2ff;
+    border-color: #845ec2;
+    box-shadow: 9px 12px 0px 2px black;
+    }
+
     .analysis_button a {
         text-decoration: none;
         background: none;
@@ -100,6 +111,19 @@
     .brand_analysis_content_image {
         width: 100%;
         height: 100%;
+    }
+    .brand_analysis_right{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .brand_analysis_content_video{
+      width: 67%;
+      /* aspect-ratio: 9 / 16; */
+      object-fit: cover;
+      background-color: white;
+      position: relative;
+      z-index: -1;
     }
   /* Responsive  */
 
@@ -144,6 +168,13 @@
             transform-origin: center center;
         }
     }
+
+    @media (max-width:440px){
+      .analysis_button a button .brand_button_icon {
+        right: -20px;
+        bottom: -40px;
+      }
+    }
 </style>
 <section class="brand_analysis">
   <div class="container container-{{ section.settings.container }}">
@@ -158,27 +189,33 @@
           </div>
         </h2>
         <div class="analysis_button">
-          <a href="#">
+          <a href="{{button_url}}">
             <button type="button">
-              Get Your Free Brand Analysis
+              {{ button_text }}
               <i class="fa-solid fa-location-arrow brand_button_icon"></i><br>
-              <span class="sub_text">Compete smarter, Not harder End To End</span>
+              <span class="sub_text">{{ button_sub_text }}</span>
             </button>
           </a>
         </div>
       </div>
       <div class="brand_analysis_right">
-        <img
-          src="{{content_image | image_url }}"
-          class="brand_analysis_content_image"
-          {%- unless isEditor -%}
-            data-aos="zoom-in-up"
-            data-aos-duration="2800"
-          {%- endunless -%}
-          width=""
-          height=""
-          alt=""
-        >
+        {%- if content_video != blank -%}
+          <video muted loop autoplay playsinline class="brand_analysis_content_video" width="300px">
+            <source src="{{ content_video.sources[1].url }}" type="video/mp4">
+          </video>
+        {%- elsif content_image != blank -%}
+          <img
+            src="{{content_image | image_url }}"
+            class="brand_analysis_content_image"
+            {%- unless isEditor -%}
+              data-aos="zoom-in-up"
+              data-aos-duration="2800"
+            {%- endunless -%}
+            width=""
+            height=""
+            alt=""
+          >
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -223,6 +260,12 @@
       "type": "image_picker",
       "id": "content_image",
       "label": "Content Image"
+    },
+    {
+      "type": "video",
+      "id": "content_video",
+      "label": "Content Video",
+      "info": "it will overide the banner image if you set any"
     },
     {
       "type": "header",
@@ -271,6 +314,23 @@
       "step": 1,
       "default": 20,
       "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Your Free Brand Analysis"
+    },
+    {
+      "type": "text",
+      "id": "button_sub_text",
+      "label": "Button Sub Text",
+      "default": "Compete smarter, Not harder End To End"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
     }
   ],
   "presets": [

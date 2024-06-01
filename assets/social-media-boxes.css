@@ -1,53 +1,60 @@
 .counter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-    gap: 2rem;
-    margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 2rem;
+  margin: 20px auto;
 }
 
 .counter-grid .counter-item {
-    background: #f1f1f1;
-    padding: 12px;
-    text-align: center;
-    border-radius: 1rem;
+  background: #f1f1f1;
+  padding: 12px;
+  text-align: center;
+  border-radius: 1rem;
 }
 
-.counter-item .counter {
-    font-size: 3.5rem;
-    color: #845ec2;
-    color: #845ec2;
-    letter-spacing: 0.5rem;
-    margin: 20px;
-    font-weight: 600;
+.counter-item .counter_box {
+  letter-spacing: 0.5rem;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+.counter-item .counter_box span {
+  font-size: 3.5rem;
+  color: #845ec2;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.counter-item .counter_box .counter {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0px;
 }
 
 .counter-item .custom-icon {
-    color: #845ec2ab;
+  color: #845ec2ab;
 }
 
 .counter-item span {
-    font-size: 18px;
-    font-weight: 500;
-
+  font-size: 18px;
+  font-weight: 500;
 }
 
-@media (max-width:768px) {
-    .counter-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
+@media (max-width: 768px) {
+  .counter-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 
-    .counter-item .counter {
-        font-size: 2rem;
-        margin: 12px;
-    }
+  .counter-item span {
+    font-size: 15px;
+  }
 
-    .counter-item span {
-        font-size: 15px;
-    }
-
-    .counter-item .text {
-        font-size: 14px;
-        font-weight: 500;
-    }
+  .counter-item .counter_box span {
+    font-size: 2.5rem;
+  }
+  .counter-item .text {
+    font-size: 14px;
+    font-weight: 500;
+  }
 }

@@ -14,21 +14,51 @@
   assign show_currency_icon = section.settings.show_currency_icon
   assign custom_pricing_text = section.settings.custom_pricing_text
   assign custom_pricing_link = section.settings.custom_pricing_link
+  assign recomended_plan = section.settings.recomended_plan
   assign custom_currency = section.settings.currency
+  assign show_both_plan = section.settings.show_both_plan
 
   assign basic_plan_name = section.settings.basic_plan_name
   assign standard_plan_name = section.settings.standard_plan_name
   assign premium_plan_name = section.settings.premium_plan_name
 
-  assign basic_plan_price = section.settings.basic_plan_price
-  assign standard_plan_price = section.settings.standard_plan_price
-  assign premium_plan_price = section.settings.premium_plan_price
+  assign basic_plan_monthly_price = section.settings.basic_plan_monthly_price
+  assign basic_plan_monthly_url = section.settings.basic_plan_monthly_url
 
-  assign basic_plan_checkout_link = section.settings.basic_plan_url
-  assign standard_plan_checkout_link = section.settings.standard_plan_url
-  assign premium_plan_checkout_link = section.settings.premium_plan_url
+  assign standard_plan_monthly_price = section.settings.standard_plan_monthly_price
+  assign standard_plan_monthly_url = section.settings.standard_plan_monthly_url
 
-  assign recomended_plan = section.settings.recomended_plan
+  assign premium_plan_monthly_price = section.settings.premium_plan_monthly_price
+  assign premium_plan_monthly_url = section.settings.premium_plan_monthly_url
+
+  assign basic_plan_yearly_price = section.settings.basic_plan_yearly_price
+  assign basic_plan_yearly_url = section.settings.basic_plan_yearly_url
+
+  assign standard_plan_yearly_price = section.settings.standard_plan_yearly_price
+  assign standard_plan_yearly_url = section.settings.standard_plan_yearly_url
+
+  assign premium_plan_yearly_price = section.settings.premium_plan_yearly_price
+  assign premium_plan_yearly_url = section.settings.premium_plan_yearly_url
+
+  if plan_type == 'month'
+    assign basic_plan_price = basic_plan_monthly_price
+    assign basic_plan_checkout_link = basic_plan_monthly_url
+
+    assign standard_plan_price = standard_plan_monthly_price
+    assign standard_plan_checkout_link = standard_plan_monthly_url
+
+    assign premium_plan_price = premium_plan_monthly_price
+    assign premium_plan_checkout_link = premium_plan_monthly_url
+  else
+    assign basic_plan_price = basic_plan_yearly_price
+    assign basic_plan_checkout_link = basic_plan_yearly_url
+
+    assign standard_plan_price = standard_plan_yearly_price
+    assign standard_plan_checkout_link = standard_plan_yearly_url
+
+    assign premium_plan_price = premium_plan_yearly_price
+    assign premium_plan_checkout_link = premium_plan_yearly_url
+  endif
 -%}
 
 <style>
@@ -41,6 +71,12 @@
         margin-top: {{ mobile_margin_top | append: 'px' }};
         margin-bottom: {{ mobile_margin_bottom | append: 'px' }};
     }
+  }
+  .pricing__table{
+    scroll-snap-type: x mandatory;
+  }
+  .pt__option{
+    scroll-snap-align: start;
   }
 </style>
 
@@ -65,6 +101,20 @@
         <p>Social Media Monthly Plan.</p>
       </div>
     {%- endif -%}
+    {% if show_both_plan == true %}
+      <div class="plans-filter text-center wow fadeInUp" data-wow-delay=".5s">
+        <div class="button-group filter-button-group">
+          <button class="{% if plan_type == 'month' %}active{% endif %}" id="monthly_plan" plan-duration="month">
+            Monthly
+          </button>
+          <button class="{% if plan_type != 'month' %}active{% endif %}" id="yearly_plan" plan-duration="year">
+            Yearly
+          </button>
+          <div class="active-bg"></div>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="row">
       <div class="pricing__table">
         <div class="pt__title">
@@ -104,7 +154,7 @@
           </div>
           <div class="pt__option__slider swiper" id="pricingTableSlider">
             <div class="swiper-wrapper content_box">
-              <div class="swiper-slide pt__option__item">
+              <div class="swiper-slide pt__option__item" data-plan-basic>
                 <div class="pt__item {% if recomended_plan == 'basic' %} recommend_plan{% endif %}">
                   <div class="pt__item__wrap">
                     <div class="pt__row">
@@ -114,7 +164,7 @@
                       <div class="pt__row price_row">
                         <div class="price_wrap">
                           {%- if show_currency_icon == true -%}
-                            <div class="price_dollar">
+                            <div class="price_dollar" plan-type="basic">
                               {%- if custom_currency == 'USD' -%}
                                 &dollar;
                               {%- else -%}
@@ -157,7 +207,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide pt__option__item">
+              <div class="swiper-slide pt__option__item" data-plan-standard>
                 <div class="pt__item {% if recomended_plan == 'standard' %} recommend_plan{% endif %}">
                   <div class="pt__item__wrap">
                     <div class="pt__row">
@@ -210,7 +260,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide pt__option__item">
+              <div class="swiper-slide pt__option__item" data-plan-premium>
                 <div class="pt__item {% if recomended_plan == 'premium' %} recommend_plan{% endif %}">
                   <div class="pt__item__wrap">
                     <div class="pt__row">
@@ -276,7 +326,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     let init = false;
     let pricingCardSwiper;
-    let pricingLoanSwiper;
+    const swiperContainer = document.querySelector('.pt__option__slider');
+    const container = document.querySelector('.pricing__table');
 
     function swiperCard() {
       if (window.innerWidth <= 991) {
@@ -318,6 +369,81 @@
       Animation: 'scale',
       theme: 'huge',
     });
+    // slider mobile option
+    function filter_animation() {
+      var active_bg = $('.pricing_plan_section .plans-filter .button-group .active-bg');
+      var element = $('.pricing_plan_section .plans-filter .button-group .active');
+      $('.pricing_plan_section .plans-filter .button-group button').on('click', function () {
+        var plan_button = $(this);
+        plan_button.addClass('active');
+        activeFilterBtn(active_bg, plan_button);
+      });
+      activeFilterBtn(active_bg, element);
+    }
+    filter_animation();
+    function activeFilterBtn(active_bg, plan_button) {
+      if (!plan_button.length) {
+        return false;
+      }
+      var leftOff = plan_button.offset().left;
+      var width = plan_button.outerWidth();
+      var menuLeft = $('.plans-filter .button-group').offset().left;
+      plan_button.siblings().removeClass('active');
+      plan_button.closest('button').siblings().addClass('.plans-filter .button-group');
+      active_bg.css({ left: leftOff - menuLeft + 'px', width: width + 'px' });
+    }
+
+    function setPrice(planCard, monthlyPrice, yearlyPrice, planDuration) {
+      if (planCard) {
+        const priceTag = planCard.querySelector('.price_tag');
+        const price_type = planCard.querySelector('.price_type');
+        if (price_type) {
+          price_type.textContent = planDuration === 'month' ? '/mo' : '/yr';
+        }
+        if (priceTag) {
+          priceTag.textContent = planDuration === 'month' ? monthlyPrice : yearlyPrice;
+        }
+      }
+    }
+
+    function setCheckoutLinks(planCard, monthlyCheckoutLink, yearlyCheckoutLink, planDuration) {
+      if (planCard) {
+        const checkoutLinkTag = planCard.querySelector('.checkout_button_link > a');
+        if (checkoutLinkTag) {
+          checkoutLinkTag.href = planDuration === 'month' ? monthlyCheckoutLink : yearlyCheckoutLink;
+        }
+      }
+    }
+
+    function togglePrice() {
+      $('.pricing_plan_section .plans-filter .button-group button').on('click', function () {
+        const current_price = $(this);
+        const planDuration = current_price.attr('plan-duration');
+
+        const basic_plan_card = document.querySelector('[data-plan-basic]');
+        const standard_plan_card = document.querySelector('[data-plan-standard]');
+        const premium_plan_card = document.querySelector('[data-plan-premium]');
+
+        setPrice(basic_plan_card, '{{basic_plan_monthly_price}}', '{{basic_plan_yearly_price}}', planDuration);
+        setPrice(standard_plan_card, '{{standard_plan_monthly_price}}', '{{standard_plan_yearly_price}}', planDuration);
+        setPrice(premium_plan_card, '{{premium_plan_monthly_price}}', '{{premium_plan_yearly_price}}', planDuration);
+
+        setCheckoutLinks(basic_plan_card, '{{basic_plan_monthly_url}}', '{{basic_plan_yearly_url}}', planDuration);
+        setCheckoutLinks(
+          standard_plan_card,
+          '{{standard_plan_monthly_url}}',
+          '{{standard_plan_yearly_url}}',
+          planDuration
+        );
+        setCheckoutLinks(
+          premium_plan_card,
+          '{{premium_plan_monthly_url}}',
+          '{{premium_plan_yearly_url}}',
+          planDuration
+        );
+      });
+    }
+    togglePrice();
   });
 </script>
 {% schema %}
@@ -448,7 +574,7 @@
     {
       "type": "select",
       "id": "plan_type",
-      "label": "Pricing Plan Type",
+      "label": "Default Pricing Plan Type",
       "options": [
         {
           "value": "month",
@@ -460,6 +586,12 @@
         }
       ],
       "default": "month"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_both_plan",
+      "label": "Show Both Plan",
+      "default": true
     },
     {
       "type": "text",
@@ -506,14 +638,23 @@
     },
     {
       "type": "text",
-      "id": "basic_plan_price",
-      "label": "Basic Plan Price",
-      "info": "ex - 5,499 or 5499"
+      "id": "basic_plan_monthly_price",
+      "label": "Plan Monthly Price"
     },
     {
       "type": "url",
-      "id": "basic_plan_url",
-      "label": "Basic Plan Url"
+      "id": "basic_plan_monthly_url",
+      "label": "Monthly Plan Url"
+    },
+    {
+      "type": "text",
+      "id": "basic_plan_yearly_price",
+      "label": "Plan Yearly Price"
+    },
+    {
+      "type": "url",
+      "id": "basic_plan_yearly_url",
+      "label": "Yearly Plan Url"
     },
     {
       "type": "header",
@@ -527,13 +668,23 @@
     },
     {
       "type": "text",
-      "id": "standard_plan_price",
-      "label": "Standard Plan Price"
+      "id": "standard_plan_monthly_price",
+      "label": "Plan Monthly Price"
     },
     {
       "type": "url",
-      "id": "standard_plan_url",
-      "label": "Standard Plan Url"
+      "id": "standard_plan_monthly_url",
+      "label": "Monthly Plan Url"
+    },
+    {
+      "type": "text",
+      "id": "standard_plan_yearly_price",
+      "label": "Plan Yearly Price"
+    },
+    {
+      "type": "url",
+      "id": "standard_plan_yearly_url",
+      "label": "Yearly Plan Url"
     },
     {
       "type": "header",
@@ -547,13 +698,23 @@
     },
     {
       "type": "text",
-      "id": "premium_plan_price",
-      "label": "Premium Plan Price"
+      "id": "premium_plan_monthly_price",
+      "label": "Plan Monthly Price"
     },
     {
       "type": "url",
-      "id": "premium_plan_url",
-      "label": "Premium Plan Url"
+      "id": "premium_plan_monthly_url",
+      "label": "Monthly Plan Url"
+    },
+    {
+      "type": "text",
+      "id": "premium_plan_yearly_price",
+      "label": "Plan Yearly Price"
+    },
+    {
+      "type": "url",
+      "id": "premium_plan_yearly_url",
+      "label": "Yearly Plan Url"
     }
   ],
   "blocks": [

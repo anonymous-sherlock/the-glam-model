@@ -29,6 +29,7 @@
     position: relative;
     width: 100%;
     height: 60vh;
+    min-height: 400px;
     display: flex;
     background: url('{{ overlay_bg_url }}') no-repeat center center / cover,
       url('{%- if image_1 != nil or image_1 != blank -%}{{ image_1 }}{% else %}"https://www.theglammodel.com/images/billboard1.jpg"{%- endif -%}')
@@ -42,8 +43,11 @@
   }
   .billboard__section .box .link {
     color: white;
-    transform: translateY(40%);
+    transform: translateY(70%);
+    height: 100%;
+    transition: all 300ms ease-in-out;
   }
+
   .billboard__section .box:hover .link {
     transform: translateY(0%);
   }
@@ -187,7 +191,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 50px 0px;
+    padding: 0px 0px;
   }
   .billboard__section .divider {
     width: 30%;

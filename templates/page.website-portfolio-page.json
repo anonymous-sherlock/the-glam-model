@@ -5,14 +5,114 @@
       "disabled": true,
       "settings": {}
     },
-    "hero_banner_image_qYhqkc": {
-      "type": "hero-banner-image",
+    "banner_slideshow_BVnkjQ": {
+      "type": "banner-slideshow",
+      "blocks": {
+        "slide_cg9Bjq": {
+          "type": "slide",
+          "settings": {
+            "title": "Digital <br>\nExcellence",
+            "sub_title": "Innovative Web Solutions",
+            "banner_image": "shopify:\/\/shop_images\/digital_advertisment.jpg",
+            "card_image": "shopify:\/\/shop_images\/digital_advertisment.jpg",
+            "year": "2024"
+          }
+        },
+        "slide_xaUFhh": {
+          "type": "slide",
+          "settings": {
+            "title": "Innovative <br> Design",
+            "sub_title": "Digital Design",
+            "banner_image": "shopify:\/\/shop_images\/port_2_1.png",
+            "year": "2020"
+          }
+        },
+        "slide_AV968V": {
+          "type": "slide",
+          "settings": {
+            "title": "Expert <br>Insights",
+            "sub_title": "Guidance",
+            "banner_image": "shopify:\/\/shop_images\/print_or_digital.jpg",
+            "year": "2020"
+          }
+        },
+        "slide_Wfih7m": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "Kiteboard <br>  action",
+            "sub_title": "Digital Design",
+            "banner_image": "shopify:\/\/shop_images\/port-3.jpg",
+            "year": "2021"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cg9Bjq",
+        "slide_xaUFhh",
+        "slide_AV968V",
+        "slide_Wfih7m"
+      ],
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/webportfolio.jpg",
-        "image_alt": "",
-        "object_fit": "cover",
-        "mobile_height": 15,
-        "desktop_height": 74
+        "container": "1770",
+        "desktop_margin_top": 0,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 20
+      }
+    },
+    "services_card_section_dVGnXW": {
+      "type": "services-card-section",
+      "blocks": {
+        "service_DXymmc": {
+          "type": "service",
+          "settings": {
+            "custom_icon": "",
+            "icon": "icon-search-1",
+            "title": "Search Engine Optimization",
+            "description": "<p>Wanna be the star of Google? We will make you one. Glam Models will develop your website and employ tactics that will boost your rankings so that the right person finds you. Let's rule the search engines. <\/p>",
+            "background_shape": "shopify:\/\/shop_images\/line.png",
+            "link": ""
+          }
+        },
+        "service_q8fwCJ": {
+          "type": "service",
+          "settings": {
+            "custom_icon": "",
+            "icon": "icon-content-writing-1",
+            "title": "Content Marketing",
+            "description": "<p>Content is the king, but you are the ruler here. From sizzling blogs to Insta worthy visuals, we will make every scrolling stop. Let’s create a buzz with keyword focused content to outreach your loyal audience. <\/p>",
+            "background_shape": "shopify:\/\/shop_images\/line.png",
+            "link": ""
+          }
+        },
+        "service_nFigkf": {
+          "type": "service",
+          "settings": {
+            "custom_icon": "",
+            "icon": "icon-trend-1",
+            "title": "UI\/UX Design",
+            "description": "<p>First impressions are important, and we know how to kick it. Our UI\/UX design are as sleek as your latest photoshoot. Easy to navigate and stunning to look at, it will make your every client say WOW!<\/p>",
+            "background_shape": "shopify:\/\/shop_images\/line.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_DXymmc",
+        "service_q8fwCJ",
+        "service_nFigkf"
+      ],
+      "settings": {
+        "container": "1170",
+        "title": "Standout in the Competitive Digital Landscape",
+        "sub_title": "OUR SERVICE",
+        "sub_text": "<p>Want to attract the top clients? Let’s ace the traction game with an effective digital presence. Welcome to the future of fashion and icons - Glam Models. Our modeling agency takes your digital presence to another level through exceptional website design and portfolio creation. <\/p>",
+        "background_image": "shopify:\/\/shop_images\/service-bg-1-1.png",
+        "desktop_margin_top": 0,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 20
       }
     },
     "portfolio_tab_section_Y8xP76": {
@@ -25,47 +125,33 @@
             "tab_id": "uxui"
           }
         },
-        "tabs_xmxPPw": {
-          "type": "tabs",
-          "settings": {
-            "tab_title": "Branding",
-            "tab_id": "branding"
-          }
-        },
-        "tabs_bpUMp8": {
-          "type": "tabs",
-          "settings": {
-            "tab_title": "Apps",
-            "tab_id": "mobile-app"
-          }
-        },
         "items_a4j6qU": {
           "type": "items",
           "settings": {
             "id": "uxui",
-            "title": "New Age",
-            "description": "<p>Project was about precision and information.<\/p>",
-            "image": "shopify:\/\/shop_images\/1.jpg",
+            "title": "Gerold",
+            "description": "<p>We brought our A-game and built a custom website from scratch, meeting all the client's specific requirements and branding. An amazing user interface (UI) and user experience (UX) aspects to enhance usability, accessibility, and overall satisfaction for website visitors.<\/p>",
+            "image": "shopify:\/\/shop_images\/ui_1.jpg",
             "url": ""
           }
         },
         "items_mfjGXF": {
           "type": "items",
           "settings": {
-            "id": "mobile-app",
-            "title": "Sebastian",
-            "description": "<p>Project was about precision and information.<\/p>",
-            "image": "shopify:\/\/shop_images\/3.jpg",
+            "id": "uxui",
+            "title": "Dianne Russell",
+            "description": "<p>We took the challenge to create a website that is optimized for viewing on various devices like laptops, smartphones, and tablets. We didn’t compromise with the loading speed at any level and delivered the best result.<\/p>",
+            "image": "shopify:\/\/shop_images\/ui_2.jpg",
             "url": ""
           }
         },
         "items_6YBdBD": {
           "type": "items",
           "settings": {
-            "id": "branding",
-            "title": "Deloitte",
-            "description": "<p>Project was about precision and information.<\/p>",
-            "image": "shopify:\/\/shop_images\/2.jpg",
+            "id": "uxui",
+            "title": "Myportfy",
+            "description": "<p>The overall challenge was to draw more traffic to the brand’s website. We employed the SEO tactics after crafting a quick loading website along with keywords focused content. It leads to improved visibility and ranking results driving more audience. <\/p>",
+            "image": "shopify:\/\/shop_images\/ui_3.jpg",
             "url": ""
           }
         },
@@ -73,51 +159,28 @@
           "type": "items",
           "settings": {
             "id": "uxui",
-            "title": "New Age",
-            "description": "<p>Project was about precision and information.<\/p>",
-            "image": "shopify:\/\/shop_images\/1.jpg",
-            "url": ""
-          }
-        },
-        "items_JEWtN4": {
-          "type": "items",
-          "settings": {
-            "id": "mobile-app",
-            "title": "Sebastian",
-            "description": "<p>Project was about precision and information.<\/p>",
-            "image": "shopify:\/\/shop_images\/3.jpg",
-            "url": ""
-          }
-        },
-        "items_Lb7ABX": {
-          "type": "items",
-          "settings": {
-            "id": "branding",
-            "title": "Mochnix",
-            "description": "<p>Project was about precision and information.<\/p>",
-            "image": "shopify:\/\/shop_images\/download.jpg",
+            "title": "Myportfy",
+            "description": "<p>Apart from modifying the brand logo to match it with their brand idea, we revamped the UI\/UX interface for them. For better engagement and easy content sharing, we also integrated social media platforms like Instagram, Twitter, & Facebook.<\/p>",
+            "image": "shopify:\/\/shop_images\/ui_4.jpg",
             "url": ""
           }
         }
       },
       "block_order": [
         "tabs_JycWmK",
-        "tabs_xmxPPw",
-        "tabs_bpUMp8",
         "items_a4j6qU",
         "items_mfjGXF",
         "items_6YBdBD",
-        "items_zHrTLf",
-        "items_JEWtN4",
-        "items_Lb7ABX"
+        "items_zHrTLf"
       ],
       "settings": {
         "container": "1170",
-        "heading_start": "Our Recent Works",
-        "sub_text": "<p>We put your ideas and thus your wishes in the form of a unique web project that inspires you and you customers.<\/p>",
+        "heading_start": "We are proud of our work",
+        "sub_text": "<p>We flip the scale in the favor of our client through exclusive website and portfolio creation services. Turning ideas into reality of not one or two, but numerous clients.<\/p>",
+        "column_count": "2",
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
-        "mobile_margin_top": 20,
+        "mobile_margin_top": 40,
         "mobile_margin_bottom": 20
       }
     },
@@ -138,7 +201,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Number of Pages",
-            "hover_content": "Total no of pages",
+            "hover_content": "Choose from the minimum number of pages to extensive categorization of pages for your website.",
             "basic_plan_content": "Up to 5",
             "standard_plan_content": "Up to 10",
             "premium_plan_content": "Unlimited"
@@ -148,7 +211,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Design Templates",
-            "hover_content": "Design Templates",
+            "hover_content": "Choose either the pre-designed templates, themes for your website or opt for customized templates.",
             "basic_plan_content": "Limited Selection",
             "standard_plan_content": "Wide Selection",
             "premium_plan_content": "Custom Designs"
@@ -168,7 +231,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Responsive Design",
-            "hover_content": "Responsive Design",
+            "hover_content": "Ensure that the website is compatible with various devices and screen sizes, including desktops, laptops, tablets, & smartphones.",
             "basic_plan_content": "Yes",
             "standard_plan_content": "Yes",
             "premium_plan_content": "Yes"
@@ -178,7 +241,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Contact Form",
-            "hover_content": "Contact Form",
+            "hover_content": "Customized the fields and placement of the contact form to collect the data of the visitors that are interested in your services.",
             "basic_plan_content": "Yes",
             "standard_plan_content": "Yes",
             "premium_plan_content": "Yes"
@@ -188,7 +251,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Blog Section",
-            "hover_content": "Blogging Functionality",
+            "hover_content": "Building websites with blogs section that is easy-to-manage and update content without extensive technical knowledge.",
             "basic_plan_content": "No",
             "standard_plan_content": "Yes",
             "premium_plan_content": "Yes"
@@ -198,7 +261,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "E-Commerce",
-            "hover_content": "E-commerce Functionality",
+            "hover_content": "To create an online store with features like product listings, shopping carts, payment gateways, and much more.",
             "basic_plan_content": "No",
             "standard_plan_content": "No",
             "premium_plan_content": "Yes"
@@ -208,7 +271,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "SEO Optimization",
-            "hover_content": "Search Engine Optimization",
+            "hover_content": "On-page\/off-page\/technical\/local SEO tactics to increase visibility and drive more traffic to the website and portfolio.",
             "basic_plan_content": "Basic",
             "standard_plan_content": "Advanced",
             "premium_plan_content": "Premium"
@@ -218,7 +281,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Analytics",
-            "hover_content": "Analytics",
+            "hover_content": "To examine the page views, visitors, audience demographics, behavior analysis, traffic source, and a lot more to optimize the user journey.",
             "basic_plan_content": "Basic",
             "standard_plan_content": "Advanced",
             "premium_plan_content": "Premium"
@@ -228,7 +291,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Website Security Audit",
-            "hover_content": "Website Security Audit",
+            "hover_content": "Examination of the configuration settings of the software components, identifying potential threats, and much more.",
             "basic_plan_content": "No",
             "standard_plan_content": "No",
             "premium_plan_content": "Yes"
@@ -248,7 +311,7 @@
           "type": "plan_feature",
           "settings": {
             "title": "Support",
-            "hover_content": "Support",
+            "hover_content": "Troubleshooting technical issues. Carrying out maintenance, updates, and implementing security measures for abrupt functioning of the website.",
             "basic_plan_content": "Email",
             "standard_plan_content": "Email & Chat",
             "premium_plan_content": "Priority Support"
@@ -284,23 +347,45 @@
         "plan_type": "month",
         "custom_pricing_text": "",
         "custom_pricing_link": "",
+        "currency": "USD",
         "show_currency_icon": true,
         "basic_plan_name": "Essentials",
-        "basic_plan_price": "30,000",
+        "basic_plan_price": "399",
         "basic_plan_url": "",
         "standard_plan_name": "Standard",
-        "standard_plan_price": "45,000",
+        "standard_plan_price": "699",
         "standard_plan_url": "",
         "premium_plan_name": "Custom",
-        "premium_plan_price": "83,000",
+        "premium_plan_price": "",
         "premium_plan_url": ""
+      }
+    },
+    "cta_section_meyPXT": {
+      "type": "cta-section",
+      "settings": {
+        "container": "1170",
+        "heading": "Ready to take your online presence to the",
+        "heading_feature": "&nbsp;next level",
+        "heading_end": "&nbsp;?",
+        "sub_text": "<p>Schedule a free consultation with our design team today!<\/p>",
+        "desktop_margin_top": 50,
+        "desktop_margin_bottom": 50,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20,
+        "custom_popup_button": "",
+        "button_text": "SEE OUR PLANS",
+        "button_link": "",
+        "show_button_subtext": false,
+        "button_subtext": "No credit card required!"
       }
     }
   },
   "order": [
     "main",
-    "hero_banner_image_qYhqkc",
+    "banner_slideshow_BVnkjQ",
+    "services_card_section_dVGnXW",
     "portfolio_tab_section_Y8xP76",
-    "pricing_plan_section_myMkkQ"
+    "pricing_plan_section_myMkkQ",
+    "cta_section_meyPXT"
   ]
 }

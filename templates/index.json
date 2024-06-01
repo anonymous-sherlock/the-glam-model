@@ -13,7 +13,8 @@
           "type": "instagram",
           "settings": {
             "icon": "",
-            "count": "1000",
+            "count": "580",
+            "sufix": "K",
             "sub_text": "Instagram Followers"
           }
         },
@@ -21,7 +22,8 @@
           "type": "youtube",
           "settings": {
             "icon": "",
-            "count": "2000",
+            "count": "354",
+            "sufix": "K",
             "sub_text": "Youtube Subscribers"
           }
         },
@@ -29,7 +31,8 @@
           "type": "facebook",
           "settings": {
             "icon": "",
-            "count": "1400",
+            "count": "88",
+            "sufix": "K",
             "sub_text": "Facebook Fans"
           }
         },
@@ -37,7 +40,8 @@
           "type": "total_likes",
           "settings": {
             "icon": "",
-            "count": "800",
+            "count": "27",
+            "sufix": "M",
             "sub_text": "Total Likes"
           }
         }
@@ -60,30 +64,35 @@
         "desktop_margin_top": 40,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
-        "mobile_margin_bottom": 20
+        "mobile_margin_bottom": 20,
+        "button_text": "Grab your free social media analysis",
+        "button_sub_text": "Slay the FEED! Turn likes into runway success.",
+        "button_url": "shopify:\/\/pages\/social-media-management"
       }
     },
     "magazine_section_UmUkxF": {
       "type": "magazine-section",
       "blocks": {
+        "feature_fKf4V8": {
+          "type": "feature",
+          "settings": {
+            "title_start": "",
+            "title_featured": "Blaze",
+            "title_end": "magazines",
+            "image": "shopify:\/\/shop_images\/BLAZE_FRONT_COVER.jpg",
+            "description": "<p>A trend defining magazine for the trailblazers. Get a peek into the hottest trends in fashion and beauty. Discover the jaw dropping secrets behind the fashion scene. <\/p>",
+            "link": "https:\/\/www.blazemagazines.com\/"
+          }
+        },
         "feature_iNN4PL": {
           "type": "feature",
           "settings": {
             "title_start": "",
             "title_featured": "Swing",
             "title_end": "magazines",
-            "image": "shopify:\/\/shop_images\/magazine1.jpg",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
-          }
-        },
-        "feature_D44LJF": {
-          "type": "feature",
-          "settings": {
-            "title_start": "",
-            "title_featured": "Mac",
-            "title_end": "magazines",
-            "image": "shopify:\/\/shop_images\/magazine1.jpg",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+            "image": "shopify:\/\/shop_images\/swing_cover.png",
+            "description": "<p>Bridging the diverse cultures and trends. Aiming to spotlight the global fashion talent and dishing out epic editorial collabs. We are not just a magazine, we are a vibe. <\/p>",
+            "link": "https:\/\/www.swingmagazines.com\/"
           }
         },
         "feature_DbUA3r": {
@@ -92,33 +101,35 @@
             "title_start": "",
             "title_featured": "Con",
             "title_end": "magazines",
-            "image": "shopify:\/\/shop_images\/magazine1.jpg",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+            "image": "shopify:\/\/shop_images\/con_front_cover.jpg",
+            "description": "<p>A digital and print magazine, celebrating the creativity of the artists. Dive into captivating stories, stunning visuals, & inspiring interviews that shape today's art world.<\/p>",
+            "link": "https:\/\/www.conmagazines.com\/"
           }
         },
-        "feature_fKf4V8": {
+        "feature_D44LJF": {
           "type": "feature",
           "settings": {
             "title_start": "",
-            "title_featured": "Uncover",
+            "title_featured": "Mex",
             "title_end": "magazines",
-            "image": "shopify:\/\/shop_images\/magazine1.jpg",
-            "description": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>"
+            "image": "shopify:\/\/shop_images\/max_cover.png",
+            "description": "<p>The go-to magazine for discovering next generation icons in the fashion industry. Experience the creativity on the vibrant pages filled with dreams. <\/p>",
+            "link": "https:\/\/www.mexmagazines.com\/"
           }
         }
       },
       "block_order": [
+        "feature_fKf4V8",
         "feature_iNN4PL",
-        "feature_D44LJF",
         "feature_DbUA3r",
-        "feature_fKf4V8"
+        "feature_D44LJF"
       ],
       "settings": {
         "container": "1170",
         "heading_start": "Magaz",
         "heading_featured": "i",
         "heading_end": "nes",
-        "sub_text": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>",
+        "sub_text": "<p>Get the scoop on what’s hot and happening in the glam world. Exclusive editorials, insider interviews & much more.<\/p>",
         "content_image": "shopify:\/\/shop_images\/model.png",
         "content_image_alt": "",
         "desktop_margin_top": 40,
@@ -133,27 +144,27 @@
         "feature_czLL9g": {
           "type": "feature",
           "settings": {
-            "image": "shopify:\/\/shop_images\/billboard-1.jpg",
-            "title": "the mountains",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt\n              quibusdam\n              corrupti aut, recusandae alias dolores ex expedita quaerat a in et.",
+            "image": "shopify:\/\/shop_images\/models_onboard.png",
+            "title": "Model Onboarding",
+            "description": "Start by reaching out to potential models through social media, events, or referrals.\n<br>\n<br>\nGet their basic info, snap some initial shots, and create their profile in the mag.",
             "url": ""
           }
         },
         "feature_7aRztw": {
           "type": "feature",
           "settings": {
-            "image": "shopify:\/\/shop_images\/billboard-2.jpg",
-            "title": "the mountains",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt\n              quibusdam\n              corrupti aut, recusandae alias dolores ex expedita quaerat a in et.",
+            "image": "shopify:\/\/shop_images\/blaze_mag.jpg",
+            "title": "Upgrade Assistance",
+            "description": "We pair each model with an agent \n\n<br>\n<br>\nCarry out the upgradation and customization of the portfolio\n<br>\n<br>\n\nWe keep their profiles looking fresh and updated regularly, so they’re always ready for the next big opportunity.",
             "url": ""
           }
         },
         "feature_kV4Wx3": {
           "type": "feature",
           "settings": {
-            "image": "shopify:\/\/shop_images\/billboard-3.jpg",
-            "title": "the mountains",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis rerum laudantium, ad deserunt\n              quibusdam\n              corrupti aut, recusandae alias dolores ex expedita quaerat a in et.",
+            "image": "shopify:\/\/shop_images\/billboard-1_d1a3f7c4-a56a-4423-9707-1481480f29f0.jpg",
+            "title": "Feature in NYC Billboard",
+            "description": "We scout for the hottest gigs for our clients.\n<br>\n<br>\nCollaborate with top magazines to land our models the prime spots.",
             "url": ""
           }
         }
@@ -164,8 +175,63 @@
         "feature_kV4Wx3"
       ],
       "settings": {
-        "section_title": "",
-        "sub_text": "<p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, adipisci.<\/strong><\/p>"
+        "section_title": "Casting Calls to Cover Stars",
+        "sub_text": "<p>Kickstart your dream in the easiest way ever and see your face light up the billboards globally.<\/p>"
+      }
+    },
+    "halo_submission_form_g9m6Gr": {
+      "type": "halo-submission-form",
+      "blocks": {
+        "button_rLzdpK": {
+          "type": "button",
+          "settings": {
+            "button_text": "Submit Blaze Magazine",
+            "button_cover_image": "shopify:\/\/shop_images\/BLAZE_FRONT_COVER.jpg",
+            "button_url": "https:\/\/www.blazemagazines.com\/",
+            "hover_color": ""
+          }
+        },
+        "button_3wfjYA": {
+          "type": "button",
+          "settings": {
+            "button_text": "Submit Con Magazine",
+            "button_cover_image": "shopify:\/\/shop_images\/con_front_cover.jpg",
+            "button_url": "https:\/\/www.conmagazines.com\/",
+            "hover_color": ""
+          }
+        },
+        "button_BzfGbL": {
+          "type": "button",
+          "settings": {
+            "button_text": "Submit Swing Magazine",
+            "button_cover_image": "shopify:\/\/shop_images\/swing_cover.png",
+            "button_url": "https:\/\/www.swingmagazines.com\/",
+            "hover_color": ""
+          }
+        },
+        "button_zmJR3k": {
+          "type": "button",
+          "settings": {
+            "button_text": "Submit Mex Magazine",
+            "button_cover_image": "shopify:\/\/shop_images\/max_cover.png",
+            "button_url": "https:\/\/www.mexmagazines.com\/",
+            "hover_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_rLzdpK",
+        "button_3wfjYA",
+        "button_BzfGbL",
+        "button_zmJR3k"
+      ],
+      "settings": {
+        "container": "1770",
+        "button_text": "Submission",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 40,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 20
       }
     },
     "social_media_management_Ew8gDN": {
@@ -177,7 +243,7 @@
             "title_start": "",
             "title_featured": "Online",
             "title_end": "Marketing",
-            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+            "description": "<p>Max out your reach and engagement & get your name buzzing online.<\/p>"
           }
         },
         "feature_hQrBcU": {
@@ -186,7 +252,7 @@
             "title_start": "",
             "title_featured": "Latest",
             "title_end": "Technology",
-            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+            "description": "<p>Tapping the best tech to make your feed enriching and engaging.<\/p>"
           }
         },
         "feature_MAFQ7D": {
@@ -195,7 +261,7 @@
             "title_start": "",
             "title_featured": "Content",
             "title_end": "Writing",
-            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+            "description": "<p>An epic content service that tells your story and attract attention.<\/p>"
           }
         },
         "feature_iKBcLT": {
@@ -204,7 +270,7 @@
             "title_start": "",
             "title_featured": "Social",
             "title_end": "Marketing",
-            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+            "description": "<p>Tapping the best tech to make your feed enriching and engaging.<\/p>"
           }
         },
         "feature_4yqGD6": {
@@ -213,7 +279,7 @@
             "title_start": "",
             "title_featured": "PPC",
             "title_end": "Advertising",
-            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+            "description": "<p>A bull’s eye PPC ads campaigns to drive<strong> <\/strong>traffic and conversion.<\/p>"
           }
         },
         "feature_bK6KNR": {
@@ -222,7 +288,7 @@
             "title_start": "",
             "title_featured": "Quick",
             "title_end": "Support",
-            "description": "<p>Get high rankings with multi-team collaboration help you optimize SEO.<\/p>"
+            "description": "<p>Our support team got your back, anytime and anywhere. <\/p>"
           }
         }
       },
@@ -236,16 +302,35 @@
       ],
       "settings": {
         "container": "1170",
-        "heading_start": "",
+        "heading_start": "Boost Your Soc<span class=\"halfStyled\" data-content=\"i\">i<\/span>al Med<span class=\"halfStyled\" data-content=\"i\">i<\/span>a Mag<span class=\"halfStyled\" data-content=\"i\">i<\/span>c",
         "heading_featured": "",
         "heading_end": "",
-        "sub_text": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, libero!<\/p>",
+        "sub_text": "<p>From Insta glam to Tik Tok Reels, we are gonna amplify your social media swagger and get you trending.<\/p>",
         "content_image": "shopify:\/\/shop_images\/smm.png",
         "content_image_alt": "",
         "desktop_margin_top": 100,
         "desktop_margin_bottom": 40,
         "mobile_margin_top": 20,
         "mobile_margin_bottom": 20
+      }
+    },
+    "cta_section_FgceV3": {
+      "type": "cta-section",
+      "settings": {
+        "container": "1770",
+        "heading": "Ready to",
+        "heading_feature": "&nbsp;Shine ?",
+        "heading_end": "",
+        "sub_text": "<p>Fill out the form and join our squad now! , Let’s make you the next best thing.<\/p>",
+        "desktop_margin_top": 40,
+        "desktop_margin_bottom": 0,
+        "mobile_margin_top": 20,
+        "mobile_margin_bottom": 0,
+        "custom_popup_button": "data-open-contact-popup",
+        "button_text": "Get Started",
+        "button_link": "",
+        "show_button_subtext": false,
+        "button_subtext": "No credit card required!"
       }
     },
     "services_filtered_tab_yyg3G4": {
@@ -366,6 +451,7 @@
         "items_AGF9Dr",
         "items_X4yCMq"
       ],
+      "disabled": true,
       "settings": {
         "container": "1170",
         "heading_start": "Our Serv",
@@ -378,31 +464,146 @@
         "mobile_margin_bottom": 20
       }
     },
+    "portfolio_tab_section_VhKcdT": {
+      "type": "portfolio-tab-section",
+      "blocks": {
+        "tabs_xNMbDh": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "SMM",
+            "tab_id": "smm"
+          }
+        },
+        "tabs_cCk7dQ": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "PR Activites",
+            "tab_id": "pr-activity"
+          }
+        },
+        "tabs_T6nAwf": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "Brands",
+            "tab_id": "brands"
+          }
+        },
+        "tabs_RJHme6": {
+          "type": "tabs",
+          "settings": {
+            "tab_title": "Website Creations",
+            "tab_id": "website-creations"
+          }
+        },
+        "items_qVrHgi": {
+          "type": "items",
+          "settings": {
+            "id": "website-creations",
+            "title": "Ui\/Ux design",
+            "description": "<p>To make your online vibe pop with dope visuals and navigation.<\/p>",
+            "image": "shopify:\/\/shop_images\/1.jpg",
+            "url": "shopify:\/\/pages\/website-and-portfolio-creation"
+          }
+        },
+        "items_gamDet": {
+          "type": "items",
+          "settings": {
+            "id": "smm",
+            "title": "Instagram Growth",
+            "description": "<p>Grow your Instagram family like wildfire. Get the exposure you deserve.<\/p>",
+            "image": "shopify:\/\/shop_images\/2.jpg",
+            "url": "shopify:\/\/pages\/social-media-management"
+          }
+        },
+        "items_aKpQGX": {
+          "type": "items",
+          "settings": {
+            "id": "brands",
+            "title": "UGC Content",
+            "description": "<p>Harnessing user generated content for authentic representation.<\/p>",
+            "image": "shopify:\/\/shop_images\/3.jpg",
+            "url": "shopify:\/\/pages\/brand-management-services"
+          }
+        },
+        "items_Gwr9wb": {
+          "type": "items",
+          "settings": {
+            "id": "website-creations",
+            "title": "On\/Off Page SEO",
+            "description": "<p>We play the Google game to optimize your online presence. <\/p>",
+            "image": "shopify:\/\/shop_images\/download.jpg",
+            "url": "shopify:\/\/pages\/website-and-portfolio-creation"
+          }
+        },
+        "items_yUTJdj": {
+          "type": "items",
+          "settings": {
+            "id": "brands",
+            "title": "Influencer Marketing",
+            "description": "<p>Partner with big shots in the fashion to skyrocket the brand’s name.<\/p>",
+            "image": "shopify:\/\/shop_images\/2.jpg",
+            "url": ""
+          }
+        },
+        "items_UPW88d": {
+          "type": "items",
+          "settings": {
+            "id": "pr-activity",
+            "title": "Event and Fashion Show",
+            "description": "<p>Covering and endorsing events to keep you in the limelight. <\/p>",
+            "image": "shopify:\/\/shop_images\/3.jpg",
+            "url": "shopify:\/\/pages\/pr-services"
+          }
+        }
+      },
+      "block_order": [
+        "tabs_xNMbDh",
+        "tabs_cCk7dQ",
+        "tabs_T6nAwf",
+        "tabs_RJHme6",
+        "items_qVrHgi",
+        "items_gamDet",
+        "items_aKpQGX",
+        "items_Gwr9wb",
+        "items_yUTJdj",
+        "items_UPW88d"
+      ],
+      "settings": {
+        "container": "1770",
+        "heading_start": "Our Glamorous Services",
+        "sub_text": "<p>Step up your modeling career with our amazing MOVES.<\/p>",
+        "column_count": "3",
+        "desktop_margin_top": 100,
+        "desktop_margin_bottom": 100,
+        "mobile_margin_top": 60,
+        "mobile_margin_bottom": 50
+      }
+    },
     "testimonial_section_cWxNxx": {
       "type": "testimonial-section",
       "blocks": {
         "testimonial_PKUrNT": {
           "type": "testimonial",
           "settings": {
-            "name": "PETER LEE",
-            "content": "<p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!<\/p>",
-            "image": "shopify:\/\/shop_images\/testimonials-01-179x179.png"
+            "name": "Audrey Hooper",
+            "content": "<p>Working with Glam Models has been a game changer for my career. They have hooked me up with amazing gigs and their social media game is on point. Now I am getting amazing collabs left and right.<\/p>",
+            "image": "shopify:\/\/shop_images\/TESTIMONIAL_1.jpg"
           }
         },
         "testimonial_BH3nkq": {
           "type": "testimonial",
           "settings": {
-            "name": "JENNIFER",
-            "content": "<p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!<\/p>",
-            "image": "shopify:\/\/shop_images\/testimonials-02-306x306.png"
+            "name": "Alexis Weeler",
+            "content": "<p>Shout out to the Glam Models for always having my back. Their social media magic sky rocketed my followers. Can’t believe the exposure. Could not ask for a better team.  <\/p>",
+            "image": "shopify:\/\/shop_images\/TESTIMONIAL_2.jpg"
           }
         },
         "testimonial_rKDjmf": {
           "type": "testimonial",
           "settings": {
-            "name": "PETER LEE",
-            "content": "<p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!<\/p>",
-            "image": "shopify:\/\/shop_images\/testimonials-03-179x179.png"
+            "name": "Brandon Sylvie",
+            "content": "<p>Kudos to Glam Models. This agency is a straight fire. They have opened doors I never thought would be possible. They took care of my portfolio and landed me up with some amazing opportunities.<\/p>",
+            "image": "shopify:\/\/shop_images\/TESTIMONIAL_3.jpg"
           }
         }
       },
@@ -500,6 +701,30 @@
         "content_bg": "",
         "content_gradient": ""
       }
+    },
+    "halo_contact_form_popup_VyiqRe": {
+      "type": "halo-contact-form-popup",
+      "blocks": {
+        "custom_cip7W7": {
+          "type": "custom",
+          "settings": {
+            "custom_script": "<!--pifyform-start-->\n<style>.pifyform.formloading iframe{visibility: hidden !important;} .pifyform.formloading{background-image: url(https:\/\/form-builder.pifyapp.com\/assets\/images\/loading.gif?v=4.6);background-position: center 30px;background-size: 30px 30px;background-repeat: no-repeat;}<\/style>\n<div id=\"pifyform-21210\" class=\"pifyform\" style=\"margin:10px 0;\">\n<script charset=\"UTF-8\" defer>document.getElementById(\"pifyform-21210\").classList.add(\"formloading\");(function(h){function n(a){return null===a?null:a.scrollHeight>a.clientHeight?a:n(a.parentNode)}function t(b){if(b.data && typeof(b.data)==\"string\"){var f =null;try{f=JSON.parse(b.data);}catch(e){}if(f!=null&&f.height!=undefined){if(f.formId==undefined){d.style.height=f.height+\"px\"}else if(\"pifyform-\"+f.formId==d.id){d.style.height=f.height+\"px\"} }if(f!=null&&f.redirect!=undefined&&f.redirect!=\"\"){window.location.href=f.redirect;}if(f!=null&&f.retsetHeight!=undefined&&f.retsetHeight){d.style.height=\"520px\";window.location.href=\"#pifyform-21210\";}if(document.getElementsByClassName('lazyframe').length>0){var lazyframe=document.getElementsByClassName('lazyframe')[0];lazyframe.style.height=\"100%\";lazyframe.removeAttribute(\"data-ratio\");lazyframe.parentNode.style.overflow='hidden'} if(f!=null&&f.getter){b={};var f=[].concat(f.getter),k,h=f.length,m,c,g,e;for(k=0;k<h;k++){m=k;c=f[k]||{};c.n&&(m=c.n);g=null;try{switch(c.t){case \"window\":e=window;break;case \"scrollParent\":e=n(a)||window;break;default:e=a}if(c.e)if(\"rect\"===c.v){g={};var l=e.getBoundingClientRect();g={top:l.top,left:l.left,width:l.width,height:l.height} }else g=e[c.v].apply(e,[].concat(c.e))||!0;else c.s?(e[c.v]=c.s,g=!0):g=e[c.v]||!1}catch(u){}b[m]=g}b.innerState=!p&&!q;a.contentWindow.postMessage(JSON.stringify({queryRes:b}),\"*\")} } }var d = document.getElementById(\"pifyform-21210\");var a = document.createElement(\"iframe\");d.style.overflowY=\"auto\";d.style.overflowX=\"hidden\";var p=d.style.height&&\"auto\"!==d.style.height,q=\"absolute\"===d.style.position||window.getComputedStyle&&\"absolute\"===window.getComputedStyle(d,null).getPropertyValue(\"position\")||d.currentStyle&&\"absolute\"===d.currentStyle.position;h.addEventListener&&h.addEventListener(\"message\",t,!1);a.src=\"https:\/\/form-builder-en.pifyapp.com\/form\/s\/21210\";a.id=\"form-iframe-21210\";a.onload=function(){document.getElementById(\"pifyform-21210\").classList.remove(\"formloading\");a.contentWindow.postMessage(JSON.stringify({parentUrl: window.location.href}), \"*\");};a.frameBorder=0;a.scrolling=\"no\";a.style.display=\"block\";a.style.minWidth=\"100%\";a.style.width=\"100px\";a.style.height=\"100%\";a.style.border=\"none\";a.style.overflow=\"auto\";setTimeout(function(){if(!document.getElementById(\"form-iframe-21210\")){d.appendChild(a);} },50);})(window);<\/script>\n<\/div>\n<!--pifyform-end-->"
+          }
+        }
+      },
+      "block_order": [
+        "custom_cip7W7"
+      ],
+      "settings": {
+        "container": "1770",
+        "custom_button": true,
+        "form_title": "Contact Us",
+        "button_text": "Contact Us",
+        "desktop_margin_top": 0,
+        "desktop_margin_bottom": 0,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 0
+      }
     }
   },
   "order": [
@@ -508,9 +733,13 @@
     "brand_analysis_section_q3eXbk",
     "magazine_section_UmUkxF",
     "billboard_njG8qN",
+    "halo_submission_form_g9m6Gr",
     "social_media_management_Ew8gDN",
+    "cta_section_FgceV3",
     "services_filtered_tab_yyg3G4",
+    "portfolio_tab_section_VhKcdT",
     "testimonial_section_cWxNxx",
-    "featured_blog_ytEbbP"
+    "featured_blog_ytEbbP",
+    "halo_contact_form_popup_VyiqRe"
   ]
 }
